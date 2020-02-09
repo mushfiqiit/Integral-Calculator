@@ -8,8 +8,14 @@ using namespace std;
 
 class term
 {
+    string recievedTerm;
+    string processedTerm;
     public:
         term();
+        setTerm(string seperatedTerm)
+        {
+            this.seperatedTerm=seperatedTerm;
+        }
 };
 
 #endif // TERM_H

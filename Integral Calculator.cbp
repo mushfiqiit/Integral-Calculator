@@ -32,7 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="header1.h" />
+		<Unit filename="inputTakingUnit.cpp" />
+		<Unit filename="inputTakingUnit.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="term.cpp" />
+		<Unit filename="term.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
