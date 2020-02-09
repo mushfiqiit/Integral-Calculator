@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1581226991 source:e:\semester 3\integral calculator\main.cpp
+	<bits/stdc++.h>
+	"inputTakingUnit.h"
+
+1581227494 e:\semester 3\integral calculator\inputtakingunit.h
+	<bits/stdc++.h>
+
+1581229953 source:e:\semester 3\integral calculator\inputtakingunit.cpp
+	"inputTakingUnit.h"
+	<bits/stdc++.h>
+

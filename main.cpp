@@ -1,17 +1,14 @@
-#include "header1.hpp"
-
+#include <bits/stdc++.h>
+#include "header1.h"
+using namespace std;
 
 int main()
 {
-    inputTaker inputTaker1;
+    inputTakingUnit inputTakingUnit_1;
 
-    characterCategorizer categorizer_1;
-
-    inputTaker1.setInputFromUser();
-
-    catergorizer_1.setInputFromUser(inputTaker1.getInputFromUser());
-
-
+    inputTakingUnit_1.takeInput();
 
     return 0;
 }
+
+
