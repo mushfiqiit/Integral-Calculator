@@ -4,11 +4,19 @@ using namespace std;
 
 int main()
 {
-    inputTakingUnit inputTakingUnit_1;
+    term term_unit_1;
 
+    //Input taking
+    inputTakingUnit inputTakingUnit_1;
     inputTakingUnit_1.takeInput();
+    // **
+
+    //recieve a term
+    term_unit_1.setTerm(inputTakingUnit_1.getProcessedTerm());
+
+
+    cout << inputTakingUnit_1.getProcessedTerm() << endl;
+
 
     return 0;
 }
-
-

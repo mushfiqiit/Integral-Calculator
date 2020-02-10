@@ -1,6 +1,7 @@
 #ifndef TERM_H
 #define TERM_H
 #include <bits/stdc++.h>
+#include "constantpart.h"
 
 using namespace std;
 
@@ -10,12 +11,11 @@ class term
 {
     string recievedTerm;
     string processedTerm;
+    constantPart constant_1;
     public:
         term();
-        setTerm(string seperatedTerm)
-        {
-            this.seperatedTerm=seperatedTerm;
-        }
+        void setTerm(string seperatedTerm);
+        string getInitialTerm();
 };
 
 #endif // TERM_H

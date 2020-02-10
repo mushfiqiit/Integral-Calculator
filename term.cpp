@@ -8,4 +8,12 @@ term::term()
 
 }
 
-setTerm()
+void term::setTerm(string seperatedTerm)
+{
+    this->recievedTerm = seperatedTerm;
+}
+
+string term::getInitialTerm()
+{
+    return recievedTerm;
+}

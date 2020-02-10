@@ -32,10 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="constantpart.cpp" />
+		<Unit filename="constantpart.h" />
 		<Unit filename="header1.h" />
 		<Unit filename="inputTakingUnit.cpp" />
 		<Unit filename="inputTakingUnit.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="outputUnit.cpp" />
+		<Unit filename="outputUnit.h" />
 		<Unit filename="term.cpp" />
 		<Unit filename="term.h" />
 		<Extensions>
