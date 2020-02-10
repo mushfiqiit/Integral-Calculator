@@ -15,7 +15,7 @@ int main()
     term_unit_1.setTerm(inputTakingUnit_1.getProcessedTerm());
 
 
-    cout << inputTakingUnit_1.getProcessedTerm() << endl;
+    cout << term_unit_1.getInitialTerm() << endl;
 
 
     return 0;

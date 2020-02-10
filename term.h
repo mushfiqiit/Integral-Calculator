@@ -12,10 +12,13 @@ class term
     string recievedTerm;
     string processedTerm;
     constantPart constant_1;
+
+        void termProcessor();
     public:
         term();
         void setTerm(string seperatedTerm);
         string getInitialTerm();
+        string getProcessedTerm();
 };
 
 #endif // TERM_H

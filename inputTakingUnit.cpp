@@ -27,7 +27,7 @@ void inputTakingUnit::processInputToTerms()
 
         else
         {
-            temporaryTerm[i]=recievedInput[i];
+            temporaryTerm= temporaryTerm+recievedInput[i];
         }
     }
     processedToTerm=temporaryTerm;
