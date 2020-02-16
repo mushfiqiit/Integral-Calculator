@@ -40,8 +40,12 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="outputUnit.cpp" />
 		<Unit filename="outputUnit.h" />
+		<Unit filename="powerpart.cpp" />
+		<Unit filename="powerpart.h" />
 		<Unit filename="term.cpp" />
 		<Unit filename="term.h" />
+		<Unit filename="variablefunctionpart.cpp" />
+		<Unit filename="variablefunctionpart.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -2,6 +2,8 @@
 #define TERM_H
 #include <bits/stdc++.h>
 #include "constantpart.h"
+#include "variablefunctionpart.h"
+#include "powerpart.h"
 
 using namespace std;
 
@@ -11,7 +13,9 @@ class term
 {
     string recievedTerm;
     string processedTerm;
-    constantPart constant_1;
+    constantPart constant_Part_1;
+    variableFunctionPart variable_Function_Part_1;
+    powerPart power_Part_1;
 
         void termProcessor();
     public:
@@ -19,6 +23,7 @@ class term
         void setTerm(string seperatedTerm);
         string getInitialTerm();
         string getProcessedTerm();
+        constantPart getConstantPart();
 };
 
 #endif // TERM_H

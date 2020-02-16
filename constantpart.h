@@ -15,6 +15,7 @@ class constantPart
     public:
         constantPart();
         void setConstant(string constantStringAsInput);
+        string getConstantStringAsInput();
 };
 
 #endif // CONSTANTPART_H

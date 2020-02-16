@@ -2,3 +2,6 @@
 #include "term.h"
 #include "constantpart.h"
 #include "outputUnit.h"
+#include "constantpart.h"
+#include "powerpart.h"
+#include "variablefunctionpart.h"

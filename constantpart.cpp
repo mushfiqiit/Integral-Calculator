@@ -13,3 +13,7 @@ void constantPart::setConstant(string constantStringAsInput)
     this->constantStringAsInput=constantStringAsInput;
 }
 
+string constantPart::getConstantStringAsInput()
+{
+    return constantStringAsInput;
+}

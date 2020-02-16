@@ -13,6 +13,7 @@ class powerPart
     int convertedOutputPower;
     public:
         powerPart();
+        void setInputPower(string inputPower);
 
 };
 
