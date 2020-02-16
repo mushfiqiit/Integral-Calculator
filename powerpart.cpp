@@ -7,9 +7,13 @@ powerPart::powerPart()
 {
 }
 
-void powerPart::setPowerPart(string inputPower)
+void powerPart::setInputPower(string inputPower)
 {
-    this.inputPower=inputPower;
+    this->inputPower=inputPower;
 }
 
+string powerPart::getInputPower()
+{
+    return inputPower;
+}
 

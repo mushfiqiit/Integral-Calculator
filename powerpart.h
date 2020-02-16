@@ -14,7 +14,7 @@ class powerPart
     public:
         powerPart();
         void setInputPower(string inputPower);
-
+        string getInputPower();
 };
 
 #endif // POWERPART_H

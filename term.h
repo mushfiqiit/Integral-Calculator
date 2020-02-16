@@ -24,6 +24,8 @@ class term
         string getInitialTerm();
         string getProcessedTerm();
         constantPart getConstantPart();
+        variableFunctionPart getVariableFunctionPart();
+        powerPart getPowerPart();
 };
 
 #endif // TERM_H

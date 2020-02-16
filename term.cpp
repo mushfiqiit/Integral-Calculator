@@ -24,9 +24,10 @@ void term::termProcessor()
     string constant;
     string functionType;
     string power;
+    int i;
 
     // Parsing constant part
-    for(int i=0;i<recievedTerm.size();i++)
+    for(i=0;i<recievedTerm.size();i++)
     {
         if(recievedTerm[i]>='0' && recievedTerm[i]<='9')
         {
@@ -67,4 +68,14 @@ void term::termProcessor()
 constantPart term::getConstantPart()
 {
     return constant_Part_1;
+}
+
+variableFunctionPart term::getVariableFunctionPart()
+{
+    return variable_Function_Part_1;
+}
+
+powerPart term::getPowerPart()
+{
+    return power_Part_1;
 }

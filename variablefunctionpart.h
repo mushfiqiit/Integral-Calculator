@@ -8,7 +8,9 @@ class variableFunctionPart
 {
     string variableFunctionAsInput;
     public:
+        variableFunctionPart();
         void setVariableFunctionAsInput(string variableFunctionAsInput);
+        string getVariableFunctionAsInput();
 
 };
 
