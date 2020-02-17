@@ -13,6 +13,7 @@ constantPart::constantPart()
 void constantPart::setConstant(string constantStringAsInput)
 {
     this->constantStringAsInput=constantStringAsInput;
+
 }
 
 string constantPart::getConstantStringAsInput()
@@ -32,7 +33,13 @@ void constantPart::computeOutputConstant(string inputPower)
     inputPowerAsInt=inputPowerAsInt+1;
     ss<<inputPowerAsInt;
     ss>>inputPower;
-    outputConstant=constantStringAsInput+'/'+inputPower;
+
+    if(constantStringAsInput=="" || constantStringAsInput.empty())
+    {
+        constantStringAsInput="1";
+    }
+
+    outputConstant=constantStringAsInput+"/"+inputPower;
 }
 
 string constantPart::getOutputConstant()
