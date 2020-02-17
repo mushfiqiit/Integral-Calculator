@@ -38,11 +38,39 @@ void constantPart::computeOutputConstant(string inputPower)
     {
         constantStringAsInput="1";
     }
+    numeratorDenominatorSimplification(constantStringAsInput, inputPower);
 
-    outputConstant=constantStringAsInput+"/"+inputPower;
+    if(processedDenominator=="1")
+    {
+        outputConstant="(" +processedNumerator +")";
+    }
+
+    else
+    {
+    outputConstant="("+processedNumerator+"/"+processedDenominator+")";
+    }
 }
 
 string constantPart::getOutputConstant()
 {
     return outputConstant;
+}
+
+void constantPart::numeratorDenominatorSimplification(string numerator, string denominator)
+{
+    int numeratorAsInt=atoi(numerator.c_str());
+    int denominatorAsInt=atoi(denominator.c_str());
+    int numeratorAsIntFinal, denominatorAsIntFinal;
+
+    numeratorAsIntFinal=numeratorAsInt/__gcd(numeratorAsInt, denominatorAsInt);
+    denominatorAsIntFinal=denominatorAsInt/__gcd(numeratorAsInt, denominatorAsInt);
+
+
+    stringstream ss1;
+    stringstream ss2;
+    ss1 <<numeratorAsIntFinal;
+    ss1 >>processedNumerator;
+
+    ss2 <<denominatorAsIntFinal;
+    ss2 >>processedDenominator;
 }

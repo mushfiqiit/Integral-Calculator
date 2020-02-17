@@ -9,10 +9,11 @@ class constantPart
     string constantStringAsInput;
     string outputConstant;
 
-    int processedConstant;
-    int constantIntegerAsInput;
+    string processedNumerator;
+    string processedDenominator;
 
     void computeOutputConstant(string inputPower);
+    void numeratorDenominatorSimplification(string numerator, string denominator);
     public:
         constantPart();
         void setConstant(string constantStringAsInput);
