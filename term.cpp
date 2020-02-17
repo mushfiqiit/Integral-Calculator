@@ -40,11 +40,12 @@ void term::termProcessor()
         }
     }
     constant_Part_1.setConstant(constant);
+    // ********
 
     //Parsing variable function part
     for(;i<recievedTerm.size();i++)
     {
-        if(recievedTerm[i]!='^')
+        if(recievedTerm[i]=='^')
         {
             break;
         }
@@ -55,14 +56,34 @@ void term::termProcessor()
         }
     }
     variable_Function_Part_1.setVariableFunctionAsInput(functionType);
+    // *******
 
     // Parsing power part
-
-    for(i++;i<recievedTerm.size();i++)
+    for(;i<recievedTerm.size();i++)
     {
+        if(recievedTerm[i]!='^')
+        {
         power=power+recievedTerm[i];
+        }
     }
+    power_Part_1.setInputPower(power);
+    // *******
+}
 
+void term::computeOutputTerm()
+{
+    constant_Part_1.formOutputConstant(power_Part_1.getInputPower());
+    power_Part_1.formOutputPower();
+    outputTerm=outputTerm+constant_Part_1.getOutputConstant()+
+                variable_Function_Part_1.getVariableFunctionAsInput()+
+                "^" +
+                power_Part_1.getOutputPower();
+        cout << outputTerm << endl;
+}
+
+void term::formOutputTerm()
+{
+    computeOutputTerm();
 }
 
 constantPart term::getConstantPart()

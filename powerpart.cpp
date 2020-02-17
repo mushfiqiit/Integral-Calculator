@@ -1,5 +1,6 @@
 #include "powerpart.h"
 #include <bits/stdc++.h>
+#include <string>
 
 using namespace std;
 
@@ -17,3 +18,21 @@ string powerPart::getInputPower()
     return inputPower;
 }
 
+void powerPart::formOutputPower()
+{
+    computeOutputPower();
+}
+
+void powerPart::computeOutputPower()
+{
+    stringstream ss;
+    convertedInputPower=atoi(inputPower.c_str());
+    convertedOutputPower=convertedInputPower+1;
+    ss<< convertedOutputPower;
+    ss>>outputPower;
+}
+
+string powerPart::getOutputPower()
+{
+    return outputPower;
+}

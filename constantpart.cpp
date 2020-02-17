@@ -1,5 +1,7 @@
 #include "constantpart.h"
 #include <bits/stdc++.h>
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -16,4 +18,24 @@ void constantPart::setConstant(string constantStringAsInput)
 string constantPart::getConstantStringAsInput()
 {
     return constantStringAsInput;
+}
+
+void constantPart::formOutputConstant(string inputPower)
+{
+    computeOutputConstant(inputPower);
+}
+
+void constantPart::computeOutputConstant(string inputPower)
+{
+    stringstream ss;
+    int inputPowerAsInt=atoi(inputPower.c_str());
+    inputPowerAsInt=inputPowerAsInt+1;
+    ss<<inputPowerAsInt;
+    ss>>inputPower;
+    outputConstant=constantStringAsInput+'/'+inputPower;
+}
+
+string constantPart::getOutputConstant()
+{
+    return outputConstant;
 }

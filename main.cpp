@@ -21,10 +21,7 @@ int main()
     temporary_Variable_Function_Part_1=term_unit_1.getVariableFunctionPart();
     temporary_Power_Part_1=term_unit_1.getPowerPart();
 
-    cout << temporaryConstant_1.getConstantStringAsInput() << endl;
-    cout << temporary_Variable_Function_Part_1.getVariableFunctionAsInput() << endl;
-    cout << temporary_Power_Part_1.getInputPower() << endl;
-
+    term_unit_1.formOutputTerm();
 
     return 0;
 }

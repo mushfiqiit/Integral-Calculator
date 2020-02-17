@@ -12,12 +12,13 @@ using namespace std;
 class term
 {
     string recievedTerm;
-    string processedTerm;
+    string outputTerm;
     constantPart constant_Part_1;
     variableFunctionPart variable_Function_Part_1;
     powerPart power_Part_1;
 
         void termProcessor();
+        void computeOutputTerm();
     public:
         term();
         void setTerm(string seperatedTerm);
@@ -26,6 +27,8 @@ class term
         constantPart getConstantPart();
         variableFunctionPart getVariableFunctionPart();
         powerPart getPowerPart();
+        void formOutputTerm();
+        string getOutputTerm();
 };
 
 #endif // TERM_H

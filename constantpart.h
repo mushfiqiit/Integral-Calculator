@@ -12,10 +12,13 @@ class constantPart
     int processedConstant;
     int constantIntegerAsInput;
 
+    void computeOutputConstant(string inputPower);
     public:
         constantPart();
         void setConstant(string constantStringAsInput);
         string getConstantStringAsInput();
+        void formOutputConstant(string inputPower);
+        string getOutputConstant();
 };
 
 #endif // CONSTANTPART_H

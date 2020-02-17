@@ -7,14 +7,17 @@ using namespace std;
 class powerPart
 {
     string inputPower;
-    string OutPutPower;
-
+    string outputPower;
     int convertedInputPower;
     int convertedOutputPower;
+
+    void computeOutputPower();
     public:
         powerPart();
         void setInputPower(string inputPower);
         string getInputPower();
+        void formOutputPower();
+        string getOutputPower();
 };
 
 #endif // POWERPART_H
