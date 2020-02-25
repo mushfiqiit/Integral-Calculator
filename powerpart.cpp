@@ -6,6 +6,7 @@ using namespace std;
 
 powerPart::powerPart()
 {
+
 }
 
 void powerPart::setInputPower(string inputPower)
@@ -29,7 +30,7 @@ void powerPart::computeOutputPower()
     convertedInputPower=atoi(inputPower.c_str());
     convertedOutputPower=convertedInputPower+1;
     ss<< convertedOutputPower;
-    ss>>outputPower;
+    outputPower=ss.str();
 }
 
 string powerPart::getOutputPower()

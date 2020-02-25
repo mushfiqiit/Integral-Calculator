@@ -56,17 +56,35 @@ void term::termProcessor()
         }
     }
     variable_Function_Part_1.setVariableFunctionAsInput(functionType);
-    // *******
+
+    cout << functionType << endl;
+
+    if(functionType.empty())
+    {
+        variable_Function_Part_1.setVariableFunctionAsInput("x");
+    }
+
+    // ************
+
 
     // Parsing power part
-    for(;i<recievedTerm.size();i++)
+    for(;i<recievedTerm[i]!='\0';i++)
     {
+        cout << recievedTerm[i] << " " << i << endl;;
         if(recievedTerm[i]!='^')
         {
         power=power+recievedTerm[i];
         }
     }
+    cout << endl;
     power_Part_1.setInputPower(power);
+
+    cout << power << endl;
+
+    if(power.empty())
+    {
+        power_Part_1.setInputPower("1");
+    }
     // *******
 }
 

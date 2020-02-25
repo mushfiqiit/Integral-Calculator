@@ -32,7 +32,7 @@ void constantPart::computeOutputConstant(string inputPower)
     int inputPowerAsInt=atoi(inputPower.c_str());
     inputPowerAsInt=inputPowerAsInt+1;
     ss<<inputPowerAsInt;
-    ss>>inputPower;
+    inputPower=ss.str();
 
     if(constantStringAsInput=="" || constantStringAsInput.empty())
     {
@@ -69,8 +69,8 @@ void constantPart::numeratorDenominatorSimplification(string numerator, string d
     stringstream ss1;
     stringstream ss2;
     ss1 <<numeratorAsIntFinal;
-    ss1 >>processedNumerator;
+    processedNumerator=ss1.str();
 
     ss2 <<denominatorAsIntFinal;
-    ss2 >>processedDenominator;
+    processedDenominator=ss2.str();
 }

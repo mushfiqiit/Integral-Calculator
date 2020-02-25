@@ -11,7 +11,6 @@ class variableFunctionPart
         variableFunctionPart();
         void setVariableFunctionAsInput(string variableFunctionAsInput);
         string getVariableFunctionAsInput();
-
 };
 
 #endif // VARIABLEFUNCTIONPART_H
