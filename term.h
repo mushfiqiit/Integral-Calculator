@@ -30,5 +30,4 @@ class term
         void formOutputTerm();
         string getOutputTerm();
 };
-
 #endif // TERM_H

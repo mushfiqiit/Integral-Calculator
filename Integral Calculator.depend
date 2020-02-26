@@ -134,7 +134,7 @@
 	"variablefunctionpart.h"
 	<bits/stdc++.h>
 
-1581911117 source:e:\semester 3\spl -1\integral-calculator-master\inputtakingunit.cpp
+1582681911 source:e:\semester 3\spl -1\integral-calculator-master\inputtakingunit.cpp
 	"inputTakingUnit.h"
 	<bits/stdc++.h>
 
@@ -142,7 +142,7 @@
 	<bits/stdc++.h>
 	"term.h"
 
-1581911117 e:\semester 3\spl -1\integral-calculator-master\term.h
+1582709330 e:\semester 3\spl -1\integral-calculator-master\term.h
 	<bits/stdc++.h>
 	"constantpart.h"
 	"variablefunctionpart.h"
@@ -182,7 +182,7 @@
 	<bits/stdc++.h>
 	<string>
 
-1582619724 source:e:\semester 3\spl -1\integral-calculator-master\term.cpp
+1582709801 source:e:\semester 3\spl -1\integral-calculator-master\term.cpp
 	<bits/stdc++.h>
 	"term.h"
 

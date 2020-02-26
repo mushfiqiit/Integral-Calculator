@@ -20,15 +20,7 @@ void inputTakingUnit::processInputToTerms()
 
     for(int i=0;i<recievedInput.size();i++)
     {
-        if(recievedInput[i]=='+' || recievedInput[i]=='-')
-        {
-            break;
-        }
-
-        else
-        {
             temporaryTerm= temporaryTerm+recievedInput[i];
-        }
     }
     processedToTerm=temporaryTerm;
 }

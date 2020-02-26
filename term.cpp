@@ -34,6 +34,11 @@ void term::termProcessor()
             constant=constant+recievedTerm[i];
         }
 
+      /*  else if(recievedTerm[i]=='/')
+        {
+            constant_Part_1.setFractionStatus(1);
+        } */
+
         else
         {
             break;
@@ -57,7 +62,6 @@ void term::termProcessor()
     }
     variable_Function_Part_1.setVariableFunctionAsInput(functionType);
 
-    cout << functionType << endl;
 
     if(functionType.empty())
     {
@@ -68,18 +72,15 @@ void term::termProcessor()
 
 
     // Parsing power part
-    for(;i<recievedTerm[i]!='\0';i++)
+    for(;i<recievedTerm.size();i++)
     {
-        cout << recievedTerm[i] << " " << i << endl;;
         if(recievedTerm[i]!='^')
         {
         power=power+recievedTerm[i];
         }
     }
-    cout << endl;
-    power_Part_1.setInputPower(power);
 
-    cout << power << endl;
+    power_Part_1.setInputPower(power);
 
     if(power.empty())
     {
