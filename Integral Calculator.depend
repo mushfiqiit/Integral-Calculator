@@ -10,19 +10,19 @@
 	"inputTakingUnit.h"
 	<bits/stdc++.h>
 
-1581856609 source:e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.cpp
+1583156049 source:e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.cpp
 	"inputTakingUnit.h"
 	<bits/stdc++.h>
 
-1581856609 e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.h
+1583156049 e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.h
 	<bits/stdc++.h>
 	"term.h"
 
-1581907307 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
+1583156049 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
 	<bits/stdc++.h>
 	"header1.h"
 
-1581874561 e:\work\second year\spl- 1\integral-calculator-master\header1.h
+1583156049 e:\work\second year\spl- 1\integral-calculator-master\header1.h
 	"inputTakingUnit.h"
 	"term.h"
 	"constantpart.h"
@@ -31,38 +31,38 @@
 	"powerpart.h"
 	"variablefunctionpart.h"
 
-1581910726 e:\work\second year\spl- 1\integral-calculator-master\term.h
+1583156049 e:\work\second year\spl- 1\integral-calculator-master\term.h
 	<bits/stdc++.h>
 	"constantpart.h"
 	"variablefunctionpart.h"
 	"powerpart.h"
 
-1581856609 source:e:\work\second year\spl- 1\integral-calculator-master\outputunit.cpp
+1583156049 source:e:\work\second year\spl- 1\integral-calculator-master\outputunit.cpp
 	"outputUnit.h"
 	<bits/stdc++.h>
 
-1581856609 e:\work\second year\spl- 1\integral-calculator-master\outputunit.h
+1583156049 e:\work\second year\spl- 1\integral-calculator-master\outputunit.h
 	<bits/stdc++.h>
 
-1581910856 source:e:\work\second year\spl- 1\integral-calculator-master\term.cpp
+1583257435 source:e:\work\second year\spl- 1\integral-calculator-master\term.cpp
 	<bits/stdc++.h>
 	"term.h"
 
-1581907307 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
+1583257191 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
 	<bits/stdc++.h>
 
-1581910666 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
+1583257212 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
 	"constantpart.h"
 	<bits/stdc++.h>
 	<string>
 	<iostream>
 
-1581910778 source:e:\work\second year\spl- 1\integral-calculator-master\powerpart.cpp
+1583156049 source:e:\work\second year\spl- 1\integral-calculator-master\powerpart.cpp
 	"powerpart.h"
 	<bits/stdc++.h>
 	<string>
 
-1581910700 e:\work\second year\spl- 1\integral-calculator-master\powerpart.h
+1583156049 e:\work\second year\spl- 1\integral-calculator-master\powerpart.h
 	<bits/stdc++.h>
 
 1582607458 source:e:\semester 3\integral-calculator-master\term.cpp
@@ -102,10 +102,10 @@
 1581911117 e:\semester 3\integral-calculator-master\outputunit.h
 	<bits/stdc++.h>
 
-1581876637 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.h
+1583257190 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.h
 	<bits/stdc++.h>
 
-1581876557 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.cpp
+1583257191 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.cpp
 	"variablefunctionpart.h"
 	<bits/stdc++.h>
 

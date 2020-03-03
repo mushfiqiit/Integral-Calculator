@@ -11,6 +11,8 @@ class variableFunctionPart
         variableFunctionPart();
         void setVariableFunctionAsInput(string variableFunctionAsInput);
         string getVariableFunctionAsInput();
+        bool functionIsX();
+        bool functionIsEmpty();
 };
 
 #endif // VARIABLEFUNCTIONPART_H

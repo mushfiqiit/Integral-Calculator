@@ -34,10 +34,16 @@ void term::termProcessor()
             constant=constant+recievedTerm[i];
         }
 
-      /*  else if(recievedTerm[i]=='/')
+        else if(recievedTerm[i]=='/')
         {
             constant_Part_1.setFractionStatus(1);
-        } */
+            constant=constant+recievedTerm[i];
+        }
+
+        else if(recievedTerm[i]=='(' || recievedTerm[i]==')')
+        {
+            continue;
+        }
 
         else
         {
@@ -82,9 +88,14 @@ void term::termProcessor()
 
     power_Part_1.setInputPower(power);
 
-    if(power.empty())
+    if(power.empty() && functionType=="x")
     {
         power_Part_1.setInputPower("1");
+    }
+
+    else if(power.empty() && functionType.empty())
+    {
+        power_Part_1.setInputPower("0");
     }
     // *******
 }

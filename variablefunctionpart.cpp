@@ -17,3 +17,29 @@ string variableFunctionPart::getVariableFunctionAsInput()
 {
     return variableFunctionAsInput;
 }
+
+bool variableFunctionPart::functionIsX()
+{
+    if(variableFunctionAsInput=="x")
+    {
+        return true;
+    }
+
+    else
+    {
+        return false;
+    }
+}
+
+bool variableFunctionPart::functionIsEmpty()
+{
+    if(variableFunctionAsInput.empty())
+    {
+        return true;
+    }
+
+    else
+    {
+        return false;
+    }
+}
