@@ -10,6 +10,7 @@ class powerPart
     string outputPower;
     int convertedInputPower;
     int convertedOutputPower;
+    bool isPositive;
 
     void computeOutputPower();
     public:

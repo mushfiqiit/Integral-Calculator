@@ -4,12 +4,31 @@ using namespace std;
 
 int main()
 {
+    string recievedInput;
     term term_unit_1;
+
+    cout << "\tInput Instructions : \n\n";
+    cout << "\t1. Two terms must be seperated from their operators by a space.\n\n";
+    cout << "\t2. The constant cannot be zero or negative\n\n";
+    cout << "\t3. The power must be a positive integer. \n\n";
+    cout << "\t4. Enter quit to exit.\n\n";
+    cout << "\t Sample Input : (7/3)x^2. \n\n";
 
 
     //Input taking
+
+    while(recievedInput!="quit")
+    {
+        cout << "Input : ";
+        getline(cin, recievedInput);
+        cout << "\n\n";
+        if(recievedInput=="quit")
+        {
+            break;
+        }
     inputTakingUnit inputTakingUnit_1;
-    inputTakingUnit_1.takeInput();
+    inputTakingUnit_1.takeInput(recievedInput);
+    }
     // **
 
     //recieve a term

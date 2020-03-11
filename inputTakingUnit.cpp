@@ -8,10 +8,9 @@ inputTakingUnit::inputTakingUnit()
 
 }
 
-void inputTakingUnit::takeInput()
+void inputTakingUnit::takeInput(string recievedInput)
 {
-    cout << "Input : ";
-    getline(cin, recievedInput);
+    this->recievedInput=recievedInput;
     processInputToTerms();
 }
 
@@ -27,6 +26,16 @@ void inputTakingUnit::processInputToTerms()
         if(recievedInput[i]==' ' && (recievedInput[i+1]=='+' || recievedInput[i+1]=='-') &&
            recievedInput[i+2]==' ')
         {
+            if(recievedInput[i+1]=='-')
+            {
+                operatorSigns.push_back('-');
+            }
+
+            else
+            {
+                operatorSigns.push_back('+');
+            }
+
             i=i+2;
             termIterator++;
         }
@@ -70,7 +79,9 @@ void inputTakingUnit::formOutputString(int termCount)
 
     for(int i=1; i<=termCount;i++)
     {
-        resultToShow=resultToShow + " + ";
+        resultToShow=resultToShow + " ";
+        resultToShow=resultToShow + operatorSigns[i-1];
+        resultToShow=resultToShow + " ";
         resultToShow=resultToShow + arrayOfTerms[i].getOutputTerm();
     }
     outputUnit_1.setResultToShow(resultToShow);

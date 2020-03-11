@@ -9,6 +9,7 @@ using namespace std;
 
 class inputTakingUnit
 {
+    vector <char> operatorSigns;
     string recievedInput;
     string processedToTerm;
     term arrayOfTerms[5];
@@ -19,7 +20,7 @@ class inputTakingUnit
     void processInputToTerms();
     public:
         inputTakingUnit();
-        void takeInput();
+        void takeInput(string recievedInput);
         string getProcessedTerm();
         string getRecievedInput();
 };

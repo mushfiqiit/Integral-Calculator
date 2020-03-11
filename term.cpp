@@ -40,7 +40,8 @@ void term::termProcessor()
             constant=constant+recievedTerm[i];
         }
 
-        else if(recievedTerm[i]=='(' || recievedTerm[i]==')' || recievedTerm[i]==' ')
+        else if(recievedTerm[i]=='(' || recievedTerm[i]==')' || recievedTerm[i]==' '
+                || recievedTerm[i]=='*')
         {
             continue;
         }

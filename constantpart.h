@@ -15,6 +15,7 @@ class constantPart
     string processedNumerator;
     string processedDenominator;
     int fractionStatus;
+    bool isPositive;
 
     void computeOutputConstant(string inputPower);
     void numeratorDenominatorSimplification(string numerator, string denominator);
