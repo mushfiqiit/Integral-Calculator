@@ -11,7 +11,7 @@ class outputUnit
     public:
         outputUnit();
         void showOutput();
-
+        void setResultToShow(string resultToShow);
 };
 
 #endif // OUTPUTUNIT_H

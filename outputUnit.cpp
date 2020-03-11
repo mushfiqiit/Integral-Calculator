@@ -10,5 +10,10 @@ outputUnit::outputUnit()
 
 void outputUnit::showOutput()
 {
-    cout << resultToShow;
+    cout << "Output : " <<  resultToShow;
+}
+
+void outputUnit::setResultToShow(string resultToShow)
+{
+    this->resultToShow=resultToShow;
 }

@@ -40,7 +40,7 @@ void term::termProcessor()
             constant=constant+recievedTerm[i];
         }
 
-        else if(recievedTerm[i]=='(' || recievedTerm[i]==')')
+        else if(recievedTerm[i]=='(' || recievedTerm[i]==')' || recievedTerm[i]==' ')
         {
             continue;
         }
@@ -108,7 +108,7 @@ void term::computeOutputTerm()
                 variable_Function_Part_1.getVariableFunctionAsInput()+
                 "^" +
                 power_Part_1.getOutputPower();
-        cout << outputTerm << endl;
+     //   cout << "Output : " << outputTerm << endl;
 }
 
 void term::formOutputTerm()
@@ -129,4 +129,9 @@ variableFunctionPart term::getVariableFunctionPart()
 powerPart term::getPowerPart()
 {
     return power_Part_1;
+}
+
+string term::getOutputTerm()
+{
+    return outputTerm;
 }
