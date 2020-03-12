@@ -10,9 +10,9 @@ int main()
     cout << "\tInput Instructions : \n\n";
     cout << "\t1. Two terms must be seperated from their operators by a space.\n\n";
     cout << "\t2. The constant must be a nonzero integer or fraction.\n\n";
-    cout << "\t3. The power must be a nonzero integer. \n\n";
+    cout << "\t3. The power must be a nonzero integer except -1. \n\n";
     cout << "\t4. Do not use empty input.\n\n";
-    cout << "\t4. Enter quit to exit.\n\n";
+    cout << "\t6. Enter quit to exit.\n\n";
     cout << "\t Sample Input : (7/3)x^2. \n\n";
 
 
