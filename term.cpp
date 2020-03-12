@@ -29,7 +29,7 @@ void term::termProcessor()
     // Parsing constant part
     for(i=0;i<recievedTerm.size();i++)
     {
-        if(recievedTerm[i]>='0' && recievedTerm[i]<='9')
+        if((recievedTerm[i]>='0' && recievedTerm[i]<='9') || recievedTerm[i]=='-')
         {
             constant=constant+recievedTerm[i];
         }
@@ -51,6 +51,7 @@ void term::termProcessor()
             break;
         }
     }
+    cout << constant << endl;
     constant_Part_1.setConstant(constant);
     // ********
 

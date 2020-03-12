@@ -43,6 +43,8 @@ void constantPart::computeOutputConstant(string inputPower)
     {
     initialNumerator=constantStringAsInput;
     initialDenominator=inputPower;
+   /* cout << initialNumerator << endl;
+    cout << initialDenominator << endl; */
     }
 
     else  // Calculation when constant part is a fraction
@@ -76,6 +78,22 @@ void constantPart::numeratorDenominatorSimplification(string numerator, string d
 
     numeratorAsIntFinal=numeratorAsInt/__gcd(numeratorAsInt, denominatorAsInt);
     denominatorAsIntFinal=denominatorAsInt/__gcd(numeratorAsInt, denominatorAsInt);
+
+    if(numeratorAsIntFinal<0 && denominatorAsIntFinal<0)
+    {
+        numeratorAsIntFinal=abs(numeratorAsIntFinal);
+        denominatorAsIntFinal=denominatorAsIntFinal;
+    }
+
+    else if((numeratorAsIntFinal<0 && denominatorAsIntFinal>0)||
+            (numeratorAsIntFinal>0 && denominatorAsIntFinal<0))
+    {
+        if(numeratorAsIntFinal>0)
+        {
+            numeratorAsIntFinal=-numeratorAsIntFinal;
+            denominatorAsIntFinal=abs(denominatorAsIntFinal);
+        }
+    }
 
 
     stringstream ss1;
