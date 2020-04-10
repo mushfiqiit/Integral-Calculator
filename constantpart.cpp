@@ -21,18 +21,17 @@ string constantPart::getConstantStringAsInput()
     return constantStringAsInput;
 }
 
-void constantPart::formOutputConstant(string inputPower)
+void constantPart::formOutputConstant()
 {
-    computeOutputConstant(inputPower);
+    computeOutputConstant();
 }
 
-void constantPart::computeOutputConstant(string inputPower)
+void constantPart::computeOutputConstant()
 {
-    stringstream ss;
-    int inputPowerAsInt=atoi(inputPower.c_str());
-    inputPowerAsInt=inputPowerAsInt+1;
+    /*stringstream ss;
+    int outputPowerAsInt=atoi(inputPower.c_str());
     ss<<inputPowerAsInt;
-    inputPower=ss.str();
+    inputPower=ss.str(); */
 
     if(constantStringAsInput=="" || constantStringAsInput.empty())
     {
@@ -42,16 +41,18 @@ void constantPart::computeOutputConstant(string inputPower)
     if(fractionStatus==0)  //Calculation when constant part is not a fraction
     {
     initialNumerator=constantStringAsInput;
-    initialDenominator=inputPower;
-   /* cout << initialNumerator << endl;
-    cout << initialDenominator << endl; */
+    initialDenominator="1";
     }
 
-    else  // Calculation when constant part is a fraction
+    else
     {
-        computeFractionNumeratorDenominator(constantStringAsInput, inputPower);
+        parseFractionConstant(constantStringAsInput);
     }
 
+    computeFractionNumeratorDenominator(initialNumerator, initialDenominator);
+
+
+    //cout << initialNumerator << " " << initialDenominator << endl;
     numeratorDenominatorSimplification(initialNumerator, initialDenominator);
 
     if(processedDenominator=="1")
@@ -75,6 +76,7 @@ void constantPart::numeratorDenominatorSimplification(string numerator, string d
     int numeratorAsInt=atoi(numerator.c_str());
     int denominatorAsInt=atoi(denominator.c_str());
     int numeratorAsIntFinal, denominatorAsIntFinal;
+    //cout << numeratorAsInt << " " << denominatorAsInt << endl;
 
     numeratorAsIntFinal=numeratorAsInt/__gcd(numeratorAsInt, denominatorAsInt);
     denominatorAsIntFinal=denominatorAsInt/__gcd(numeratorAsInt, denominatorAsInt);
@@ -107,19 +109,18 @@ void constantPart::numeratorDenominatorSimplification(string numerator, string d
 
 void constantPart::setFractionStatus(int fractionStatus)
 {
-    this->
-    fractionStatus=fractionStatus;
+    this->fractionStatus=fractionStatus;
 }
 
-void constantPart::computeFractionNumeratorDenominator(string constantStringAsInput,
-                                                       string inputPower)
+void constantPart::computeFractionNumeratorDenominator(string initialNumerator,
+                                                       string initialDenominator)
 {
     int i;
     string fractionStatusInitialNumerator;
     string fractionStatusInitialDenominator;
 
     //Parsing Numerator of fraction
-    for(i=0;i<constantStringAsInput.size();i++)
+   /* for(i=0;i<constantStringAsInput.size();i++)
     {
         if(constantStringAsInput[i]=='/')
         {
@@ -150,24 +151,77 @@ void constantPart::computeFractionNumeratorDenominator(string constantStringAsIn
         fractionStatusInitialDenominator=fractionStatusInitialDenominator+constantStringAsInput[i];
     }
     //**************************
+    */
+    fractionStatusInitialNumerator=initialNumerator;
+    fractionStatusInitialDenominator=initialDenominator;
 
 int fractionStatusNumeratorAsInt=atoi(fractionStatusInitialNumerator.c_str());
 int fractionStatusDenominatorAsInt=atoi(fractionStatusInitialDenominator.c_str());
-int inputPowerAsInt=atoi(inputPower.c_str());
 
+//cout << fractionStatusNumeratorAsInt << " " << fractionStatusDenominatorAsInt << endl;
 
+int outputPowerNumeratorAsInt=atoi(outputPowerNumerator.c_str());
+int outputPowerDenominatorAsInt=atoi(outputPowerDenominator.c_str());
 
-fractionStatusDenominatorAsInt=fractionStatusDenominatorAsInt*inputPowerAsInt;
+//cout << outputPowerNumeratorAsInt << " " << outputPowerDenominatorAsInt << endl;
 
+fractionStatusNumeratorAsInt=fractionStatusNumeratorAsInt*outputPowerDenominatorAsInt;
+fractionStatusDenominatorAsInt=(fractionStatusDenominatorAsInt*
+                                outputPowerNumeratorAsInt);
+//cout << fractionStatusNumeratorAsInt << " " << fractionStatusDenominatorAsInt << endl;
 
 stringstream ss1, ss2;
 ss1<<fractionStatusNumeratorAsInt;
-initialNumerator=ss1.str();
+this->initialNumerator=ss1.str();
 ss2<<fractionStatusDenominatorAsInt;
-initialDenominator=ss2.str();
+this->initialDenominator=ss2.str();
 }
 
 int constantPart::getFractionStatus()
 {
     return fractionStatus;
+}
+
+void constantPart::setOutputPowerNumerator(string outputPowerNumerator)
+{
+    this->outputPowerNumerator=outputPowerNumerator;
+    //cout << outputPowerNumerator << endl;
+}
+
+void constantPart::setOutputPowerDenominator(string outputPowerDenominator)
+{
+    this->outputPowerDenominator=outputPowerDenominator;
+    //cout << outputPowerDenominator << endl;
+}
+
+void constantPart::parseFractionConstant(string constantStringAsInput)
+{
+    int i;
+    for(i=0;i<constantStringAsInput.length();i++)
+    {
+        if(constantStringAsInput[i]=='(')
+        {
+            continue;
+        }
+
+        else if(constantStringAsInput[i]=='/')
+        {
+            break;
+        }
+
+        else
+        {
+            initialNumerator=initialNumerator+constantStringAsInput[i];
+        }
+    }
+    i++;
+
+    for(;i<constantStringAsInput.length();i++)
+    {
+        if(constantStringAsInput[i]==')')
+        {
+            break;
+        }
+        initialDenominator=initialDenominator+constantStringAsInput[i];
+    }
 }

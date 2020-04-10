@@ -51,7 +51,6 @@ void term::termProcessor()
             break;
         }
     }
-    cout << constant << endl;
     constant_Part_1.setConstant(constant);
     // ********
 
@@ -82,6 +81,11 @@ void term::termProcessor()
     // Parsing power part
     for(;i<recievedTerm.size();i++)
     {
+        if(recievedTerm[i]=='/')
+        {
+            power_Part_1.setFractionStatus(1);
+        }
+
         if(recievedTerm[i]!='^')
         {
         power=power+recievedTerm[i];
@@ -104,12 +108,42 @@ void term::termProcessor()
 
 void term::computeOutputTerm()
 {
-    constant_Part_1.formOutputConstant(power_Part_1.getInputPower());
     power_Part_1.formOutputPower();
+    //constant_Part_1.formOutputConstant(power_Part_1.getInputPower());
+
+    if(power_Part_1.getFractionStatus()==0)
+    {
+        constant_Part_1.setOutputPowerNumerator(power_Part_1.getOutputPower());
+    }
+
+    else
+    {
+    constant_Part_1.setOutputPowerNumerator(power_Part_1.getNumeratorAsOutput());
+    }
+
+    // If the power is not a fraction then denominator is 1
+    if(power_Part_1.getFractionStatus()==0)
+    {
+        constant_Part_1.setOutputPowerDenominator("1");
+    }
+
+    else
+    {
+    constant_Part_1.setOutputPowerDenominator(power_Part_1.getDenominatorAsOutput());
+    }
+    //**********************************
+
+    // Finally Compute constant
+    constant_Part_1.formOutputConstant();
+    //***************************
+
+    //Combine everything to from outputTerm
     outputTerm=outputTerm+constant_Part_1.getOutputConstant()+
                 variable_Function_Part_1.getVariableFunctionAsInput()+
                 "^" +
                 power_Part_1.getOutputPower();
+    //****************************************
+
      //   cout << "Output : " << outputTerm << endl;
 }
 

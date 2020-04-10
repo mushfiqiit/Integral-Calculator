@@ -14,21 +14,26 @@ class constantPart
 
     string processedNumerator;
     string processedDenominator;
+    string outputPowerNumerator;
+    string outputPowerDenominator;
     int fractionStatus;
     bool isPositive;
 
-    void computeOutputConstant(string inputPower);
+    void computeOutputConstant();
     void numeratorDenominatorSimplification(string numerator, string denominator);
-    void computeFractionNumeratorDenominator(string constantStringAsInput,
-                                             string inputPower);
+    void computeFractionNumeratorDenominator(string initialNumerator,
+                                             string initialDenominator);
+    void parseFractionConstant(string constantStringAsInput);
     public:
         constantPart();
         void setConstant(string constantStringAsInput);
         string getConstantStringAsInput();
-        void formOutputConstant(string inputPower);
+        void formOutputConstant();
         string getOutputConstant();
         void setFractionStatus(int fractionStatus);
         int getFractionStatus();
+        void setOutputPowerNumerator(string outputPowerNumerator);
+        void setOutputPowerDenominator(string outputPowerDenominator);
 };
 
 #endif // CONSTANTPART_H
