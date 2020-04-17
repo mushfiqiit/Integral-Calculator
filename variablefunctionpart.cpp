@@ -43,3 +43,8 @@ bool variableFunctionPart::functionIsEmpty()
         return false;
     }
 }
+
+void variableFunctionPart::setFunctionType(int functionTypeCode)
+{
+    this->functionType=functionTypeCode;
+}

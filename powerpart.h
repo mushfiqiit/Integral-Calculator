@@ -22,6 +22,7 @@ class powerPart
     int convertedOutputPower;
     bool isPositive;
     int fractionStatus;
+    int functionType;
 
     void computeOutputPower();
     void computeFractionalPowerAsOutput(string numerator, string denominator);
@@ -38,6 +39,7 @@ class powerPart
         string getDenominator();
         string getNumeratorAsOutput();
         string getDenominatorAsOutput();
+        void setFunctionType(int functionTypeCode);
 };
 
 #endif // POWERPART_H

@@ -103,7 +103,9 @@ void term::termProcessor()
     {
         power_Part_1.setInputPower("0");
     }
-    // *******
+    // *******************
+
+    identifyFunctionType(constant, functionType, power);
 }
 
 void term::computeOutputTerm()
@@ -170,4 +172,22 @@ powerPart term::getPowerPart()
 string term::getOutputTerm()
 {
     return outputTerm;
+}
+
+void term::identifyFunctionType(string constant, string variableFunction, string power)
+{
+    if(power=="-1")
+    {
+        setTermFunctionType(2);
+    }
+
+    else
+    {
+        setTermFunctionType(1);
+    }
+}
+
+void term::setTermFunctionType(int functionTypeCode)
+{
+    this->functionType=functionTypeCode;
 }

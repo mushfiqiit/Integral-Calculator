@@ -174,3 +174,8 @@ string powerPart::getDenominatorAsOutput()
 {
     return denominatorAsOutput;
 }
+
+void powerPart::setFunctionType(int functionTypeCode)
+{
+    this->functionType=functionTypeCode;
+}

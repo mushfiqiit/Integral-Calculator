@@ -225,3 +225,8 @@ void constantPart::parseFractionConstant(string constantStringAsInput)
         initialDenominator=initialDenominator+constantStringAsInput[i];
     }
 }
+
+void constantPart::setFunctionType(int functionTypeCode)
+{
+    this->functionType=functionTypeCode;
+}

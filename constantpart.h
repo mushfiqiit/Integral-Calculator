@@ -18,6 +18,7 @@ class constantPart
     string outputPowerDenominator;
     int fractionStatus;
     bool isPositive;
+    int functionType;
 
     void computeOutputConstant();
     void numeratorDenominatorSimplification(string numerator, string denominator);
@@ -34,6 +35,7 @@ class constantPart
         int getFractionStatus();
         void setOutputPowerNumerator(string outputPowerNumerator);
         void setOutputPowerDenominator(string outputPowerDenominator);
+        void setFunctionType(int functionTypeCode);
 };
 
 #endif // CONSTANTPART_H
