@@ -35,6 +35,7 @@ void term::termProcessor()
         }
 
         else if(recievedTerm[i]=='/')
+
         {
             constant_Part_1.setFractionStatus(1);
             constant=constant+recievedTerm[i];
@@ -84,6 +85,11 @@ void term::termProcessor()
         if(recievedTerm[i]=='/')
         {
             power_Part_1.setFractionStatus(1);
+        }
+
+        else if(recievedTerm[i]=='(' || recievedTerm[i]==')')
+        {
+            continue;
         }
 
         if(recievedTerm[i]!='^')
@@ -139,11 +145,18 @@ void term::computeOutputTerm()
     constant_Part_1.formOutputConstant();
     //***************************
 
+    //Compute output variable function
+    variable_Function_Part_1.formOutputVariableFunction();
+    //****************************
+
     //Combine everything to from outputTerm
     outputTerm=outputTerm+constant_Part_1.getOutputConstant()+
-                variable_Function_Part_1.getVariableFunctionAsInput()+
-                "^" +
-                power_Part_1.getOutputPower();
+                variable_Function_Part_1.getOutputVariableFunction();
+    if(functionType==1)
+    {
+    outputTerm=outputTerm+"^";
+    }
+    outputTerm=outputTerm+power_Part_1.getOutputPower();
     //****************************************
 
      //   cout << "Output : " << outputTerm << endl;
@@ -189,5 +202,9 @@ void term::identifyFunctionType(string constant, string variableFunction, string
 
 void term::setTermFunctionType(int functionTypeCode)
 {
+    //cout << functionTypeCode << endl;
     this->functionType=functionTypeCode;
+    constant_Part_1.setFunctionType(functionTypeCode);
+    variable_Function_Part_1.setFunctionType(functionTypeCode);
+    power_Part_1.setFunctionType(functionTypeCode);
 }

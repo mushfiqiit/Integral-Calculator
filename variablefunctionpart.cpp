@@ -47,4 +47,34 @@ bool variableFunctionPart::functionIsEmpty()
 void variableFunctionPart::setFunctionType(int functionTypeCode)
 {
     this->functionType=functionTypeCode;
+    //cout << functionType << " " << functionTypeCode << endl;
+}
+
+void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeTwo()
+{
+    outputVariableFunction="ln" + variableFunctionAsInput;
+}
+
+void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeOne()
+{
+    outputVariableFunction=variableFunctionAsInput;
+}
+
+string variableFunctionPart::getOutputVariableFunction()
+{
+    return this->outputVariableFunction;
+}
+
+void variableFunctionPart::formOutputVariableFunction()
+{
+    //cout << functionType << endl;
+    if(functionType==1)
+    {
+        computeOutputVariableFunctionForFunctionTypeOne();
+    }
+
+    else if(functionType==2)
+    {
+        computeOutputVariableFunctionForFunctionTypeTwo();
+    }
 }

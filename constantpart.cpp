@@ -23,10 +23,18 @@ string constantPart::getConstantStringAsInput()
 
 void constantPart::formOutputConstant()
 {
-    computeOutputConstant();
+    if(functionType==1)
+    {
+    computeOutputConstantForFunctionTypeOne();
+    }
+
+    else if(functionType==2)
+    {
+        computeOutputConstantForFunctionTypeTwo();
+    }
 }
 
-void constantPart::computeOutputConstant()
+void constantPart::computeOutputConstantForFunctionTypeOne()
 {
     /*stringstream ss;
     int outputPowerAsInt=atoi(inputPower.c_str());
@@ -229,4 +237,10 @@ void constantPart::parseFractionConstant(string constantStringAsInput)
 void constantPart::setFunctionType(int functionTypeCode)
 {
     this->functionType=functionTypeCode;
+}
+
+void constantPart::computeOutputConstantForFunctionTypeTwo()
+{
+    outputConstant=outputConstant+"("+constantStringAsInput+")";
+    //cout << outputConstant << endl;
 }

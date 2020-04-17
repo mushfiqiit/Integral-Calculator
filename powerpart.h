@@ -24,7 +24,11 @@ class powerPart
     int fractionStatus;
     int functionType;
 
-    void computeOutputPower();
+    void computeOutputPowerForFunctionTypeOne();
+    /*
+    Does all the internal calculations to form the output power
+    for function type one.
+    */
     void computeFractionalPowerAsOutput(string numerator, string denominator);
     void numeratorDenominatorSimplification(string numerator, string denominator);
     public:
@@ -32,6 +36,10 @@ class powerPart
         void setInputPower(string inputPower);
         string getInputPower();
         void formOutputPower();
+        /*
+        The method recieves a signal from term class that the output power
+        must be formed.
+        */
         string getOutputPower();
         void setFractionStatus(int fractionStatus);
         int getFractionStatus();

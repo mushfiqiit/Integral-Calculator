@@ -21,10 +21,18 @@ string powerPart::getInputPower()
 
 void powerPart::formOutputPower()
 {
-    computeOutputPower();
+    if(functionType==1)
+    {
+    computeOutputPowerForFunctionTypeOne();
+    }
+
+    else if(functionType==2)
+    {
+
+    }
 }
 
-void powerPart::computeOutputPower()
+void powerPart::computeOutputPowerForFunctionTypeOne()
 {
     if(fractionStatus==0)
     {

@@ -20,11 +20,22 @@ class constantPart
     bool isPositive;
     int functionType;
 
-    void computeOutputConstant();
+    void computeOutputConstantForFunctionTypeOne();
+    /*
+    Integrate regular polynomial.
+    */
+    void computeOutputConstantForFunctionTypeTwo();
+    /*
+    Compute constant when the result is lnx.
+    */
     void numeratorDenominatorSimplification(string numerator, string denominator);
     void computeFractionNumeratorDenominator(string initialNumerator,
                                              string initialDenominator);
     void parseFractionConstant(string constantStringAsInput);
+    /*
+    If the constant is a fraction then we need to parse it and identify
+    the numerator and denominator.
+    */
     public:
         constantPart();
         void setConstant(string constantStringAsInput);
