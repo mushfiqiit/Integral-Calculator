@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="coefficientpart.cpp" />
+		<Unit filename="coefficientpart.h" />
 		<Unit filename="constantpart.cpp" />
 		<Unit filename="constantpart.h" />
 		<Unit filename="header1.h" />

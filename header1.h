@@ -5,3 +5,4 @@
 #include "constantpart.h"
 #include "powerpart.h"
 #include "variablefunctionpart.h"
+#include "coefficientpart.h"

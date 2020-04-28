@@ -194,6 +194,11 @@ void term::identifyFunctionType(string constant, string variableFunction, string
         setTermFunctionType(2);
     }
 
+    else if(variableFunction[0]=='s')
+    {
+        setTermFunctionType(3);
+    }
+
     else
     {
         setTermFunctionType(1);
