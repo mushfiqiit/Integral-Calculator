@@ -11,6 +11,18 @@ variableFunctionPart::variableFunctionPart()
 void variableFunctionPart::setVariableFunctionAsInput(string variableFunctionAsInput)
 {
     this->variableFunctionAsInput=variableFunctionAsInput;
+
+    if(functionType==1)
+    {
+        for(int i=0;i<variableFunctionAsInput.length();i++)
+        {
+            if(variableFunctionAsInput[i]>='0' && variableFunctionAsInput[i]<='9')
+            {
+                coefficientAsString=coefficientAsString+variableFunctionAsInput[i];
+            }
+        }
+        coefficient_Part_1.setCoeffficientAsInput(coefficientAsString);
+    }
 }
 
 string variableFunctionPart::getVariableFunctionAsInput()

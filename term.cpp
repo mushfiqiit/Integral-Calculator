@@ -119,26 +119,28 @@ void term::computeOutputTerm()
     power_Part_1.formOutputPower();
     //constant_Part_1.formOutputConstant(power_Part_1.getInputPower());
 
-    if(power_Part_1.getFractionStatus()==0)
-    {
-        constant_Part_1.setOutputPowerNumerator(power_Part_1.getOutputPower());
-    }
 
-    else
-    {
-    constant_Part_1.setOutputPowerNumerator(power_Part_1.getNumeratorAsOutput());
-    }
+
+        if(power_Part_1.getFractionStatus()==0)
+        {
+            constant_Part_1.setOutputPowerNumerator(power_Part_1.getOutputPower());
+        }
+
+        else
+        {
+            constant_Part_1.setOutputPowerNumerator(power_Part_1.getNumeratorAsOutput());
+        }
 
     // If the power is not a fraction then denominator is 1
-    if(power_Part_1.getFractionStatus()==0)
-    {
-        constant_Part_1.setOutputPowerDenominator("1");
-    }
+        if(power_Part_1.getFractionStatus()==0)
+        {
+            constant_Part_1.setOutputPowerDenominator("1");
+        }
 
-    else
-    {
-    constant_Part_1.setOutputPowerDenominator(power_Part_1.getDenominatorAsOutput());
-    }
+        else
+        {
+            constant_Part_1.setOutputPowerDenominator(power_Part_1.getDenominatorAsOutput());
+        }
     //**********************************
 
     // Finally Compute constant
@@ -158,6 +160,7 @@ void term::computeOutputTerm()
     }
     outputTerm=outputTerm+power_Part_1.getOutputPower();
     //****************************************
+
 
      //   cout << "Output : " << outputTerm << endl;
 }
@@ -194,7 +197,8 @@ void term::identifyFunctionType(string constant, string variableFunction, string
         setTermFunctionType(2);
     }
 
-    else if(variableFunction[0]=='s')
+    else if(variableFunction[0]=='s' && variableFunction[1]=='i' &&
+            variableFunction[2]=='n')
     {
         setTermFunctionType(3);
     }

@@ -4,3 +4,8 @@ Coefficientpart::Coefficientpart()
 {
     //ctor
 }
+
+void Coefficientpart::setCoeffficientAsInput()
+{
+    this.coefficentAsInput=coefficentAsInput;
+}

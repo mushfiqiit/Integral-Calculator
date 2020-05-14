@@ -6,10 +6,11 @@ using namespace std;
 
 class Coefficientpart
 {
-
+    string coefficentAsInput;
+    int cofficientAsInt;
     public:
         Coefficientpart();
-
+        void setCoeffficientAsInput(string coefficentAsInput);
 };
 
 #endif // COEFFICIENTPART_H

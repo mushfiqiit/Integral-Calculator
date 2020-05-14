@@ -9,6 +9,8 @@ class variableFunctionPart
     string variableFunctionAsInput;
     string outputVariableFunction;
     int functionType;
+    string coefficientAsString;
+    Coefficientpart coefficient_Part_1;
 
         void computeOutputVariableFunctionForFunctionTypeOne();
         /*
@@ -19,6 +21,7 @@ class variableFunctionPart
         /*
         The output variableFunction will be lnx.
         */
+
     public:
         variableFunctionPart();
         void setVariableFunctionAsInput(string variableFunctionAsInput);
