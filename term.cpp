@@ -52,7 +52,6 @@ void term::termProcessor()
             break;
         }
     }
-    constant_Part_1.setConstant(constant);
     // ********
 
     //Parsing variable function part
@@ -68,12 +67,11 @@ void term::termProcessor()
             functionType=functionType+recievedTerm[i];
         }
     }
-    variable_Function_Part_1.setVariableFunctionAsInput(functionType);
 
 
     if(functionType.empty())
     {
-        variable_Function_Part_1.setVariableFunctionAsInput("x");
+        functionType="x";
     }
 
     // ************
@@ -98,20 +96,23 @@ void term::termProcessor()
         }
     }
 
-    power_Part_1.setInputPower(power);
 
     if(power.empty() && functionType=="x")
     {
-        power_Part_1.setInputPower("1");
+        power="1";
     }
 
     else if(power.empty() && functionType.empty())
     {
-        power_Part_1.setInputPower("0");
+        power="0";
     }
     // *******************
 
     identifyFunctionType(constant, functionType, power);
+
+    constant_Part_1.setConstant(constant);
+    variable_Function_Part_1.setVariableFunctionAsInput(functionType);
+    power_Part_1.setInputPower(power);
 }
 
 void term::computeOutputTerm()
@@ -121,6 +122,8 @@ void term::computeOutputTerm()
 
 
 
+    if(functionType==1 || functionType==2)
+    {
         if(power_Part_1.getFractionStatus()==0)
         {
             constant_Part_1.setOutputPowerNumerator(power_Part_1.getOutputPower());
@@ -143,26 +146,48 @@ void term::computeOutputTerm()
         }
     //**********************************
 
-    // Finally Compute constant
-    constant_Part_1.formOutputConstant();
-    //***************************
+        // Finally Compute constant
+        constant_Part_1.formOutputConstant();
+        //***************************
 
-    //Compute output variable function
-    variable_Function_Part_1.formOutputVariableFunction();
+        //Compute output variable function
+        variable_Function_Part_1.formOutputVariableFunction();
     //****************************
 
     //Combine everything to from outputTerm
-    outputTerm=outputTerm+constant_Part_1.getOutputConstant()+
+        outputTerm=outputTerm+constant_Part_1.getOutputConstant()+
                 variable_Function_Part_1.getOutputVariableFunction();
-    if(functionType==1)
-    {
-    outputTerm=outputTerm+"^";
-    }
-    outputTerm=outputTerm+power_Part_1.getOutputPower();
+
+                if(functionType==1)
+                {
+                outputTerm=outputTerm+"^";
+                }
+
+        outputTerm=outputTerm+power_Part_1.getOutputPower();
     //****************************************
+    }
 
+    else if(functionType==3)
+    {
+        /*cout << constant_Part_1.getConstantStringAsInput() << " "
+            << variable_Function_Part_1.getVariableFunctionAsInput() << " "
+            << variable_Function_Part_1.getCoefficientStringAsInput() << endl; */
+            if(variable_Function_Part_1.getCoefficientFractionStatus()==0)
+            {
+                constant_Part_1.setOutputPowerNumerator
+                        (variable_Function_Part_1.getCoefficientStringAsInput());
+                constant_Part_1.setOutputDenominator
+                        ("1");
+            }
 
-     //   cout << "Output : " << outputTerm << endl;
+            else
+            {
+                constant_Part_1.setOutputPowerNumerator
+                    (variable_Function_Part_1.getCoefficientNumerator());
+                constant_Part_1.setOutputPowerDenominator
+                    (variable_Function_Part_1.getCoefficientDenominator());
+            }
+    }
 }
 
 void term::formOutputTerm()

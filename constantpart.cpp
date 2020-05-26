@@ -127,39 +127,6 @@ void constantPart::computeFractionNumeratorDenominator(string initialNumerator,
     string fractionStatusInitialNumerator;
     string fractionStatusInitialDenominator;
 
-    //Parsing Numerator of fraction
-   /* for(i=0;i<constantStringAsInput.size();i++)
-    {
-        if(constantStringAsInput[i]=='/')
-        {
-            break;
-        }
-
-        else if(constantStringAsInput[i]=='(')
-        {
-            continue;
-        }
-
-        else
-        {
-            fractionStatusInitialNumerator=fractionStatusInitialNumerator+constantStringAsInput[i];
-        }
-    }
-    //**********************
-    i++;
-
-    //Parsing denominator part of fraction
-
-    for(;i<constantStringAsInput.size();i++)
-    {
-        if(constantStringAsInput[i]==')')
-        {
-            break;
-        }
-        fractionStatusInitialDenominator=fractionStatusInitialDenominator+constantStringAsInput[i];
-    }
-    //**************************
-    */
     fractionStatusInitialNumerator=initialNumerator;
     fractionStatusInitialDenominator=initialDenominator;
 

@@ -28,6 +28,11 @@ class constantPart
     /*
     Compute constant when the result is lnx.
     */
+
+    void computeOutputConstantForFunctionTypeThree();
+    /*
+    Compute constant when function is sinx;
+    */
     void numeratorDenominatorSimplification(string numerator, string denominator);
     void computeFractionNumeratorDenominator(string initialNumerator,
                                              string initialDenominator);

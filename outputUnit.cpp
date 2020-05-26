@@ -10,7 +10,7 @@ outputUnit::outputUnit()
 
 void outputUnit::showOutput()
 {
-    cout << "Output : " <<  resultToShow << "\n\n";
+    cout << "Output : " <<  resultToShow << " + c" << "\n\n";
 }
 
 void outputUnit::setResultToShow(string resultToShow)

@@ -12,16 +12,25 @@ void variableFunctionPart::setVariableFunctionAsInput(string variableFunctionAsI
 {
     this->variableFunctionAsInput=variableFunctionAsInput;
 
-    if(functionType==1)
+    if(functionType==3)
     {
         for(int i=0;i<variableFunctionAsInput.length();i++)
         {
-            if(variableFunctionAsInput[i]>='0' && variableFunctionAsInput[i]<='9')
+            if(variableFunctionAsInput[i]=='/')
             {
-                coefficientAsString=coefficientAsString+variableFunctionAsInput[i];
+                coefficient_Part_1.setFractionStatus(1);
+            }
+
+            //cout << variableFunctionAsInput[i] << endl;
+            if((variableFunctionAsInput[i]>='0' && variableFunctionAsInput[i]<='9')
+               || variableFunctionAsInput[i]=='(' || variableFunctionAsInput[i]==')'
+               || variableFunctionAsInput[i]=='/')
+            {
+                coefficientStringAsInput=coefficientStringAsInput+variableFunctionAsInput[i];
             }
         }
-        coefficient_Part_1.setCoeffficientAsInput(coefficientAsString);
+        //cout << coefficientStringAsInput << endl;
+        coefficient_Part_1.setCoeffficientAsInput(coefficientStringAsInput);
     }
 }
 
@@ -89,4 +98,25 @@ void variableFunctionPart::formOutputVariableFunction()
     {
         computeOutputVariableFunctionForFunctionTypeTwo();
     }
+}
+
+string variableFunctionPart::getCoefficientStringAsInput()
+{
+    //cout << coefficientStringAsInput << endl;
+    return this->coefficientStringAsInput;
+}
+
+int variableFunctionPart::getCoefficientFractionStatus()
+{
+    return this->coefficient_Part_1.getFractionStatus();
+}
+
+string variableFunctionPart::getCoefficientNumerator()
+{
+    return this->coefficient_Part_1.getCoefficientNumerator();
+}
+
+string variableFunctionPart::getCoefficientDenominator()
+{
+    return this->coefficient_Part_1.getCoefficientDenominator();
 }
