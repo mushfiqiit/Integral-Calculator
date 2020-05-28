@@ -176,8 +176,9 @@ void term::computeOutputTerm()
             {
                 constant_Part_1.setOutputPowerNumerator
                         (variable_Function_Part_1.getCoefficientStringAsInput());
-                constant_Part_1.setOutputDenominator
+                constant_Part_1.setOutputPowerDenominator
                         ("1");
+                //cout << variable_Function_Part_1.getCoefficientStringAsInput() << endl;
             }
 
             else
@@ -187,6 +188,10 @@ void term::computeOutputTerm()
                 constant_Part_1.setOutputPowerDenominator
                     (variable_Function_Part_1.getCoefficientDenominator());
             }
+            constant_Part_1.formOutputConstant();
+
+            //cout << constant_Part_1.getOutputConstant() << endl;
+            outputTerm=outputTerm+constant_Part_1.getOutputConstant();
     }
 }
 

@@ -32,6 +32,11 @@ void constantPart::formOutputConstant()
     {
         computeOutputConstantForFunctionTypeTwo();
     }
+
+    else if(functionType==3)
+    {
+        computeOutputConstantForFunctionTypeThree();
+    }
 }
 
 void constantPart::computeOutputConstantForFunctionTypeOne()
@@ -138,6 +143,11 @@ int fractionStatusDenominatorAsInt=atoi(fractionStatusInitialDenominator.c_str()
 int outputPowerNumeratorAsInt=atoi(outputPowerNumerator.c_str());
 int outputPowerDenominatorAsInt=atoi(outputPowerDenominator.c_str());
 
+if(functionType==3)
+{
+    fractionStatusNumeratorAsInt=-fractionStatusNumeratorAsInt;
+}
+
 //cout << outputPowerNumeratorAsInt << " " << outputPowerDenominatorAsInt << endl;
 
 fractionStatusNumeratorAsInt=fractionStatusNumeratorAsInt*outputPowerDenominatorAsInt;
@@ -210,4 +220,9 @@ void constantPart::computeOutputConstantForFunctionTypeTwo()
 {
     outputConstant=outputConstant+"("+constantStringAsInput+")";
     //cout << outputConstant << endl;
+}
+
+void constantPart::computeOutputConstantForFunctionTypeThree()
+{
+    computeOutputConstantForFunctionTypeOne();
 }

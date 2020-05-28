@@ -2,7 +2,7 @@
 
 Coefficientpart::Coefficientpart()
 {
-    //ctor
+    fractionStatus=0;
 }
 
 void Coefficientpart::setCoeffficientAsInput(string coefficentAsInput)
@@ -48,6 +48,12 @@ void Coefficientpart::setCoeffficientAsInput(string coefficentAsInput)
 
 string Coefficientpart::getCoefficientAsInput()
 {
+    //cout << "Coefficient : " << this->coefficentAsInput << endl;
+    if(this->coefficentAsInput.empty() || this->coefficentAsInput.length()==0 || this->coefficentAsInput=="()")
+    {
+        //cout << "Done " << endl;
+        return "1";
+    }
     return this->coefficentAsInput;
 }
 

@@ -102,7 +102,7 @@ void variableFunctionPart::formOutputVariableFunction()
 
 string variableFunctionPart::getCoefficientStringAsInput()
 {
-    //cout << coefficientStringAsInput << endl;
+    this->coefficientStringAsInput=coefficient_Part_1.getCoefficientAsInput();
     return this->coefficientStringAsInput;
 }
 
