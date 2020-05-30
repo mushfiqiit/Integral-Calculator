@@ -167,7 +167,7 @@ void term::computeOutputTerm()
     //****************************************
     }
 
-    else if(functionType==3)
+    else if(functionType==3 || functionType==4)
     {
         /*cout << constant_Part_1.getConstantStringAsInput() << " "
             << variable_Function_Part_1.getVariableFunctionAsInput() << " "
@@ -189,9 +189,11 @@ void term::computeOutputTerm()
                     (variable_Function_Part_1.getCoefficientDenominator());
             }
             constant_Part_1.formOutputConstant();
+            variable_Function_Part_1.formOutputVariableFunction();
 
             //cout << constant_Part_1.getOutputConstant() << endl;
-            outputTerm=outputTerm+constant_Part_1.getOutputConstant();
+            outputTerm=outputTerm+constant_Part_1.getOutputConstant()
+                 +variable_Function_Part_1.getOutputVariableFunction();
     }
 }
 
@@ -231,6 +233,12 @@ void term::identifyFunctionType(string constant, string variableFunction, string
             variableFunction[2]=='n')
     {
         setTermFunctionType(3);
+    }
+
+    else if(variableFunction[0]=='c' && variableFunction[1]=='o' &&
+            variableFunction[2]=='s')
+    {
+        setTermFunctionType(4);
     }
 
     else

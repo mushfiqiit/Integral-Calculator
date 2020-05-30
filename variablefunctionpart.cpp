@@ -98,6 +98,16 @@ void variableFunctionPart::formOutputVariableFunction()
     {
         computeOutputVariableFunctionForFunctionTypeTwo();
     }
+
+    else if(functionType==3)
+    {
+        computeOutputVariableFunctionForFunctionTypeThree();
+    }
+
+    else if(functionType==4)
+    {
+        computeOutputVariableFunctionForFunctionTypeFour();
+    }
 }
 
 string variableFunctionPart::getCoefficientStringAsInput()
@@ -119,4 +129,38 @@ string variableFunctionPart::getCoefficientNumerator()
 string variableFunctionPart::getCoefficientDenominator()
 {
     return this->coefficient_Part_1.getCoefficientDenominator();
+}
+
+void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeThree()
+{
+    if(coefficient_Part_1.getFractionStatus()==0)
+    {
+        outputVariableFunction=outputVariableFunction+"cos" + "(" +
+                                coefficientStringAsInput + "x" + ")";
+    }
+
+    else
+    {
+        outputVariableFunction=outputVariableFunction+"cos" + "(" +
+                coefficient_Part_1.getCoefficientNumerator() + "x"
+                + "/" + coefficient_Part_1.getCoefficientDenominator()
+                + ")";
+    }
+}
+
+void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeFour()
+{
+    if(coefficient_Part_1.getFractionStatus()==0)
+    {
+        outputVariableFunction=outputVariableFunction+"sin" + "(" +
+                            coefficientStringAsInput + "x" + ")";
+    }
+
+    else if(coefficient_Part_1.getFractionStatus()==0)
+    {
+        outputVariableFunction=outputVariableFunction+"sin" + "("
+                +coefficient_Part_1.getCoefficientNumerator() + "x"
+                + "/" + coefficient_Part_1.getCoefficientDenominator()
+                + ")";
+    }
 }

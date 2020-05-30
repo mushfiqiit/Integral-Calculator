@@ -23,6 +23,9 @@ class variableFunctionPart
         The output variableFunction will be lnx.
         */ //*******************
 
+        void computeOutputVariableFunctionForFunctionTypeThree();
+        void computeOutputVariableFunctionForFunctionTypeFour();
+
     public:
         variableFunctionPart();
         void setVariableFunctionAsInput(string variableFunctionAsInput);

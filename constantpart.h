@@ -33,6 +33,9 @@ class constantPart
     /*
     Compute constant when function is sinx;
     */
+
+    void computeOutputConstantForFunctionTypeFour();
+
     void numeratorDenominatorSimplification(string numerator, string denominator);
     void computeFractionNumeratorDenominator(string initialNumerator,
                                              string initialDenominator);
