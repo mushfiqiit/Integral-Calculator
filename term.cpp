@@ -57,7 +57,7 @@ void term::termProcessor()
     //Parsing variable function part
     for(;i<recievedTerm.size();i++)
     {
-        if(recievedTerm[i]=='^')
+        if(recievedTerm[i]=='^' && functionType!="sec")
         {
             break;
         }
@@ -167,7 +167,7 @@ void term::computeOutputTerm()
     //****************************************
     }
 
-    else if(functionType==3 || functionType==4)
+    else if(functionType==3 || functionType==4 || functionType==5)
     {
         /*cout << constant_Part_1.getConstantStringAsInput() << " "
             << variable_Function_Part_1.getVariableFunctionAsInput() << " "
@@ -188,6 +188,7 @@ void term::computeOutputTerm()
                 constant_Part_1.setOutputPowerDenominator
                     (variable_Function_Part_1.getCoefficientDenominator());
             }
+            //cout << "Here" << endl;
             constant_Part_1.formOutputConstant();
             variable_Function_Part_1.formOutputVariableFunction();
 
@@ -239,6 +240,14 @@ void term::identifyFunctionType(string constant, string variableFunction, string
             variableFunction[2]=='s')
     {
         setTermFunctionType(4);
+    }
+
+    else if(variableFunction[0]=='s' && variableFunction[1]=='e' &&
+            variableFunction[2]=='c' && variableFunction[3]=='^' &&
+            variableFunction[4]=='2')
+    {
+        //cout << "Here" << endl;
+        setTermFunctionType(5);
     }
 
     else

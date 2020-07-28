@@ -12,9 +12,20 @@ void variableFunctionPart::setVariableFunctionAsInput(string variableFunctionAsI
 {
     this->variableFunctionAsInput=variableFunctionAsInput;
 
-    if(functionType==3)
+    if(functionType==3 || functionType==4 || functionType==5)
     {
-        for(int i=0;i<variableFunctionAsInput.length();i++)
+        int i;
+        if(functionType==3 || functionType==4)
+        {
+            i=0;
+        }
+
+        else if(functionType==5)
+        {
+            i=5;
+        }
+
+        for(;i<variableFunctionAsInput.length();i++)
         {
             if(variableFunctionAsInput[i]=='/')
             {
@@ -23,7 +34,6 @@ void variableFunctionPart::setVariableFunctionAsInput(string variableFunctionAsI
 
             //cout << variableFunctionAsInput[i] << endl;
             if((variableFunctionAsInput[i]>='0' && variableFunctionAsInput[i]<='9')
-               || variableFunctionAsInput[i]=='(' || variableFunctionAsInput[i]==')'
                || variableFunctionAsInput[i]=='/')
             {
                 coefficientStringAsInput=coefficientStringAsInput+variableFunctionAsInput[i];
@@ -108,6 +118,11 @@ void variableFunctionPart::formOutputVariableFunction()
     {
         computeOutputVariableFunctionForFunctionTypeFour();
     }
+
+    else if(functionType==5)
+    {
+        computeOutputVariableFunctionForFunctionTypeFive();
+    }
 }
 
 string variableFunctionPart::getCoefficientStringAsInput()
@@ -156,9 +171,26 @@ void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeFour()
                             coefficientStringAsInput + "x" + ")";
     }
 
-    else if(coefficient_Part_1.getFractionStatus()==0)
+    else
     {
         outputVariableFunction=outputVariableFunction+"sin" + "("
+                +coefficient_Part_1.getCoefficientNumerator() + "x"
+                + "/" + coefficient_Part_1.getCoefficientDenominator()
+                + ")";
+    }
+}
+
+void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeFive()
+{
+    if(coefficient_Part_1.getFractionStatus()==0)
+    {
+        outputVariableFunction=outputVariableFunction+"tan" + "(" +
+                                coefficientStringAsInput + "x" + ")";
+    }
+
+    else
+    {
+        outputVariableFunction=outputVariableFunction+"tan" + "("
                 +coefficient_Part_1.getCoefficientNumerator() + "x"
                 + "/" + coefficient_Part_1.getCoefficientDenominator()
                 + ")";

@@ -46,14 +46,14 @@
 1585313037 e:\work\second year\spl- 1\integral-calculator-master\outputunit.h
 	<bits/stdc++.h>
 
-1590807603 source:e:\work\second year\spl- 1\integral-calculator-master\term.cpp
+1595946856 source:e:\work\second year\spl- 1\integral-calculator-master\term.cpp
 	<bits/stdc++.h>
 	"term.h"
 
-1590808196 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
+1590855275 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
 	<bits/stdc++.h>
 
-1590808292 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
+1595943567 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
 	"constantpart.h"
 	<bits/stdc++.h>
 	<string>
@@ -104,11 +104,11 @@
 1581911117 e:\semester 3\integral-calculator-master\outputunit.h
 	<bits/stdc++.h>
 
-1590807683 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.h
+1595933640 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.h
 	<bits/stdc++.h>
 	"coefficientpart.h"
 
-1590808163 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.cpp
+1595946824 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.cpp
 	"variablefunctionpart.h"
 	<bits/stdc++.h>
 
@@ -202,6 +202,6 @@
 1590475909 e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.h
 	<bits/stdc++.h>
 
-1590673798 source:e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.cpp
+1590856102 source:e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.cpp
 	"coefficientpart.h"
 

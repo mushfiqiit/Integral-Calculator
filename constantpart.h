@@ -21,20 +21,11 @@ class constantPart
     int functionType;
 
     void computeOutputConstantForFunctionTypeOne();
-    /*
-    Integrate regular polynomial.
-    */
     void computeOutputConstantForFunctionTypeTwo();
-    /*
-    Compute constant when the result is lnx.
-    */
-
     void computeOutputConstantForFunctionTypeThree();
-    /*
-    Compute constant when function is sinx;
-    */
-
     void computeOutputConstantForFunctionTypeFour();
+    void computeOutputConstantForFunctionTypeFive();
+
 
     void numeratorDenominatorSimplification(string numerator, string denominator);
     void computeFractionNumeratorDenominator(string initialNumerator,

@@ -8,6 +8,7 @@ Coefficientpart::Coefficientpart()
 void Coefficientpart::setCoeffficientAsInput(string coefficentAsInput)
 {
     this->coefficentAsInput=coefficentAsInput;
+    //cout << coefficentAsInput << endl;
 
     if(fractionStatus==1)
     {

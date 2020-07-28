@@ -42,6 +42,11 @@ void constantPart::formOutputConstant()
     {
         computeOutputConstantForFunctionTypeFour();
     }
+
+    else if(functionType==5)
+    {
+        computeOutputConstantForFunctionTypeFive();
+    }
 }
 
 void constantPart::computeOutputConstantForFunctionTypeOne()
@@ -233,6 +238,11 @@ void constantPart::computeOutputConstantForFunctionTypeThree()
 }
 
 void constantPart::computeOutputConstantForFunctionTypeFour()
+{
+    computeOutputConstantForFunctionTypeOne();
+}
+
+void constantPart::computeOutputConstantForFunctionTypeFive()
 {
     computeOutputConstantForFunctionTypeOne();
 }
