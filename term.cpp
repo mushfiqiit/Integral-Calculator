@@ -11,6 +11,7 @@ term::term()
 void term::setTerm(string seperatedTerm)
 {
     this->recievedTerm = seperatedTerm;
+    //cout << recievedTerm << "\n";
     termProcessor();
 }
 
@@ -57,7 +58,7 @@ void term::termProcessor()
     //Parsing variable function part
     for(;i<recievedTerm.size();i++)
     {
-        if(recievedTerm[i]=='^' && functionType!="sec")
+        if(recievedTerm[i]=='^' && functionType!="sec" && functionType!="cosec")
         {
             break;
         }
@@ -110,6 +111,8 @@ void term::termProcessor()
 
     identifyFunctionType(constant, functionType, power);
 
+    //cout << constant << " " << functionType << " " << power << "\n";
+
     constant_Part_1.setConstant(constant);
     variable_Function_Part_1.setVariableFunctionAsInput(functionType);
     power_Part_1.setInputPower(power);
@@ -120,7 +123,7 @@ void term::computeOutputTerm()
     power_Part_1.formOutputPower();
     //constant_Part_1.formOutputConstant(power_Part_1.getInputPower());
 
-
+    //cout << "here \n";
 
     if(functionType==1 || functionType==2)
     {
@@ -153,7 +156,7 @@ void term::computeOutputTerm()
         //Compute output variable function
         variable_Function_Part_1.formOutputVariableFunction();
     //****************************
-
+    //cout << "here \n";
     //Combine everything to from outputTerm
         outputTerm=outputTerm+constant_Part_1.getOutputConstant()+
                 variable_Function_Part_1.getOutputVariableFunction();
@@ -167,7 +170,7 @@ void term::computeOutputTerm()
     //****************************************
     }
 
-    else if(functionType==3 || functionType==4 || functionType==5)
+    else if(functionType==3 || functionType==4 || functionType==5 || functionType==6)
     {
         /*cout << constant_Part_1.getConstantStringAsInput() << " "
             << variable_Function_Part_1.getVariableFunctionAsInput() << " "
@@ -225,26 +228,30 @@ string term::getOutputTerm()
 
 void term::identifyFunctionType(string constant, string variableFunction, string power)
 {
+    //cout << variableFunction << "\n";
     if(power=="-1")
     {
         setTermFunctionType(2);
     }
 
-    else if(variableFunction[0]=='s' && variableFunction[1]=='i' &&
-            variableFunction[2]=='n')
+    else if(variableFunction.substr(0, 3)=="sin")
     {
         setTermFunctionType(3);
     }
 
-    else if(variableFunction[0]=='c' && variableFunction[1]=='o' &&
-            variableFunction[2]=='s')
+    else if(variableFunction.substr(0, 7)=="cosec^2")
+    {
+        //cout << "HESE\n";
+        setTermFunctionType(6);
+    }
+
+
+    else if(variableFunction.substr(0, 3)=="cos")
     {
         setTermFunctionType(4);
     }
 
-    else if(variableFunction[0]=='s' && variableFunction[1]=='e' &&
-            variableFunction[2]=='c' && variableFunction[3]=='^' &&
-            variableFunction[4]=='2')
+    else if(variableFunction.substr(0, 5)=="sec^2")
     {
         //cout << "Here" << endl;
         setTermFunctionType(5);

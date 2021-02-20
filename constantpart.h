@@ -25,6 +25,7 @@ class constantPart
     void computeOutputConstantForFunctionTypeThree();
     void computeOutputConstantForFunctionTypeFour();
     void computeOutputConstantForFunctionTypeFive();
+    void computeOutputConstantForFunctionTypeSix();
 
 
     void numeratorDenominatorSimplification(string numerator, string denominator);
@@ -39,7 +40,7 @@ class constantPart
         constantPart();
         void setConstant(string constantStringAsInput);
         string getConstantStringAsInput();
-        void formOutputConstant();
+        void formOutputConstant(); // Called by term class
         string getOutputConstant();
         void setFractionStatus(int fractionStatus);
         int getFractionStatus();

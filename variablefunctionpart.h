@@ -13,40 +13,29 @@ class variableFunctionPart
     string coefficientStringAsInput;
     Coefficientpart coefficient_Part_1;
 
+    // All the type wise calculations
         void computeOutputVariableFunctionForFunctionTypeOne();
-        /*
-        For type one, the variable function will stay as it is in the input.
-        */
-
         void computeOutputVariableFunctionForFunctionTypeTwo();
-        /*
-        The output variableFunction will be lnx.
-        */ //*******************
-
         void computeOutputVariableFunctionForFunctionTypeThree();
         void computeOutputVariableFunctionForFunctionTypeFour();
         void computeOutputVariableFunctionForFunctionTypeFive();
+        void computeOutputVariableFunctionForFunctionTypeSix();
 
     public:
-        variableFunctionPart();
-        void setVariableFunctionAsInput(string variableFunctionAsInput);
-        void formOutputVariableFunction();
-        /*
-        Recieves a signal from term class to form the output variableFunction.
-        */ //**************************************
+        variableFunctionPart(); // (1)
+        void setVariableFunctionAsInput(string variableFunctionAsInput); // (2)
+        string getVariableFunctionAsInput(); // (3)
+        bool functionIsX(); //(4)
+        bool functionIsEmpty(); //(5)
+        void setFunctionType(int functionTypeCode); // (6) // Set function type from term class
+        string getOutputVariableFunction(); // (7)
+        void formOutputVariableFunction(); // (8) Called by term class to start calculation
+        string getCoefficientStringAsInput(); // (9)
 
-        string getVariableFunctionAsInput();
-        bool functionIsX();
-        bool functionIsEmpty();
-        void setFunctionType(int functionTypeCode);
-        /*
-        A method for knowing setting the function type.
-        */
-        string getOutputVariableFunction();
-        string getCoefficientStringAsInput();
-        int getCoefficientFractionStatus();
-        string getCoefficientNumerator();
-        string getCoefficientDenominator();
+
+        int getCoefficientFractionStatus(); // (10)
+        string getCoefficientNumerator(); // (11)
+        string getCoefficientDenominator(); // (12)
 };
 
 #endif // VARIABLEFUNCTIONPART_H

@@ -3,16 +3,16 @@
 
 using namespace std;
 
-variableFunctionPart::variableFunctionPart()
+variableFunctionPart::variableFunctionPart() // 1
 {
 
 }
 
-void variableFunctionPart::setVariableFunctionAsInput(string variableFunctionAsInput)
+void variableFunctionPart::setVariableFunctionAsInput(string variableFunctionAsInput) // 2
 {
     this->variableFunctionAsInput=variableFunctionAsInput;
 
-    if(functionType==3 || functionType==4 || functionType==5)
+    if(functionType==3 || functionType==4 || functionType==5 || functionType==6)
     {
         int i;
         if(functionType==3 || functionType==4)
@@ -23,6 +23,11 @@ void variableFunctionPart::setVariableFunctionAsInput(string variableFunctionAsI
         else if(functionType==5)
         {
             i=5;
+        }
+
+        else if(functionType==6)
+        {
+            i=7;
         }
 
         for(;i<variableFunctionAsInput.length();i++)
@@ -49,7 +54,7 @@ string variableFunctionPart::getVariableFunctionAsInput()
     return variableFunctionAsInput;
 }
 
-bool variableFunctionPart::functionIsX()
+bool variableFunctionPart::functionIsX() // 4
 {
     if(variableFunctionAsInput=="x")
     {
@@ -62,7 +67,7 @@ bool variableFunctionPart::functionIsX()
     }
 }
 
-bool variableFunctionPart::functionIsEmpty()
+bool variableFunctionPart::functionIsEmpty() // 5
 {
     if(variableFunctionAsInput.empty())
     {
@@ -75,76 +80,71 @@ bool variableFunctionPart::functionIsEmpty()
     }
 }
 
-void variableFunctionPart::setFunctionType(int functionTypeCode)
+void variableFunctionPart::setFunctionType(int functionTypeCode) // 6
 {
     this->functionType=functionTypeCode;
     //cout << functionType << " " << functionTypeCode << endl;
 }
 
-void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeTwo()
+
+
+string variableFunctionPart::getOutputVariableFunction() // 7
 {
-    outputVariableFunction="ln" + variableFunctionAsInput;
+    return this->outputVariableFunction;
 }
+
+void variableFunctionPart::formOutputVariableFunction() // 8
+{
+    //cout << functionType << endl;
+    if(functionType==1) computeOutputVariableFunctionForFunctionTypeOne();
+
+    else if(functionType==2) computeOutputVariableFunctionForFunctionTypeTwo();
+
+    else if(functionType==3) computeOutputVariableFunctionForFunctionTypeThree();
+
+    else if(functionType==4) computeOutputVariableFunctionForFunctionTypeFour();
+
+    else if(functionType==5) computeOutputVariableFunctionForFunctionTypeFive();
+
+    else if(functionType==6) computeOutputVariableFunctionForFunctionTypeSix();
+}
+
+string variableFunctionPart::getCoefficientStringAsInput() // 9
+{
+    this->coefficientStringAsInput=coefficient_Part_1.getCoefficientAsInput();
+    return this->coefficientStringAsInput;
+}
+
+int variableFunctionPart::getCoefficientFractionStatus() // 10
+{
+    return this->coefficient_Part_1.getFractionStatus();
+}
+
+string variableFunctionPart::getCoefficientNumerator() // 11
+{
+    return this->coefficient_Part_1.getCoefficientNumerator();
+}
+
+string variableFunctionPart::getCoefficientDenominator() // 12
+{
+    return this->coefficient_Part_1.getCoefficientDenominator();
+}
+
+
+
 
 void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeOne()
 {
     outputVariableFunction=variableFunctionAsInput;
 }
 
-string variableFunctionPart::getOutputVariableFunction()
+
+void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeTwo()
 {
-    return this->outputVariableFunction;
+    outputVariableFunction="ln" + variableFunctionAsInput;
 }
 
-void variableFunctionPart::formOutputVariableFunction()
-{
-    //cout << functionType << endl;
-    if(functionType==1)
-    {
-        computeOutputVariableFunctionForFunctionTypeOne();
-    }
 
-    else if(functionType==2)
-    {
-        computeOutputVariableFunctionForFunctionTypeTwo();
-    }
-
-    else if(functionType==3)
-    {
-        computeOutputVariableFunctionForFunctionTypeThree();
-    }
-
-    else if(functionType==4)
-    {
-        computeOutputVariableFunctionForFunctionTypeFour();
-    }
-
-    else if(functionType==5)
-    {
-        computeOutputVariableFunctionForFunctionTypeFive();
-    }
-}
-
-string variableFunctionPart::getCoefficientStringAsInput()
-{
-    this->coefficientStringAsInput=coefficient_Part_1.getCoefficientAsInput();
-    return this->coefficientStringAsInput;
-}
-
-int variableFunctionPart::getCoefficientFractionStatus()
-{
-    return this->coefficient_Part_1.getFractionStatus();
-}
-
-string variableFunctionPart::getCoefficientNumerator()
-{
-    return this->coefficient_Part_1.getCoefficientNumerator();
-}
-
-string variableFunctionPart::getCoefficientDenominator()
-{
-    return this->coefficient_Part_1.getCoefficientDenominator();
-}
 
 void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeThree()
 {
@@ -191,6 +191,24 @@ void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeFive()
     else
     {
         outputVariableFunction=outputVariableFunction+"tan" + "("
+                +coefficient_Part_1.getCoefficientNumerator() + "x"
+                + "/" + coefficient_Part_1.getCoefficientDenominator()
+                + ")";
+    }
+}
+
+void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeSix()
+{
+    //cout << "here" << "\n";
+    if(coefficient_Part_1.getFractionStatus()==0)
+    {
+        outputVariableFunction=outputVariableFunction+"cot" + "(" + coefficientStringAsInput
+                                +"x" + ")";
+    }
+
+    else
+    {
+        outputVariableFunction=outputVariableFunction+"cot" + "("
                 +coefficient_Part_1.getCoefficientNumerator() + "x"
                 + "/" + coefficient_Part_1.getCoefficientDenominator()
                 + ")";
