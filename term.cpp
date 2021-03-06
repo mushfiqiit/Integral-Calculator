@@ -3,24 +3,49 @@
 
 using namespace std;
 
-term::term()
+term::term() // 1
 {
 
 }
 
-void term::setTerm(string seperatedTerm)
+void term::setTerm(string seperatedTerm) // 2
 {
     this->recievedTerm = seperatedTerm;
     //cout << recievedTerm << "\n";
     termProcessor();
 }
 
-string term::getInitialTerm()
+string term::getInitialTerm() // 3
 {
     return recievedTerm;
 }
 
-void term::termProcessor()
+constantPart term::getConstantPart() // 4
+{
+    return constant_Part_1;
+}
+
+variableFunctionPart term::getVariableFunctionPart() // 5
+{
+    return variable_Function_Part_1;
+}
+
+powerPart term::getPowerPart() // 6
+{
+    return power_Part_1;
+}
+
+void term::formOutputTerm() // 7
+{
+    computeOutputTerm();
+}
+
+string term::getOutputTerm() // 8
+{
+    return outputTerm;
+}
+
+void term::termProcessor() // 9
 {
     string constant;
     string functionType;
@@ -70,10 +95,10 @@ void term::termProcessor()
     }
 
 
-    if(functionType.empty())
+    /*if(functionType.empty())
     {
         functionType="x";
-    }
+    }*/
 
     // ************
 
@@ -105,7 +130,7 @@ void term::termProcessor()
 
     else if(power.empty() && functionType.empty())
     {
-        power="0";
+        power="0"; functionType="x";
     }
     // *******************
 
@@ -118,7 +143,7 @@ void term::termProcessor()
     power_Part_1.setInputPower(power);
 }
 
-void term::computeOutputTerm()
+void term::computeOutputTerm() // 10
 {
     power_Part_1.formOutputPower();
     //constant_Part_1.formOutputConstant(power_Part_1.getInputPower());
@@ -170,7 +195,8 @@ void term::computeOutputTerm()
     //****************************************
     }
 
-    else if(functionType==3 || functionType==4 || functionType==5 || functionType==6)
+    else if(functionType==3 || functionType==4 || functionType==5 || functionType==6 || functionType==7
+            || functionType==8)
     {
         /*cout << constant_Part_1.getConstantStringAsInput() << " "
             << variable_Function_Part_1.getVariableFunctionAsInput() << " "
@@ -201,63 +227,59 @@ void term::computeOutputTerm()
     }
 }
 
-void term::formOutputTerm()
-{
-    computeOutputTerm();
-}
 
-constantPart term::getConstantPart()
-{
-    return constant_Part_1;
-}
-
-variableFunctionPart term::getVariableFunctionPart()
-{
-    return variable_Function_Part_1;
-}
-
-powerPart term::getPowerPart()
-{
-    return power_Part_1;
-}
-
-string term::getOutputTerm()
-{
-    return outputTerm;
-}
-
-void term::identifyFunctionType(string constant, string variableFunction, string power)
+void term::identifyFunctionType(string constant, string variableFunction, string power) // 11
 {
     //cout << variableFunction << "\n";
+    string croppedvariableFunction;
+    for(int i=0;i<variableFunction.length();i++)
+    {
+        if((variableFunction[i]>='a' && variableFunction[i]<='z') || (variableFunction[i]=='2'
+                                            && variableFunction[i-1]=='^') || variableFunction[i]=='^')
+           {
+               croppedvariableFunction=croppedvariableFunction+variableFunction[i];
+           }
+    }
+    //cout << croppedvariableFunction << "\n";
     if(power=="-1")
     {
         setTermFunctionType(2);
     }
 
-    else if(variableFunction.substr(0, 3)=="sin")
+    else if(croppedvariableFunction=="sinx")
     {
         setTermFunctionType(3);
     }
 
-    else if(variableFunction.substr(0, 7)=="cosec^2")
+    else if(croppedvariableFunction=="secxtanx")
+    {
+        setTermFunctionType(7);
+    }
+
+    else if(croppedvariableFunction=="cosecxcotx")
+    {
+        setTermFunctionType(8);
+    }
+
+    else if(croppedvariableFunction=="cosec^2x")
     {
         //cout << "HESE\n";
         setTermFunctionType(6);
     }
 
 
-    else if(variableFunction.substr(0, 3)=="cos")
+    else if(croppedvariableFunction=="cosx")
     {
         setTermFunctionType(4);
     }
 
-    else if(variableFunction.substr(0, 5)=="sec^2")
+    else if(croppedvariableFunction=="sec^2x")
     {
         //cout << "Here" << endl;
         setTermFunctionType(5);
     }
 
-    else
+    else if(croppedvariableFunction=="x")
     {
         setTermFunctionType(1);
     }

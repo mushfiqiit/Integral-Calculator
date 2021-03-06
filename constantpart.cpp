@@ -23,35 +23,21 @@ string constantPart::getConstantStringAsInput()
 
 void constantPart::formOutputConstant()
 {
-    if(functionType==1)
-    {
-    computeOutputConstantForFunctionTypeOne();
-    }
+    if(functionType==1) computeOutputConstantForFunctionTypeOne();
 
-    else if(functionType==2)
-    {
-        computeOutputConstantForFunctionTypeTwo();
-    }
+    else if(functionType==2) computeOutputConstantForFunctionTypeTwo();
 
-    else if(functionType==3)
-    {
-        computeOutputConstantForFunctionTypeThree();
-    }
+    else if(functionType==3) computeOutputConstantForFunctionTypeThree();
 
-    else if(functionType==4)
-    {
-        computeOutputConstantForFunctionTypeFour();
-    }
+    else if(functionType==4) computeOutputConstantForFunctionTypeFour();
 
-    else if(functionType==5)
-    {
-        computeOutputConstantForFunctionTypeFive();
-    }
+    else if(functionType==5) computeOutputConstantForFunctionTypeFive();
 
-    else if(functionType==6)
-    {
-        computeOutputConstantForFunctionTypeSix();
-    }
+    else if(functionType==6) computeOutputConstantForFunctionTypeSix();
+
+    else if(functionType==7) computeOutputConstantForFunctionTypeSeven();
+
+    else if(functionType==8) computeOutputConstantForFunctionTypeEight();
 }
 
 void constantPart::computeOutputConstantForFunctionTypeOne()
@@ -158,7 +144,7 @@ int fractionStatusDenominatorAsInt=atoi(fractionStatusInitialDenominator.c_str()
 int outputPowerNumeratorAsInt=atoi(outputPowerNumerator.c_str());
 int outputPowerDenominatorAsInt=atoi(outputPowerDenominator.c_str());
 
-if(functionType==3 || functionType==6)
+if(functionType==3 || functionType==6 || functionType==8)
 {
     fractionStatusNumeratorAsInt=-fractionStatusNumeratorAsInt;
 }
@@ -253,6 +239,16 @@ void constantPart::computeOutputConstantForFunctionTypeFive()
 }
 
 void constantPart::computeOutputConstantForFunctionTypeSix()
+{
+    computeOutputConstantForFunctionTypeOne();
+}
+
+void constantPart:: computeOutputConstantForFunctionTypeSeven()
+{
+    computeOutputConstantForFunctionTypeOne();
+}
+
+void constantPart:: computeOutputConstantForFunctionTypeEight()
 {
     computeOutputConstantForFunctionTypeOne();
 }

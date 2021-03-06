@@ -2,19 +2,24 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="variablefunctionpart.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="919" topLine="3" />
+		</Cursor>
+	</File>
 	<File name="inputTakingUnit.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="224" topLine="47" />
 		</Cursor>
 	</File>
-	<File name="header1.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="powerpart.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="215" topLine="0" />
+			<Cursor1 position="209" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="inputTakingUnit.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="variablefunctionpart.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="522" topLine="0" />
+			<Cursor1 position="457" topLine="85" />
 		</Cursor>
 	</File>
 	<File name="coefficientpart.cpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
@@ -22,9 +27,14 @@
 			<Cursor1 position="228" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="term.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+	<File name="outputUnit.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5191" topLine="175" />
+			<Cursor1 position="259" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="inputTakingUnit.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="522" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="coefficientpart.h" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -32,34 +42,19 @@
 			<Cursor1 position="189" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="powerpart.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="constantpart.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="470" topLine="0" />
+			<Cursor1 position="846" topLine="12" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="header1.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1247" topLine="0" />
+			<Cursor1 position="215" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="term.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="constantpart.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="489" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="variablefunctionpart.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="899" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="outputUnit.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="259" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="constantpart.cpp" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4231" topLine="138" />
+			<Cursor1 position="6206" topLine="55" />
 		</Cursor>
 	</File>
 	<File name="outputUnit.cpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -67,19 +62,34 @@
 			<Cursor1 position="206" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="powerpart.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="variableFunctionPartTypeB.cpp" open="1" top="1" tabpos="18" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="631" topLine="13" />
+			<Cursor1 position="1408" topLine="28" />
 		</Cursor>
 	</File>
-	<File name="variablefunctionpart.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+	<File name="term.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2695" topLine="83" />
+			<Cursor1 position="637" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="constantpart.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="term.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1400" topLine="16" />
+			<Cursor1 position="843" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1247" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="powerpart.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="631" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="variableFunctionPartTypeB.h" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="214" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

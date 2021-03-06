@@ -26,6 +26,8 @@ class constantPart
     void computeOutputConstantForFunctionTypeFour();
     void computeOutputConstantForFunctionTypeFive();
     void computeOutputConstantForFunctionTypeSix();
+    void computeOutputConstantForFunctionTypeSeven();
+    void computeOutputConstantForFunctionTypeEight();
 
 
     void numeratorDenominatorSimplification(string numerator, string denominator);

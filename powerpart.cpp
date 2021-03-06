@@ -11,6 +11,7 @@ powerPart::powerPart()
 
 void powerPart::setInputPower(string inputPower)
 {
+    //cout << inputPower << "\n";
     this->inputPower=inputPower;
 }
 
@@ -38,7 +39,9 @@ void powerPart::computeOutputPowerForFunctionTypeOne()
     {
     stringstream ss;
     convertedInputPower=atoi(inputPower.c_str());
+    //cout << convertedInputPower << "\n";
     convertedOutputPower=convertedInputPower+1;
+    //cout << convertedOutputPower << "\n";
     ss<< convertedOutputPower;
     outputPower=ss.str();
     }

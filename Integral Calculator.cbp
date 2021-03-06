@@ -46,6 +46,8 @@
 		<Unit filename="powerpart.h" />
 		<Unit filename="term.cpp" />
 		<Unit filename="term.h" />
+		<Unit filename="variableFunctionPartTypeB.cpp" />
+		<Unit filename="variableFunctionPartTypeB.h" />
 		<Unit filename="variablefunctionpart.cpp" />
 		<Unit filename="variablefunctionpart.h" />
 		<Extensions>

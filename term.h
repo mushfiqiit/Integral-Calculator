@@ -18,23 +18,23 @@ class term
     powerPart power_Part_1;
     int functionType;
 
-        void termProcessor();
+        void termProcessor(); // 9
 
-        void computeOutputTerm();
+        void computeOutputTerm(); // 10
 
-        void identifyFunctionType(string constant, string variableFunction, string power);
+        void identifyFunctionType(string constant, string variableFunction, string power); // 11
 
         void setTermFunctionType(int functionTypeCode);
 
     public:
-        term();
-        void setTerm(string seperatedTerm); //Recieve a term from input taking unit.
-        string getInitialTerm();
-        string getProcessedTerm();
-        constantPart getConstantPart();
-        variableFunctionPart getVariableFunctionPart();
-        powerPart getPowerPart();
-        void formOutputTerm(); // Called by input taking unit to start the processing.
-        string getOutputTerm(); // Returns output term to input taking unit.
+        term(); // 1
+        void setTerm(string seperatedTerm); // 2 -Recieve a term from input taking unit.
+        string getInitialTerm(); // 3
+        //string getProcessedTerm();
+        constantPart getConstantPart(); // 4
+        variableFunctionPart getVariableFunctionPart(); // 5
+        powerPart getPowerPart(); // 6
+        void formOutputTerm(); // 7 - Called by input taking unit to start the processing.
+        string getOutputTerm(); // 8 - Returns output term to input taking unit.
 };
 #endif // TERM_H
