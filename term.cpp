@@ -12,7 +12,17 @@ void term::setTerm(string seperatedTerm) // 2
 {
     this->recievedTerm = seperatedTerm;
     //cout << recievedTerm << "\n";
-    termProcessor();
+
+    int variableFunctionType=variable_Function_Part_TypeB_1.getfunctionType(recievedTerm);
+    //cout << variableFunctionType << "\n";
+    if(variableFunctionType==0)
+    termProcessorForTypeA();
+
+    else
+    {
+        setTermFunctionType(variableFunctionType);
+        termProcessorForTypeB();
+    }
 }
 
 string term::getInitialTerm() // 3
@@ -37,7 +47,11 @@ powerPart term::getPowerPart() // 6
 
 void term::formOutputTerm() // 7
 {
-    computeOutputTerm();
+    if(functionType>=1 && functionType<=9)
+    computeOutputTermForTypeA();
+
+    else
+    computeOutputTermForTypeB();
 }
 
 string term::getOutputTerm() // 8
@@ -45,7 +59,7 @@ string term::getOutputTerm() // 8
     return outputTerm;
 }
 
-void term::termProcessor() // 9
+void term::termProcessorForTypeA() // 9
 {
     string constant;
     string functionType;
@@ -143,7 +157,14 @@ void term::termProcessor() // 9
     power_Part_1.setInputPower(power);
 }
 
-void term::computeOutputTerm() // 10
+void term::termProcessorForTypeB()
+{
+    string tempConstantPartAsString=variable_Function_Part_TypeB_1.getConstantPart();
+    constant_Part_1.setConstant(tempConstantPartAsString);
+    //cout << tempConstantPartAsString << "\n";
+}
+
+void term::computeOutputTermForTypeA() // 11
 {
     power_Part_1.formOutputPower();
     //constant_Part_1.formOutputConstant(power_Part_1.getInputPower());
@@ -227,8 +248,19 @@ void term::computeOutputTerm() // 10
     }
 }
 
+void term::computeOutputTermForTypeB()
+{
+    variable_Function_Part_TypeB_1.formVariableFunctionAsOutput();
+    outputTerm=outputTerm+constant_Part_1.getConstantStringAsInput()
+            +variable_Function_Part_TypeB_1.getVariableFunctionAsOutput();
+            //cout << "here \n";
+    //cout << constant_Part_1.getConstantStringAsInput() << " "
+     //<< variable_Function_Part_TypeB_1.getVariableFunctionAsOutput() << "\n";
+    //cout << outputTerm << "\n";
+}
 
-void term::identifyFunctionType(string constant, string variableFunction, string power) // 11
+
+void term::identifyFunctionType(string constant, string variableFunction, string power) // 12
 {
     //cout << variableFunction << "\n";
     string croppedvariableFunction;
@@ -285,7 +317,7 @@ void term::identifyFunctionType(string constant, string variableFunction, string
     }
 }
 
-void term::setTermFunctionType(int functionTypeCode)
+void term::setTermFunctionType(int functionTypeCode) // 13
 {
     //cout << functionTypeCode << endl;
     this->functionType=functionTypeCode;

@@ -4,6 +4,7 @@
 #include "constantpart.h"
 #include "variablefunctionpart.h"
 #include "powerpart.h"
+#include "variableFunctionPartTypeB.h"
 
 using namespace std;
 
@@ -16,15 +17,20 @@ class term
     constantPart constant_Part_1;
     variableFunctionPart variable_Function_Part_1;
     powerPart power_Part_1;
+    variableFunctionPartTypeB variable_Function_Part_TypeB_1;
     int functionType;
 
-        void termProcessor(); // 9
+        void termProcessorForTypeA(); // 9
 
-        void computeOutputTerm(); // 10
+        void termProcessorForTypeB(); // 10
 
-        void identifyFunctionType(string constant, string variableFunction, string power); // 11
+        void computeOutputTermForTypeA(); // 11
 
-        void setTermFunctionType(int functionTypeCode);
+        void computeOutputTermForTypeB();
+
+        void identifyFunctionType(string constant, string variableFunction, string power); // 12
+
+        void setTermFunctionType(int functionTypeCode); // 13
 
     public:
         term(); // 1
