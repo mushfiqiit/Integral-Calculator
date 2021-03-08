@@ -47,7 +47,7 @@
 1585313037 e:\work\second year\spl- 1\integral-calculator-master\outputunit.h
 	<bits/stdc++.h>
 
-1615123379 source:e:\work\second year\spl- 1\integral-calculator-master\term.cpp
+1615146199 source:e:\work\second year\spl- 1\integral-calculator-master\term.cpp
 	<bits/stdc++.h>
 	"term.h"
 
@@ -206,10 +206,10 @@
 1595946933 source:e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.cpp
 	"coefficientpart.h"
 
-1615112303 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.h
+1615127981 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.h
 	<bits/stdc++.h>
 
-1615113167 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.cpp
+1615145907 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.cpp
 	"variableFunctionPartTypeB.h"
 	<bits/stdc++.h>
 

@@ -11,7 +11,12 @@ class variableFunctionPartTypeB
     string constantPartNumerator; string constantPartDenominator;
     int variableFunctionType;
     string valueOfaSquare; int valueOfaSquareAsInt;
+    string valueOfaSquareNumerator; string valueOfaSquareDenominator;
+    int valueOfaSquareNumeratorAsInt; int valueOfaSquareDenominatorAsInt;
     string valueOfa; int valueOfaAsInt;
+    string valueOfaNumerator; string valueOfaDenominator;
+
+    int valueOfaFractionStatus;
 
 
     bool isDigit(char ch);
@@ -20,6 +25,7 @@ class variableFunctionPartTypeB
     int identifyFunctionTypeB(string variableFunctionToIdentify);
     void computeVariableFunctionAsOutput();
     void computeVariableFunctionAsOutputForFunctionTypeTen();
+    string constantAndMainFunctionSeperation(string variableFunctionToSeperate);
 
     public:
         variableFunctionPartTypeB(); // 1

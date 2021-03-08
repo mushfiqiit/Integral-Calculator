@@ -160,7 +160,7 @@ void term::termProcessorForTypeA() // 9
 void term::termProcessorForTypeB()
 {
     string tempConstantPartAsString=variable_Function_Part_TypeB_1.getConstantPart();
-    constant_Part_1.setConstant(tempConstantPartAsString);
+    //constant_Part_1.setConstant(tempConstantPartAsString);
     //cout << tempConstantPartAsString << "\n";
 }
 
@@ -251,12 +251,8 @@ void term::computeOutputTermForTypeA() // 11
 void term::computeOutputTermForTypeB()
 {
     variable_Function_Part_TypeB_1.formVariableFunctionAsOutput();
-    outputTerm=outputTerm+constant_Part_1.getConstantStringAsInput()
+    outputTerm=outputTerm+variable_Function_Part_TypeB_1.getConstantPart()
             +variable_Function_Part_TypeB_1.getVariableFunctionAsOutput();
-            //cout << "here \n";
-    //cout << constant_Part_1.getConstantStringAsInput() << " "
-     //<< variable_Function_Part_TypeB_1.getVariableFunctionAsOutput() << "\n";
-    //cout << outputTerm << "\n";
 }
 
 

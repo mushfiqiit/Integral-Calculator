@@ -31,7 +31,7 @@ int variableFunctionPartTypeB::getfunctionType(string variableFunctionToIdentify
 
 bool variableFunctionPartTypeB::isDigit(char ch)
 {
-    if(ch>='0' && ch<='9') return true;
+    if((ch>='0' && ch<='9')||ch=='/') return true;
     else return false;
 }
 
@@ -45,6 +45,7 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
 {
     int i;
     string parsedVariableFunctionAsInput;
+    variableFunctionToParse=constantAndMainFunctionSeperation(variableFunctionToParse);
     for(i=0;i<variableFunctionToParse.size();i++)
     {
         if(variableFunctionToParse[i]=='/') break;
@@ -56,20 +57,27 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
     int digitFlag=0;
     for(;i<variableFunctionToParse.size();i++)
     {
+        //cout << variableFunctionToParse[i] << " " << digitFlag << "\n";
+        //if(isDigit(variableFunctionToParse[i])) cout << "Yes \n";
         if(isDigit(variableFunctionToParse[i]) && digitFlag==0 && variableFunctionToParse[i-1]!='^')
         {
+            //cout << "1\n";
             parsedVariableFunctionAsInput=parsedVariableFunctionAsInput+"a";
             digitFlag=1;
             valueOfaSquare=valueOfa+variableFunctionToParse[i];
         }
 
-        else if(isDigit(variableFunctionAsInput[i]) && digitFlag==1)
+        else if(isDigit(variableFunctionToParse[i])
+                 && digitFlag==1)
         {
+            //cout << "2\n";
             valueOfaSquare=valueOfaSquare+variableFunctionToParse[i];
         }
 
-        else if(variableFunctionToParse[i]!=' ')
+        else if(variableFunctionToParse[i]!=' ' && variableFunctionToParse[i]!='('
+                                                && variableFunctionToParse[i]!=')')
         {
+            //cout << "3\n";
             parsedVariableFunctionAsInput=parsedVariableFunctionAsInput
                     +variableFunctionToParse[i];
             digitFlag=0;
@@ -81,7 +89,7 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
 int variableFunctionPartTypeB::identifyFunctionTypeB(string variableFunctionToIdentify)
 {
     cout << variableFunctionToIdentify << "\n";
-    if(variableFunctionToIdentify=="(a+x^2)") return 10;
+    if(variableFunctionToIdentify=="a+x^2") return 10;
     else return 0;
 }
 
@@ -111,10 +119,11 @@ void variableFunctionPartTypeB::computeVariableFunctionAsOutput()
 
 void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeTen()
 {
-    variableFunctionAsOutput="tan^-1(x/";
+    variableFunctionAsOutput="tan^-1(x";
     valueOfaSquareAsInt=atoi(valueOfaSquare.c_str());
     if(valueOfaSquareAsInt!=1)
     {
+        variableFunctionAsOutput=variableFunctionAsOutput+"/";
         if(isPerfectSquare(valueOfaSquareAsInt))
         {
             valueOfaAsInt=sqrt(valueOfaSquareAsInt);
@@ -133,3 +142,55 @@ void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeTe
     variableFunctionAsOutput=variableFunctionAsOutput+")";
 }
 
+
+string variableFunctionPartTypeB::constantAndMainFunctionSeperation
+(string variableFunctionToSeperate)
+{
+    string parsedNumerator, parsedDenominator;
+    string seperatedVariableFunction;
+    int i=0;
+    int notConstantFlag=0;
+    for(;i<variableFunctionToSeperate.length();i++)
+    {
+        if(variableFunctionToSeperate[i]=='/' || variableFunctionToSeperate[i]==')') break;
+        else if(variableFunctionToSeperate[i]!='(' || variableFunctionToSeperate[i]!=' ')
+        {
+            parsedNumerator=parsedNumerator+variableFunctionToSeperate[i];
+        }
+    }
+    if(variableFunctionToSeperate[i]=='/')i++;
+    for(;i<variableFunctionToSeperate.length();i++)
+    {
+        if(variableFunctionToSeperate[i]==')') {parsedDenominator=parsedDenominator+")"; break;}
+        else if(variableFunctionToSeperate[i]=='+' || variableFunctionToSeperate[i]=='x')
+        {
+            notConstantFlag=1;
+            parsedDenominator=parsedDenominator+variableFunctionToSeperate[i];
+        }
+
+        else if(variableFunctionToSeperate[i]!=' ')
+        {
+            parsedDenominator=parsedDenominator+variableFunctionToSeperate[i];
+        }
+    }
+
+    if(notConstantFlag==0)
+    {
+        if(parsedDenominator!=")")
+        this->constantPart=parsedNumerator+"/" + parsedDenominator;
+        else
+        this->constantPart=parsedNumerator+")";
+        //cout << constantPart << "\n";
+        i++;
+        for(;i<variableFunctionToSeperate.length();i++)
+        {
+            seperatedVariableFunction=seperatedVariableFunction+variableFunctionToSeperate[i];
+        }
+    }
+
+    else
+    {
+        seperatedVariableFunction=variableFunctionToSeperate;
+    }
+    return seperatedVariableFunction;
+}
