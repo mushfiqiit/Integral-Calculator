@@ -37,6 +37,8 @@
 		<Unit filename="constantpart.cpp" />
 		<Unit filename="constantpart.h" />
 		<Unit filename="header1.h" />
+		<Unit filename="helpingtools.cpp" />
+		<Unit filename="helpingtools.h" />
 		<Unit filename="inputTakingUnit.cpp" />
 		<Unit filename="inputTakingUnit.h" />
 		<Unit filename="main.cpp" />

@@ -15,6 +15,7 @@ void term::setTerm(string seperatedTerm) // 2
 
     int variableFunctionType=variable_Function_Part_TypeB_1.getfunctionType(recievedTerm);
     //cout << variableFunctionType << "\n";
+    setTermFunctionType(variableFunctionType);
     if(variableFunctionType==0)
     termProcessorForTypeA();
 
@@ -160,7 +161,7 @@ void term::termProcessorForTypeA() // 9
 void term::termProcessorForTypeB()
 {
     string tempConstantPartAsString=variable_Function_Part_TypeB_1.getConstantPart();
-    //constant_Part_1.setConstant(tempConstantPartAsString);
+    constant_Part_1.setConstant(tempConstantPartAsString);
     //cout << tempConstantPartAsString << "\n";
 }
 
@@ -251,8 +252,19 @@ void term::computeOutputTermForTypeA() // 11
 void term::computeOutputTermForTypeB()
 {
     variable_Function_Part_TypeB_1.formVariableFunctionAsOutput();
-    outputTerm=outputTerm+variable_Function_Part_TypeB_1.getConstantPart()
-            +variable_Function_Part_TypeB_1.getVariableFunctionAsOutput();
+    constant_Part_1.setOutputPowerNumerator(variable_Function_Part_TypeB_1.getValueOfaNumerator());
+    if(!variable_Function_Part_TypeB_1.getValueOfaDenominator().empty())
+    constant_Part_1.setOutputPowerDenominator(variable_Function_Part_TypeB_1.getValueOfaDenominator());
+    else
+    constant_Part_1.setOutputPowerDenominator("1");
+
+    constant_Part_1.formOutputConstant();
+
+    cout << variable_Function_Part_TypeB_1.getValueOfaNumerator() << " " <<
+        variable_Function_Part_TypeB_1.getValueOfaDenominator() << "\n";
+
+    outputTerm=outputTerm+constant_Part_1.getOutputConstant()
+                +variable_Function_Part_TypeB_1.getVariableFunctionAsOutput();
 }
 
 

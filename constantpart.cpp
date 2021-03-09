@@ -252,3 +252,8 @@ void constantPart:: computeOutputConstantForFunctionTypeEight()
 {
     computeOutputConstantForFunctionTypeOne();
 }
+
+void constantPart::computeOutputConstantForFunctionTypeTen()
+{
+    computeOutputConstantForFunctionTypeOne();
+}

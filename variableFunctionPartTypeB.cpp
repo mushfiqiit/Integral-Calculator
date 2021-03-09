@@ -46,6 +46,7 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
     int i;
     string parsedVariableFunctionAsInput;
     variableFunctionToParse=constantAndMainFunctionSeperation(variableFunctionToParse);
+    //cout << variableFunctionToParse << "\n";
     for(i=0;i<variableFunctionToParse.size();i++)
     {
         if(variableFunctionToParse[i]=='/') break;
@@ -83,12 +84,13 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
             digitFlag=0;
         }
     }
+    //cout << parsedVariableFunctionAsInput << "\n";
     return parsedVariableFunctionAsInput;
 }
 
 int variableFunctionPartTypeB::identifyFunctionTypeB(string variableFunctionToIdentify)
 {
-    cout << variableFunctionToIdentify << "\n";
+    //cout << variableFunctionToIdentify << "\n";
     if(variableFunctionToIdentify=="a+x^2") return 10;
     else return 0;
 }
@@ -119,26 +121,20 @@ void variableFunctionPartTypeB::computeVariableFunctionAsOutput()
 
 void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeTen()
 {
-    variableFunctionAsOutput="tan^-1(x";
-    valueOfaSquareAsInt=atoi(valueOfaSquare.c_str());
-    if(valueOfaSquareAsInt!=1)
+    variableFunctionAsOutput="tan^-1(";
+    valueOfaNumeratorDenominatorSeperation();
+    valueOfaNumeratorDenominatorCalculation();
+    string partToAdd="x";
+    if(valueOfaDenominator!="1")
     {
-        variableFunctionAsOutput=variableFunctionAsOutput+"/";
-        if(isPerfectSquare(valueOfaSquareAsInt))
-        {
-            valueOfaAsInt=sqrt(valueOfaSquareAsInt);
-            stringstream ss;
-            ss<<valueOfaAsInt;
-            valueOfa=ss.str();
-            variableFunctionAsOutput=variableFunctionAsOutput+valueOfa;
-        }
-
-        else
-        {
-            variableFunctionAsOutput=variableFunctionAsOutput+"( " + valueOfaSquare
-                    +"^(1/2) )";
-        }
+        partToAdd="(" + partToAdd+ "*" +valueOfaDenominator+")";
     }
+
+    if(valueOfaNumerator!="1")
+    {
+        partToAdd="(" + partToAdd + "/" + valueOfaNumerator + ")";
+    }
+    variableFunctionAsOutput=variableFunctionAsOutput+partToAdd;
     variableFunctionAsOutput=variableFunctionAsOutput+")";
 }
 
@@ -152,6 +148,7 @@ string variableFunctionPartTypeB::constantAndMainFunctionSeperation
     int notConstantFlag=0;
     for(;i<variableFunctionToSeperate.length();i++)
     {
+        //cout << variableFunctionToSeperate[i] << " num\n";
         if(variableFunctionToSeperate[i]=='/' || variableFunctionToSeperate[i]==')') break;
         else if(variableFunctionToSeperate[i]!='(' || variableFunctionToSeperate[i]!=' ')
         {
@@ -159,9 +156,17 @@ string variableFunctionPartTypeB::constantAndMainFunctionSeperation
         }
     }
     if(variableFunctionToSeperate[i]=='/')i++;
+    int leftBracketCounter=0;
     for(;i<variableFunctionToSeperate.length();i++)
     {
-        if(variableFunctionToSeperate[i]==')') {parsedDenominator=parsedDenominator+")"; break;}
+        //cout << variableFunctionToSeperate[i] << "den\n";
+        if(variableFunctionToSeperate[i]==')')
+        {
+            if(leftBracketCounter==0)
+                {parsedDenominator=parsedDenominator+")"; break;}
+            else
+                leftBracketCounter--;
+        }
         else if(variableFunctionToSeperate[i]=='+' || variableFunctionToSeperate[i]=='x')
         {
             notConstantFlag=1;
@@ -171,6 +176,10 @@ string variableFunctionPartTypeB::constantAndMainFunctionSeperation
         else if(variableFunctionToSeperate[i]!=' ')
         {
             parsedDenominator=parsedDenominator+variableFunctionToSeperate[i];
+            if(variableFunctionToSeperate[i]=='(')
+            {
+                leftBracketCounter++;
+            }
         }
     }
 
@@ -194,3 +203,69 @@ string variableFunctionPartTypeB::constantAndMainFunctionSeperation
     }
     return seperatedVariableFunction;
 }
+
+void variableFunctionPartTypeB::valueOfaNumeratorDenominatorSeperation()
+{
+    int i;
+    for(i=0;i<valueOfaSquare.length();i++)
+    {
+        if(valueOfaSquare[i]==')' || valueOfaSquare[i]=='/') break;
+        else if(valueOfaSquare[i]!='(' || valueOfaSquare[i]!=' ')
+        {
+            valueOfaSquareNumerator=valueOfaSquareNumerator+valueOfaSquare[i];
+        }
+    } i++;
+    for(;i<valueOfaSquare.length();i++)
+    {
+        if(valueOfaSquare[i]!=')' || valueOfaSquare[i]!=' ' || valueOfaSquare[i]!='(')
+        {
+            valueOfaSquareDenominator=valueOfaSquareDenominator+valueOfaSquare[i];
+        }
+    }
+    //cout << valueOfaSquareNumerator << " " << valueOfaSquareDenominator << "\n";
+}
+
+void variableFunctionPartTypeB::valueOfaNumeratorDenominatorCalculation()
+{
+    valueOfaSquareNumeratorAsInt=helping_tools_1.convertStringToInt
+                        (valueOfaSquareNumerator);
+    if(!valueOfaSquareDenominator.empty())
+    valueOfaSquareDenominatorAsInt=helping_tools_1.convertStringToInt
+                        (valueOfaSquareDenominator);
+    else
+    valueOfaSquareDenominatorAsInt=1;
+
+    if(isPerfectSquare(valueOfaSquareNumeratorAsInt))
+    {
+        valueOfaNumeratorAsInt=sqrt(valueOfaSquareNumeratorAsInt);
+        valueOfaNumerator=helping_tools_1.convertIntToString(valueOfaNumeratorAsInt);
+    }
+
+    else
+    {
+        valueOfaNumerator="(" + valueOfaSquareNumerator+ "^(1/2))";
+    }
+
+    if(isPerfectSquare(valueOfaSquareDenominatorAsInt))
+    {
+        valueOfaDenominatorAsInt=sqrt(valueOfaSquareDenominatorAsInt);
+        valueOfaDenominator=helping_tools_1.convertIntToString(valueOfaDenominatorAsInt);
+    }
+
+    else
+    {
+        valueOfaDenominator="(" + valueOfaSquareDenominator+"^(1/2))";
+    }
+    //cout << valueOfaNumerator << " " << valueOfaDenominator << "\n";
+}
+
+string variableFunctionPartTypeB::getValueOfaNumerator()
+{
+    return this->valueOfaNumerator;
+}
+
+string variableFunctionPartTypeB::getValueOfaDenominator()
+{
+    return this->valueOfaDenominator;
+}
+

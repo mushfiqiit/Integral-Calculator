@@ -1,6 +1,7 @@
 #ifndef VARIABLEFUNCTIONPARTTYPEB_H
 #define VARIABLEFUNCTIONPARTTYPEB_H
 #include <bits/stdc++.h>
+#include "helpingtools.h"
 using namespace std;
 
 class variableFunctionPartTypeB
@@ -15,8 +16,10 @@ class variableFunctionPartTypeB
     int valueOfaSquareNumeratorAsInt; int valueOfaSquareDenominatorAsInt;
     string valueOfa; int valueOfaAsInt;
     string valueOfaNumerator; string valueOfaDenominator;
+    int valueOfaNumeratorAsInt; int valueOfaDenominatorAsInt;
 
     int valueOfaFractionStatus;
+    helpingtools helping_tools_1;
 
 
     bool isDigit(char ch);
@@ -26,6 +29,8 @@ class variableFunctionPartTypeB
     void computeVariableFunctionAsOutput();
     void computeVariableFunctionAsOutputForFunctionTypeTen();
     string constantAndMainFunctionSeperation(string variableFunctionToSeperate);
+    void valueOfaNumeratorDenominatorSeperation();
+    void valueOfaNumeratorDenominatorCalculation();
 
     public:
         variableFunctionPartTypeB(); // 1
@@ -36,6 +41,8 @@ class variableFunctionPartTypeB
         void setVariableFunctionType(int functionType);
         string getConstantPart();
         void formVariableFunctionAsOutput();
+        string getValueOfaNumerator();
+        string getValueOfaDenominator();
 
 };
 
