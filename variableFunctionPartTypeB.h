@@ -17,32 +17,35 @@ class variableFunctionPartTypeB
     string valueOfa; int valueOfaAsInt;
     string valueOfaNumerator; string valueOfaDenominator;
     int valueOfaNumeratorAsInt; int valueOfaDenominatorAsInt;
+    int isRootValueOfaNumerator, isRootValueOfaDenominator;
 
     int valueOfaFractionStatus;
     helpingtools helping_tools_1;
 
 
-    bool isDigit(char ch);
-    bool isPerfectSquare(int numberToCheck);
-    string parseVariableFunctionAsInput(string variableFunctionToParse);
-    int identifyFunctionTypeB(string variableFunctionToIdentify);
-    void computeVariableFunctionAsOutput();
-    void computeVariableFunctionAsOutputForFunctionTypeTen();
-    string constantAndMainFunctionSeperation(string variableFunctionToSeperate);
-    void valueOfaNumeratorDenominatorSeperation();
-    void valueOfaNumeratorDenominatorCalculation();
+    bool isDigit(char ch); // 11
+    bool isPerfectSquare(int numberToCheck); // 12
+    string parseVariableFunctionAsInput(string variableFunctionToParse); // 13
+    int identifyFunctionTypeB(string variableFunctionToIdentify); // 14
+    void computeVariableFunctionAsOutput(); // 15
+    void computeVariableFunctionAsOutputForFunctionTypeTen(); // 16
+    string constantAndMainFunctionSeperation(string variableFunctionToSeperate); // 17
+    void valueOfaNumeratorDenominatorSeperation(); // 18
+    void valueOfaNumeratorDenominatorCalculation(); // 19
 
     public:
         variableFunctionPartTypeB(); // 1
         void setVariableFunctionPart(string variableFunctionAsInput); // 2
-        string getVariableFunctionAsInput();
+        string getVariableFunctionAsInput(); // 3
         int getfunctionType(string variableFunctionToIdentify); //4
         string getVariableFunctionAsOutput();
-        void setVariableFunctionType(int functionType);
-        string getConstantPart();
-        void formVariableFunctionAsOutput();
-        string getValueOfaNumerator();
-        string getValueOfaDenominator();
+        void setVariableFunctionType(int functionType); // 6
+        string getConstantPart(); // 7
+        void formVariableFunctionAsOutput(); // 8
+        string getValueOfaNumerator(); // 9
+        string getValueOfaDenominator(); // 10
+        int getIsRootValueOfaNumerator();
+        int getIsRootValueOfaDenominator();
 
 };
 

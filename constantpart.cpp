@@ -38,6 +38,8 @@ void constantPart::formOutputConstant()
     else if(functionType==7) computeOutputConstantForFunctionTypeSeven();
 
     else if(functionType==8) computeOutputConstantForFunctionTypeEight();
+
+    else if(functionType==10) computeOutputConstantForFunctionTypeTen();
 }
 
 void constantPart::computeOutputConstantForFunctionTypeOne()
@@ -76,7 +78,7 @@ void constantPart::computeOutputConstantForFunctionTypeOne()
 
     else
     {
-    outputConstant="("+processedNumerator+"/"+processedDenominator+")";
+        outputConstant="("+processedNumerator+"/"+processedDenominator+")";
     }
 }
 
@@ -255,5 +257,90 @@ void constantPart:: computeOutputConstantForFunctionTypeEight()
 
 void constantPart::computeOutputConstantForFunctionTypeTen()
 {
+    //cout << isRootValueOfPowerNumerator << " " << isRootValueOfPowerDenominator << "\n";
+    //cout << outputPowerNumerator << " " << outputPowerDenominator << "\n";
+    if(!isRootValueOfPowerNumerator && !isRootValueOfPowerDenominator)
     computeOutputConstantForFunctionTypeOne();
+
+    else
+    {
+        if(constantStringAsInput=="" || constantStringAsInput.empty())
+        {
+            outputConstant=outputConstant+"(" + outputPowerDenominator +"/"+
+                            outputPowerNumerator + ")";
+        }
+
+        else
+        {
+            //cout << constantStringAsInput << "\n";
+            if(fractionStatus==0)  //Calculation when constant part is not a fraction
+            {
+                initialNumerator=constantStringAsInput;
+                initialDenominator="1";
+            }
+
+            else
+            {
+                parseFractionConstant(constantStringAsInput);
+            }
+
+            //cout << initialNumerator << " " << initialDenominator << "\n";
+
+            if(!isRootValueOfPowerDenominator)
+            helping_tools_1.numeratorDenominatorSimplification
+            (outputPowerDenominator, initialDenominator);
+
+            if(!isRootValueOfPowerNumerator)
+            helping_tools_1.numeratorDenominatorSimplification
+            (outputPowerNumerator, initialNumerator);
+
+            if(!isRootValueOfPowerDenominator) {
+            initialNumerator=helping_tools_1.multiplyStrings
+            (initialNumerator, outputPowerDenominator);
+            }
+
+            else
+            {
+                if(initialNumerator!="1" && outputPowerDenominator!="1")
+                initialNumerator="(" + initialNumerator + "*" + outputPowerDenominator + ")";
+
+                else if(outputPowerDenominator!="1")
+                initialNumerator="(" + outputPowerDenominator + ")";
+            }
+
+            if(!isRootValueOfPowerNumerator)
+            {
+            initialDenominator=helping_tools_1.multiplyStrings
+            (initialDenominator, outputPowerNumerator);
+            }
+
+            else
+            {
+                if(initialDenominator!="1" && outputPowerNumerator!="1")
+                initialDenominator="(" + initialDenominator + "*" + outputPowerNumerator + ")";
+
+                else if(outputPowerNumerator!="1")
+                initialDenominator="(" + outputPowerNumerator + ")";
+            }
+
+            cout << initialNumerator << " " << initialDenominator << "\n";
+
+            outputConstant="(" + initialNumerator;
+            if(initialDenominator!="1")
+            outputConstant=outputConstant+"/" + initialDenominator;
+
+            outputConstant=outputConstant + ")";
+
+        }
+    }
+}
+
+void constantPart::setIsRootValueOfPowerNumerator(int isRootValueOfPowerNumerator)
+{
+    this->isRootValueOfPowerNumerator=isRootValueOfPowerNumerator;
+}
+
+void constantPart::setIsRootValueOfPowerDenominator(int isRootValueOfPowerDenominator)
+{
+    this->isRootValueOfPowerDenominator=isRootValueOfPowerDenominator;
 }

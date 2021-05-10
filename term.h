@@ -18,6 +18,7 @@ class term
     variableFunctionPart variable_Function_Part_1;
     powerPart power_Part_1;
     variableFunctionPartTypeB variable_Function_Part_TypeB_1;
+    helpingtools helping_tools_1;
     int functionType;
 
         void termProcessorForTypeA(); // 9

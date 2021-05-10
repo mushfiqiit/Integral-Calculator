@@ -161,8 +161,13 @@ void term::termProcessorForTypeA() // 9
 void term::termProcessorForTypeB()
 {
     string tempConstantPartAsString=variable_Function_Part_TypeB_1.getConstantPart();
+    tempConstantPartAsString=helping_tools_1.removeBrackets(tempConstantPartAsString);
     constant_Part_1.setConstant(tempConstantPartAsString);
     //cout << tempConstantPartAsString << "\n";
+    for(int i=0;i<tempConstantPartAsString.length();i++)
+    {
+        if(tempConstantPartAsString[i]=='/') constant_Part_1.setFractionStatus(1);
+    }
 }
 
 void term::computeOutputTermForTypeA() // 11
@@ -252,16 +257,23 @@ void term::computeOutputTermForTypeA() // 11
 void term::computeOutputTermForTypeB()
 {
     variable_Function_Part_TypeB_1.formVariableFunctionAsOutput();
-    constant_Part_1.setOutputPowerNumerator(variable_Function_Part_TypeB_1.getValueOfaNumerator());
+    constant_Part_1.setOutputPowerNumerator
+    (variable_Function_Part_TypeB_1.getValueOfaNumerator());
     if(!variable_Function_Part_TypeB_1.getValueOfaDenominator().empty())
-    constant_Part_1.setOutputPowerDenominator(variable_Function_Part_TypeB_1.getValueOfaDenominator());
+    constant_Part_1.setOutputPowerDenominator
+    (variable_Function_Part_TypeB_1.getValueOfaDenominator());
     else
     constant_Part_1.setOutputPowerDenominator("1");
 
+    constant_Part_1.setIsRootValueOfPowerNumerator
+    (variable_Function_Part_TypeB_1.getIsRootValueOfaNumerator());
+    constant_Part_1.setIsRootValueOfPowerDenominator
+    (variable_Function_Part_TypeB_1.getIsRootValueOfaDenominator());
+
     constant_Part_1.formOutputConstant();
 
-    cout << variable_Function_Part_TypeB_1.getValueOfaNumerator() << " " <<
-        variable_Function_Part_TypeB_1.getValueOfaDenominator() << "\n";
+    //cout << variable_Function_Part_TypeB_1.getValueOfaNumerator() << " " <<
+        //variable_Function_Part_TypeB_1.getValueOfaDenominator() << "\n";
 
     outputTerm=outputTerm+constant_Part_1.getOutputConstant()
                 +variable_Function_Part_TypeB_1.getVariableFunctionAsOutput();

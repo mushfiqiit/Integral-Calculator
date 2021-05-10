@@ -1,6 +1,7 @@
 #ifndef CONSTANTPART_H
 #define CONSTANTPART_H
 #include <bits/stdc++.h>
+#include "helpingtools.h"
 
 using namespace std;
 
@@ -19,6 +20,8 @@ class constantPart
     int fractionStatus;
     bool isPositive;
     int functionType;
+    int isRootValueOfPowerNumerator, isRootValueOfPowerDenominator;
+    helpingtools helping_tools_1;
 
     void computeOutputConstantForFunctionTypeOne();
     void computeOutputConstantForFunctionTypeTwo();
@@ -50,6 +53,8 @@ class constantPart
         void setOutputPowerNumerator(string outputPowerNumerator);
         void setOutputPowerDenominator(string outputPowerDenominator);
         void setFunctionType(int functionTypeCode);
+        void setIsRootValueOfPowerNumerator(int isRootValueOfPowerNumerator);
+        void setIsRootValueOfPowerDenominator(int isRootValueOfPowerDenominator);
 };
 
 #endif // CONSTANTPART_H

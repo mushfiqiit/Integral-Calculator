@@ -29,19 +29,61 @@ int variableFunctionPartTypeB::getfunctionType(string variableFunctionToIdentify
 }
 
 
-bool variableFunctionPartTypeB::isDigit(char ch)
+void variableFunctionPartTypeB::setVariableFunctionType(int functionType) // 6
+{
+    this->variableFunctionType=functionType;
+}
+
+
+string variableFunctionPartTypeB::getConstantPart() // 7
+{
+    return this->constantPart;
+}
+
+
+void variableFunctionPartTypeB::formVariableFunctionAsOutput() // 8
+{
+    computeVariableFunctionAsOutput();
+}
+
+
+string variableFunctionPartTypeB::getValueOfaNumerator() // 9
+{
+    return this->valueOfaNumerator;
+}
+
+string variableFunctionPartTypeB::getValueOfaDenominator() // 10
+{
+    return this->valueOfaDenominator;
+}
+
+int variableFunctionPartTypeB::getIsRootValueOfaNumerator()
+{
+    return this->isRootValueOfaNumerator;
+}
+
+int variableFunctionPartTypeB::getIsRootValueOfaDenominator()
+{
+    return this->isRootValueOfaDenominator;
+}
+
+// ******     Private Part  ******************
+
+
+bool variableFunctionPartTypeB::isDigit(char ch) // 11
 {
     if((ch>='0' && ch<='9')||ch=='/') return true;
     else return false;
 }
 
-bool variableFunctionPartTypeB::isPerfectSquare(int numberToCheck)
+
+bool variableFunctionPartTypeB::isPerfectSquare(int numberToCheck) // 12
 {
     if(sqrt(numberToCheck)*sqrt(numberToCheck)==numberToCheck) return true;
     else return false;
 }
 
-string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFunctionToParse)
+string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFunctionToParse)//13
 {
     int i;
     string parsedVariableFunctionAsInput;
@@ -88,7 +130,7 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
     return parsedVariableFunctionAsInput;
 }
 
-int variableFunctionPartTypeB::identifyFunctionTypeB(string variableFunctionToIdentify)
+int variableFunctionPartTypeB::identifyFunctionTypeB(string variableFunctionToIdentify) //14
 {
     //cout << variableFunctionToIdentify << "\n";
     if(variableFunctionToIdentify=="a+x^2") return 10;
@@ -96,22 +138,7 @@ int variableFunctionPartTypeB::identifyFunctionTypeB(string variableFunctionToId
 }
 
 
-void variableFunctionPartTypeB::setVariableFunctionType(int functionType)
-{
-    this->variableFunctionType=functionType;
-}
-
-string variableFunctionPartTypeB::getConstantPart()
-{
-    return this->constantPart;
-}
-
-void variableFunctionPartTypeB::formVariableFunctionAsOutput()
-{
-    computeVariableFunctionAsOutput();
-}
-
-void variableFunctionPartTypeB::computeVariableFunctionAsOutput()
+void variableFunctionPartTypeB::computeVariableFunctionAsOutput() // 16
 {
     if(variableFunctionType==10)
     {
@@ -119,7 +146,7 @@ void variableFunctionPartTypeB::computeVariableFunctionAsOutput()
     }
 }
 
-void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeTen()
+void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeTen() // 17
 {
     variableFunctionAsOutput="tan^-1(";
     valueOfaNumeratorDenominatorSeperation();
@@ -139,7 +166,7 @@ void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeTe
 }
 
 
-string variableFunctionPartTypeB::constantAndMainFunctionSeperation
+string variableFunctionPartTypeB::constantAndMainFunctionSeperation // 18
 (string variableFunctionToSeperate)
 {
     string parsedNumerator, parsedDenominator;
@@ -204,7 +231,7 @@ string variableFunctionPartTypeB::constantAndMainFunctionSeperation
     return seperatedVariableFunction;
 }
 
-void variableFunctionPartTypeB::valueOfaNumeratorDenominatorSeperation()
+void variableFunctionPartTypeB::valueOfaNumeratorDenominatorSeperation() // 18
 {
     int i;
     for(i=0;i<valueOfaSquare.length();i++)
@@ -225,7 +252,7 @@ void variableFunctionPartTypeB::valueOfaNumeratorDenominatorSeperation()
     //cout << valueOfaSquareNumerator << " " << valueOfaSquareDenominator << "\n";
 }
 
-void variableFunctionPartTypeB::valueOfaNumeratorDenominatorCalculation()
+void variableFunctionPartTypeB::valueOfaNumeratorDenominatorCalculation() // 19
 {
     valueOfaSquareNumeratorAsInt=helping_tools_1.convertStringToInt
                         (valueOfaSquareNumerator);
@@ -239,33 +266,27 @@ void variableFunctionPartTypeB::valueOfaNumeratorDenominatorCalculation()
     {
         valueOfaNumeratorAsInt=sqrt(valueOfaSquareNumeratorAsInt);
         valueOfaNumerator=helping_tools_1.convertIntToString(valueOfaNumeratorAsInt);
+        isRootValueOfaNumerator=0;
     }
 
     else
     {
         valueOfaNumerator="(" + valueOfaSquareNumerator+ "^(1/2))";
+        isRootValueOfaNumerator=1;
     }
 
     if(isPerfectSquare(valueOfaSquareDenominatorAsInt))
     {
         valueOfaDenominatorAsInt=sqrt(valueOfaSquareDenominatorAsInt);
         valueOfaDenominator=helping_tools_1.convertIntToString(valueOfaDenominatorAsInt);
+        isRootValueOfaDenominator=0;
     }
 
     else
     {
         valueOfaDenominator="(" + valueOfaSquareDenominator+"^(1/2))";
+        isRootValueOfaDenominator=1;
     }
     //cout << valueOfaNumerator << " " << valueOfaDenominator << "\n";
-}
-
-string variableFunctionPartTypeB::getValueOfaNumerator()
-{
-    return this->valueOfaNumerator;
-}
-
-string variableFunctionPartTypeB::getValueOfaDenominator()
-{
-    return this->valueOfaDenominator;
 }
 
