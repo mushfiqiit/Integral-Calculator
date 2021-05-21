@@ -13,7 +13,7 @@ void variableFunctionPartTypeB::setVariableFunctionPart(string variableFunctionA
     this->variableFunctionAsInput=variableFunctionAsInput;
 }
 
-string variableFunctionPartTypeB::getVariableFunctionAsOutput()
+string variableFunctionPartTypeB::getVariableFunctionAsOutput() // 3
 {
     return this->variableFunctionAsOutput;
 }
@@ -67,7 +67,7 @@ int variableFunctionPartTypeB::getIsRootValueOfaDenominator()
     return this->isRootValueOfaDenominator;
 }
 
-// ******     Private Part  ******************
+// ***************     Private Part     ******************
 
 
 bool variableFunctionPartTypeB::isDigit(char ch) // 11
@@ -97,12 +97,15 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
             constantPartNumerator=constantPartNumerator+variableFunctionToParse[i];
         }
     } i++;
-    int digitFlag=0;
+    int digitFlag=0, powerFlag=0;
     for(;i<variableFunctionToParse.size();i++)
     {
         //cout << variableFunctionToParse[i] << " " << digitFlag << "\n";
         //if(isDigit(variableFunctionToParse[i])) cout << "Yes \n";
-        if(isDigit(variableFunctionToParse[i]) && digitFlag==0 && variableFunctionToParse[i-1]!='^')
+        if(variableFunctionToParse[i]=='^') powerFlag=1;
+
+        if(isDigit(variableFunctionToParse[i]) && digitFlag==0
+           && variableFunctionToParse[i-1]!='^' && powerFlag==0)
         {
             //cout << "1\n";
             parsedVariableFunctionAsInput=parsedVariableFunctionAsInput+"a";
@@ -121,6 +124,8 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
                                                 && variableFunctionToParse[i]!=')')
         {
             //cout << "3\n";
+            if(!isDigit(variableFunctionToParse[i]) &&
+               variableFunctionToParse[i]!='^' && variableFunctionToParse[i]!='/') powerFlag=0;
             parsedVariableFunctionAsInput=parsedVariableFunctionAsInput
                     +variableFunctionToParse[i];
             digitFlag=0;
@@ -132,8 +137,11 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
 
 int variableFunctionPartTypeB::identifyFunctionTypeB(string variableFunctionToIdentify) //14
 {
-    //cout << variableFunctionToIdentify << "\n";
+    cout << variableFunctionToIdentify << "\n";
     if(variableFunctionToIdentify=="a+x^2") return 10;
+    else if(variableFunctionToIdentify=="a-x^2^1/2") { return 11; }
+    else if(variableFunctionToIdentify=="a-x^2") { return 12; }
+    else if(variableFunctionToIdentify=="x^2-a") { return 13; }
     else return 0;
 }
 
@@ -143,6 +151,21 @@ void variableFunctionPartTypeB::computeVariableFunctionAsOutput() // 16
     if(variableFunctionType==10)
     {
         computeVariableFunctionAsOutputForFunctionTypeTen();
+    }
+
+    else if(variableFunctionType==11)
+    {
+        computeVariableFunctionAsOutputForFunctionTypeEleven();
+    }
+
+    else if(variableFunctionType==12)
+    {
+        computeVariableFunctionAsOutputForFunctionTypeTwelve();
+    }
+
+    else if(variableFunctionType==13)
+    {
+        computeVariableFunctionAsOutputForFunctionTypeThirteen();
     }
 }
 
@@ -164,6 +187,67 @@ void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeTe
     variableFunctionAsOutput=variableFunctionAsOutput+partToAdd;
     variableFunctionAsOutput=variableFunctionAsOutput+")";
 }
+
+
+void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeEleven()
+{
+    variableFunctionAsOutput="sin^-1(";
+    valueOfaNumeratorDenominatorSeperation();
+    valueOfaNumeratorDenominatorCalculation();
+    string partToAdd="x";
+    if(valueOfaDenominator!="1")
+    {
+        partToAdd="(" + partToAdd+ "*" +valueOfaDenominator+")";
+    }
+
+    if(valueOfaNumerator!="1")
+    {
+        partToAdd="(" + partToAdd + "/" + valueOfaNumerator + ")";
+    }
+    variableFunctionAsOutput=variableFunctionAsOutput+partToAdd;
+    variableFunctionAsOutput=variableFunctionAsOutput+")";
+}
+
+
+void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeTwelve()
+{
+    variableFunctionAsOutput="ln((";
+    valueOfaNumeratorDenominatorSeperation();
+    valueOfaNumeratorDenominatorCalculation();
+    if(valueOfaDenominator=="1")
+    {
+        valueOfa=valueOfaNumerator;
+        variableFunctionAsOutput=variableFunctionAsOutput+valueOfa + "+x)/(" +
+                valueOfa + "-x))";
+    }
+
+    else
+    {
+        variableFunctionAsOutput=variableFunctionAsOutput+valueOfaNumerator + "+" +
+        valueOfaDenominator + "*x)/(" + valueOfaNumerator + "-" + valueOfaDenominator + "*x))";
+    }
+}
+
+
+void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeThirteen()
+{
+    variableFunctionAsOutput="ln((";
+    valueOfaNumeratorDenominatorSeperation();
+    valueOfaNumeratorDenominatorCalculation();
+    if(valueOfaDenominator=="1")
+    {
+        valueOfa=valueOfaNumerator;
+        variableFunctionAsOutput=variableFunctionAsOutput+ "x-" + valueOfa + ")/(" +
+                "x+" + valueOfa + "))";
+    }
+
+    else
+    {
+        variableFunctionAsOutput=variableFunctionAsOutput+ valueOfaDenominator + "*x" + "-" +
+        valueOfaNumerator + ")/(" +valueOfaDenominator + "*x+" + valueOfaNumerator +  "))";
+    }
+}
+
 
 
 string variableFunctionPartTypeB::constantAndMainFunctionSeperation // 18

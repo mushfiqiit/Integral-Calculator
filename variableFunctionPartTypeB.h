@@ -29,6 +29,9 @@ class variableFunctionPartTypeB
     int identifyFunctionTypeB(string variableFunctionToIdentify); // 14
     void computeVariableFunctionAsOutput(); // 15
     void computeVariableFunctionAsOutputForFunctionTypeTen(); // 16
+    void computeVariableFunctionAsOutputForFunctionTypeEleven();
+    void computeVariableFunctionAsOutputForFunctionTypeTwelve();
+    void computeVariableFunctionAsOutputForFunctionTypeThirteen();
     string constantAndMainFunctionSeperation(string variableFunctionToSeperate); // 17
     void valueOfaNumeratorDenominatorSeperation(); // 18
     void valueOfaNumeratorDenominatorCalculation(); // 19
