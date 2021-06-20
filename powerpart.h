@@ -25,6 +25,7 @@ class powerPart
     int functionType;
 
     void computeOutputPowerForFunctionTypeOne();
+    void computeOutputPowerForFunctionTypeNine();
     /*
     Does all the internal calculations to form the output power
     for function type one.
@@ -41,6 +42,7 @@ class powerPart
         must be formed.
         */
         string getOutputPower();
+        string getOutputPowerWithX();
         void setFractionStatus(int fractionStatus);
         int getFractionStatus();
         string getNumerator();

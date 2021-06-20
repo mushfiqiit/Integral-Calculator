@@ -39,7 +39,11 @@ void constantPart::formOutputConstant()
 
     else if(functionType==8) computeOutputConstantForFunctionTypeEight();
 
+    else if(functionType==9) computeOutputConstantForFunctionTypeNine();
+
     else if(functionType==10) computeOutputConstantForFunctionTypeTen();
+
+    else if(functionType==12 || functionType==13) computeOutputConstantForFunctionTypeTwelve();
 }
 
 void constantPart::computeOutputConstantForFunctionTypeOne()
@@ -250,7 +254,12 @@ void constantPart:: computeOutputConstantForFunctionTypeSeven()
     computeOutputConstantForFunctionTypeOne();
 }
 
-void constantPart:: computeOutputConstantForFunctionTypeEight()
+void constantPart::computeOutputConstantForFunctionTypeEight()
+{
+    computeOutputConstantForFunctionTypeOne();
+}
+
+void constantPart::computeOutputConstantForFunctionTypeNine()
 {
     computeOutputConstantForFunctionTypeOne();
 }
@@ -260,10 +269,23 @@ void constantPart::computeOutputConstantForFunctionTypeTen()
     //cout << isRootValueOfPowerNumerator << " " << isRootValueOfPowerDenominator << "\n";
     //cout << outputPowerNumerator << " " << outputPowerDenominator << "\n";
     if(!isRootValueOfPowerNumerator && !isRootValueOfPowerDenominator)
-    computeOutputConstantForFunctionTypeOne();
+    {
+        if(functionType==12 || functionType==13)
+        outputPowerNumerator=helping_tools_1.multiplyStrings(outputPowerNumerator, "2");
+        computeOutputConstantForFunctionTypeOne();
+    }
 
     else
     {
+        int emptyflag=0;
+        if(functionType==12 || functionType==13)
+        {
+            if(constantStringAsInput=="" || constantStringAsInput.empty())
+            { constantStringAsInput="1/2"; fractionStatus=1; emptyflag=1; }
+
+        }
+        //cout << constantStringAsInput << "\n";
+
         if(constantStringAsInput=="" || constantStringAsInput.empty())
         {
             outputConstant=outputConstant+"(" + outputPowerDenominator +"/"+
@@ -272,16 +294,21 @@ void constantPart::computeOutputConstantForFunctionTypeTen()
 
         else
         {
-            //cout << constantStringAsInput << "\n";
+
             if(fractionStatus==0)  //Calculation when constant part is not a fraction
             {
                 initialNumerator=constantStringAsInput;
+                if(functionType==12 || functionType==13)
+                initialDenominator="2";
+                else
                 initialDenominator="1";
             }
 
             else
             {
                 parseFractionConstant(constantStringAsInput);
+                if(!emptyflag) initialDenominator=helping_tools_1.multiplyStrings
+                    (initialDenominator, "2");
             }
 
             //cout << initialNumerator << " " << initialDenominator << "\n";
@@ -323,7 +350,7 @@ void constantPart::computeOutputConstantForFunctionTypeTen()
                 initialDenominator="(" + outputPowerNumerator + ")";
             }
 
-            cout << initialNumerator << " " << initialDenominator << "\n";
+            //cout << initialNumerator << " " << initialDenominator << "\n";
 
             outputConstant="(" + initialNumerator;
             if(initialDenominator!="1")
@@ -334,6 +361,13 @@ void constantPart::computeOutputConstantForFunctionTypeTen()
         }
     }
 }
+
+
+void constantPart::computeOutputConstantForFunctionTypeTwelve()
+{
+    computeOutputConstantForFunctionTypeTen();
+}
+
 
 void constantPart::setIsRootValueOfPowerNumerator(int isRootValueOfPowerNumerator)
 {

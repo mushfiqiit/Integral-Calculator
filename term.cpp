@@ -158,7 +158,7 @@ void term::termProcessorForTypeA() // 9
     power_Part_1.setInputPower(power);
 }
 
-void term::termProcessorForTypeB()
+void term::termProcessorForTypeB() // 10
 {
     string tempConstantPartAsString=variable_Function_Part_TypeB_1.getConstantPart();
     tempConstantPartAsString=helping_tools_1.removeBrackets(tempConstantPartAsString);
@@ -176,9 +176,12 @@ void term::computeOutputTermForTypeA() // 11
     //constant_Part_1.formOutputConstant(power_Part_1.getInputPower());
 
     //cout << "here \n";
+    //cout << functionType << "\n";
 
-    if(functionType==1 || functionType==2)
+    if(functionType==1 || functionType==2 || functionType==9)
     {
+        //cout << power_Part_1.getFractionStatus() << " "
+        //<< power_Part_1.getOutputPower() << "\n";
         if(power_Part_1.getFractionStatus()==0)
         {
             constant_Part_1.setOutputPowerNumerator(power_Part_1.getOutputPower());
@@ -213,12 +216,12 @@ void term::computeOutputTermForTypeA() // 11
         outputTerm=outputTerm+constant_Part_1.getOutputConstant()+
                 variable_Function_Part_1.getOutputVariableFunction();
 
-                if(functionType==1)
+                if(functionType==1 || functionType==9)
                 {
                 outputTerm=outputTerm+"^";
                 }
 
-        outputTerm=outputTerm+power_Part_1.getOutputPower();
+        outputTerm=outputTerm+power_Part_1.getOutputPowerWithX();
     //****************************************
     }
 
@@ -292,7 +295,7 @@ void term::identifyFunctionType(string constant, string variableFunction, string
                croppedvariableFunction=croppedvariableFunction+variableFunction[i];
            }
     }
-    //cout << croppedvariableFunction << "\n";
+    //cout << constant << " " << croppedvariableFunction << " " << power << "\n";
     if(power=="-1")
     {
         setTermFunctionType(2);
@@ -334,6 +337,11 @@ void term::identifyFunctionType(string constant, string variableFunction, string
     else if(croppedvariableFunction=="x")
     {
         setTermFunctionType(1);
+    }
+
+    else if(croppedvariableFunction=="e")
+    {
+        setTermFunctionType(9);
     }
 }
 

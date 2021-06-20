@@ -19,7 +19,7 @@
 	"term.h"
 	"outputUnit.h"
 
-1585313037 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
+1624216787 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
 	<bits/stdc++.h>
 	"header1.h"
 
@@ -47,26 +47,26 @@
 1585313037 e:\work\second year\spl- 1\integral-calculator-master\outputunit.h
 	<bits/stdc++.h>
 
-1618223519 source:e:\work\second year\spl- 1\integral-calculator-master\term.cpp
+1624222364 source:e:\work\second year\spl- 1\integral-calculator-master\term.cpp
 	<bits/stdc++.h>
 	"term.h"
 
-1618218265 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
+1624221982 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
 	<bits/stdc++.h>
 	"helpingtools.h"
 
-1618474287 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
+1624222326 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
 	"constantpart.h"
 	<bits/stdc++.h>
 	<string>
 	<iostream>
 
-1613794849 source:e:\work\second year\spl- 1\integral-calculator-master\powerpart.cpp
+1624222948 source:e:\work\second year\spl- 1\integral-calculator-master\powerpart.cpp
 	"powerpart.h"
 	<bits/stdc++.h>
 	<string>
 
-1587141207 e:\work\second year\spl- 1\integral-calculator-master\powerpart.h
+1624221849 e:\work\second year\spl- 1\integral-calculator-master\powerpart.h
 	<bits/stdc++.h>
 
 1582607458 source:e:\semester 3\integral-calculator-master\term.cpp
@@ -106,11 +106,11 @@
 1581911117 e:\semester 3\integral-calculator-master\outputunit.h
 	<bits/stdc++.h>
 
-1614881589 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.h
+1624222539 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.h
 	<bits/stdc++.h>
 	"coefficientpart.h"
 
-1614886717 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.cpp
+1624222574 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.cpp
 	"variablefunctionpart.h"
 	<bits/stdc++.h>
 
@@ -211,7 +211,7 @@
 	<bits/stdc++.h>
 	"helpingtools.h"
 
-1621589639 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.cpp
+1621601624 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.cpp
 	"variableFunctionPartTypeB.h"
 	<bits/stdc++.h>
 

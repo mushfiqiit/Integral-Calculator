@@ -22,6 +22,7 @@ class variableFunctionPart
         void computeOutputVariableFunctionForFunctionTypeSix();
         void computeOutputVariableFunctionForFunctionTypeSeven();
         void computeOutputVariableFunctionForFunctionTypeEight();
+        void computeOutputVariableFunctionForFunctionTypeNine();
 
     public:
         variableFunctionPart(); // (1)

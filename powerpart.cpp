@@ -31,12 +31,20 @@ void powerPart::formOutputPower()
     {
 
     }
+
+    else if(functionType==9)
+    {
+        computeOutputPowerForFunctionTypeNine();
+    }
+    //cout << outputPower << "\n";
 }
 
 void powerPart::computeOutputPowerForFunctionTypeOne()
 {
     if(fractionStatus==0)
     {
+        if(functionType==9) outputPower=inputPower;
+    else {
     stringstream ss;
     convertedInputPower=atoi(inputPower.c_str());
     //cout << convertedInputPower << "\n";
@@ -44,6 +52,7 @@ void powerPart::computeOutputPowerForFunctionTypeOne()
     //cout << convertedOutputPower << "\n";
     ss<< convertedOutputPower;
     outputPower=ss.str();
+        }
     }
 
     else if(fractionStatus==1)
@@ -84,14 +93,49 @@ void powerPart::computeOutputPowerForFunctionTypeOne()
             }
         }
         //**********************
-
+        if(functionType==9)
+        {
+            numeratorAsOutput=numerator; denominatorAsOutput=denominator;
+            outputPower=inputPower;
+            //cout << outputPower << "\n";
+        }
+        else
         computeFractionalPowerAsOutput(numerator, denominator);
     }
 }
 
+void powerPart::computeOutputPowerForFunctionTypeNine()
+{
+    computeOutputPowerForFunctionTypeOne();
+}
+
 string powerPart::getOutputPower()
 {
-    return outputPower;
+    if(functionType==9)
+    {
+        string temporaryOutputPower;
+        //cout << outputPower << " " << outputPower.length() << "\n";
+        for(int i=0;i<outputPower.length();i++)
+        {
+            if(outputPower[i]!='x') temporaryOutputPower+=outputPower[i];
+            //cout << temporaryOutputPower << " " << outputPower[i] << "\n";
+        }
+        if(temporaryOutputPower.empty()) temporaryOutputPower="1";
+        //cout << temporaryOutputPower << "\n";
+        return temporaryOutputPower;
+    }
+
+    else
+    {
+        return outputPower;
+    }
+}
+
+
+string powerPart::getOutputPowerWithX()
+{
+    //cout << outputPower << "\n";
+    return ("("+outputPower+")");
 }
 
 void powerPart::setFractionStatus(int fractionStatus)
@@ -178,6 +222,16 @@ string powerPart::getDenominator()
 
 string powerPart::getNumeratorAsOutput()
 {
+    if(functionType==9)
+    {
+        string temporaryNumerator;
+        for(int i=0;i<numeratorAsOutput.length();i++)
+        {
+            if(numeratorAsOutput[i]!='x') temporaryNumerator+=numeratorAsOutput[i];
+        }
+        //cout << temporaryNumerator << "\n";
+        return temporaryNumerator;
+    }
     return numeratorAsOutput;
 }
 

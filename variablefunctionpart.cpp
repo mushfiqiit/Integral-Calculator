@@ -156,6 +156,8 @@ void variableFunctionPart::formOutputVariableFunction() // 8
     else if(functionType==7) computeOutputVariableFunctionForFunctionTypeSeven();
 
     else if(functionType==8) computeOutputVariableFunctionForFunctionTypeEight();
+
+    else if(functionType==9) computeOutputVariableFunctionForFunctionTypeNine();
 }
 
 string variableFunctionPart::getCoefficientStringAsInput() // 9
@@ -296,4 +298,9 @@ void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeEight()
                 + "/" + coefficient_Part_1.getCoefficientDenominator()
                 + ")";
     }
+}
+
+void variableFunctionPart::computeOutputVariableFunctionForFunctionTypeNine()
+{
+    outputVariableFunction="e";
 }

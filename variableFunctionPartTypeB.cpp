@@ -137,7 +137,7 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
 
 int variableFunctionPartTypeB::identifyFunctionTypeB(string variableFunctionToIdentify) //14
 {
-    cout << variableFunctionToIdentify << "\n";
+    //cout << variableFunctionToIdentify << "\n";
     if(variableFunctionToIdentify=="a+x^2") return 10;
     else if(variableFunctionToIdentify=="a-x^2^1/2") { return 11; }
     else if(variableFunctionToIdentify=="a-x^2") { return 12; }
