@@ -135,6 +135,7 @@ string powerPart::getOutputPower()
 string powerPart::getOutputPowerWithX()
 {
     //cout << outputPower << "\n";
+    if(outputPower.empty()) return outputPower;
     return ("("+outputPower+")");
 }
 

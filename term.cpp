@@ -48,7 +48,7 @@ powerPart term::getPowerPart() // 6
 
 void term::formOutputTerm() // 7
 {
-    if(functionType>=1 && functionType<=9)
+    if(functionType>=1 && functionType<=9 || functionType==-1)
     computeOutputTermForTypeA();
 
     else
@@ -148,7 +148,7 @@ void term::termProcessorForTypeA() // 9
         power="0"; functionType="x";
     }
     // *******************
-
+    //cout << constant << " " << functionType << " " << power << "\n";
     identifyFunctionType(constant, functionType, power);
 
     //cout << constant << " " << functionType << " " << power << "\n";
@@ -225,9 +225,10 @@ void term::computeOutputTermForTypeA() // 11
     //****************************************
     }
 
-    else if(functionType==3 || functionType==4 || functionType==5 || functionType==6 || functionType==7
-            || functionType==8)
+    else if(functionType==3 || functionType==4 || functionType==5
+     || functionType==6 || functionType==7 || functionType==8)
     {
+
         /*cout << constant_Part_1.getConstantStringAsInput() << " "
             << variable_Function_Part_1.getVariableFunctionAsInput() << " "
             << variable_Function_Part_1.getCoefficientStringAsInput() << endl; */
@@ -255,6 +256,8 @@ void term::computeOutputTermForTypeA() // 11
             outputTerm=outputTerm+constant_Part_1.getOutputConstant()
                  +variable_Function_Part_1.getOutputVariableFunction();
     }
+
+    else if(functionType==-1) outputTerm= "Invalid Input";
 }
 
 void term::computeOutputTermForTypeB()
@@ -343,6 +346,12 @@ void term::identifyFunctionType(string constant, string variableFunction, string
     {
         setTermFunctionType(9);
     }
+
+    else
+    {
+        setTermFunctionType(-1);
+    }
+    //cout << functionType << "\n";
 }
 
 void term::setTermFunctionType(int functionTypeCode) // 13

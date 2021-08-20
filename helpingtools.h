@@ -5,6 +5,7 @@ using namespace std;
 
 class helpingtools
 {
+        char rootSign=(char)251;
     public:
         helpingtools(); // 1
 
@@ -15,7 +16,8 @@ class helpingtools
         string removeBrackets(string stringToRemoveBrackets); // 6
         string multiplyStrings(string stringToMultiply_1,string stringToMultiply_2); // 7
         string addRoot(string stringToAddRoot);
-        string numeratorDenominatorSimplification(string& string_a, string& string_2);
+        string numeratorDenominatorSimplification(string& numerator, string& denominator);
+        string addRootSign(string stringToRoot);
 };
 
 #endif // HELPINGTOOLS_H

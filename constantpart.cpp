@@ -225,6 +225,7 @@ void constantPart::setFunctionType(int functionTypeCode)
 
 void constantPart::computeOutputConstantForFunctionTypeTwo()
 {
+    if(!constantStringAsInput.empty())
     outputConstant=outputConstant+"("+constantStringAsInput+")";
     //cout << outputConstant << endl;
 }

@@ -60,6 +60,7 @@ string helpingtools::addRoot(string stringToAddRoot)
 {
     string resultString;
     resultString= "(" + stringToAddRoot + "^(1/2))";
+    return resultString;
 }
 
 string helpingtools::numeratorDenominatorSimplification(string& numerator, string& denominator)
@@ -91,4 +92,10 @@ string helpingtools::numeratorDenominatorSimplification(string& numerator, strin
     numerator=convertIntToString(numeratorAsIntFinal);
 
     denominator=convertIntToString(denominatorAsIntFinal);
+}
+
+string helpingtools::addRootSign(string stringToRoot)
+{
+    stringToRoot=rootSign+"("+stringToRoot+")";
+    return stringToRoot;
 }
