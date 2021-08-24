@@ -355,7 +355,7 @@ void variableFunctionPartTypeB::valueOfaNumeratorDenominatorCalculation() // 19
 
     else
     {
-        valueOfaNumerator=helping_tools_1.addRoot(valueOfaSquareNumerator);
+        valueOfaNumerator=helping_tools_1.addRootSign(valueOfaSquareNumerator);
         isRootValueOfaNumerator=1;
     }
 
@@ -368,7 +368,7 @@ void variableFunctionPartTypeB::valueOfaNumeratorDenominatorCalculation() // 19
 
     else
     {
-        valueOfaDenominator=helping_tools_1.addRoot(valueOfaSquareDenominator);
+        valueOfaDenominator=helping_tools_1.addRootSign(valueOfaSquareDenominator);
         isRootValueOfaDenominator=1;
     }
     //cout << valueOfaNumerator << " " << valueOfaDenominator << "\n";

@@ -5,7 +5,7 @@ using namespace std;
 
 class helpingtools
 {
-        char rootSign=(char)251;
+        string rootSign;
     public:
         helpingtools(); // 1
 

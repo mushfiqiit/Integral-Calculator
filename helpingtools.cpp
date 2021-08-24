@@ -2,6 +2,7 @@
 
 helpingtools::helpingtools() // 1
 {
+    rootSign+=(char)(251);
     //ctor
 }
 
@@ -96,6 +97,7 @@ string helpingtools::numeratorDenominatorSimplification(string& numerator, strin
 
 string helpingtools::addRootSign(string stringToRoot)
 {
-    stringToRoot=rootSign+"("+stringToRoot+")";
-    return stringToRoot;
+    string resultString=(string)rootSign+"(" + stringToRoot + ")" ;
+    //cout << rootSign << " " << resultString << "\n";
+    return resultString;
 }
