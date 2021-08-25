@@ -171,80 +171,81 @@ void variableFunctionPartTypeB::computeVariableFunctionAsOutput() // 16
 
 void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeTen() // 17
 {
-    variableFunctionAsOutput="tan^-1(";
+    variableFunctionAsOutput="tan^-1( ";
     valueOfaNumeratorDenominatorSeperation();
     valueOfaNumeratorDenominatorCalculation();
     string partToAdd="x";
     if(valueOfaDenominator!="1")
     {
-        partToAdd="(" + partToAdd+ "*" +valueOfaDenominator+")";
+        partToAdd=" (" + partToAdd+ "*" +valueOfaDenominator+") ";
     }
 
     if(valueOfaNumerator!="1")
     {
-        partToAdd="(" + partToAdd + "/" + valueOfaNumerator + ")";
+        partToAdd="(" + partToAdd + " / " + valueOfaNumerator + " )";
     }
     variableFunctionAsOutput=variableFunctionAsOutput+partToAdd;
-    variableFunctionAsOutput=variableFunctionAsOutput+")";
+    variableFunctionAsOutput=variableFunctionAsOutput+" )";
 }
 
 
 void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeEleven()
 {
-    variableFunctionAsOutput="sin^-1(";
+    variableFunctionAsOutput="sin^-1( ";
     valueOfaNumeratorDenominatorSeperation();
     valueOfaNumeratorDenominatorCalculation();
     string partToAdd="x";
     if(valueOfaDenominator!="1")
     {
-        partToAdd="(" + partToAdd+ "*" +valueOfaDenominator+")";
+        partToAdd=" (" + partToAdd+ "*" +valueOfaDenominator+") ";
     }
 
     if(valueOfaNumerator!="1")
     {
-        partToAdd="(" + partToAdd + "/" + valueOfaNumerator + ")";
+        partToAdd="(" + partToAdd + " / " + valueOfaNumerator + ")";
     }
     variableFunctionAsOutput=variableFunctionAsOutput+partToAdd;
-    variableFunctionAsOutput=variableFunctionAsOutput+")";
+    variableFunctionAsOutput=variableFunctionAsOutput+" )";
 }
 
 
 void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeTwelve()
 {
-    variableFunctionAsOutput="ln((";
+    variableFunctionAsOutput="ln( (";
     valueOfaNumeratorDenominatorSeperation();
     valueOfaNumeratorDenominatorCalculation();
     if(valueOfaDenominator=="1")
     {
         valueOfa=valueOfaNumerator;
-        variableFunctionAsOutput=variableFunctionAsOutput+valueOfa + "+x)/(" +
-                valueOfa + "-x))";
+        variableFunctionAsOutput=variableFunctionAsOutput+valueOfa + "+x) / (" +
+                valueOfa + "-x ) )";
     }
 
     else
     {
-        variableFunctionAsOutput=variableFunctionAsOutput+valueOfaNumerator + "+" +
-        valueOfaDenominator + "*x)/(" + valueOfaNumerator + "-" + valueOfaDenominator + "*x))";
+        variableFunctionAsOutput=variableFunctionAsOutput+valueOfaNumerator + " + " +
+        "x*" + valueOfaDenominator + ") / (" + valueOfaNumerator + "-" +
+        "x*" + valueOfaDenominator + " ) )";
     }
 }
 
 
 void variableFunctionPartTypeB::computeVariableFunctionAsOutputForFunctionTypeThirteen()
 {
-    variableFunctionAsOutput="ln((";
+    variableFunctionAsOutput="ln( (";
     valueOfaNumeratorDenominatorSeperation();
     valueOfaNumeratorDenominatorCalculation();
     if(valueOfaDenominator=="1")
     {
         valueOfa=valueOfaNumerator;
-        variableFunctionAsOutput=variableFunctionAsOutput+ "x-" + valueOfa + ")/(" +
-                "x+" + valueOfa + "))";
+        variableFunctionAsOutput=variableFunctionAsOutput+ "x-" + valueOfa + ") / (" +
+                "x+" + valueOfa + " ) )";
     }
 
     else
     {
         variableFunctionAsOutput=variableFunctionAsOutput+ valueOfaDenominator + "*x" + "-" +
-        valueOfaNumerator + ")/(" +valueOfaDenominator + "*x+" + valueOfaNumerator +  "))";
+        valueOfaNumerator + ") / (" +valueOfaDenominator + "*x+" + valueOfaNumerator +  " ) )";
     }
 }
 

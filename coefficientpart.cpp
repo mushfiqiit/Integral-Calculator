@@ -44,6 +44,9 @@ void Coefficientpart::setCoeffficientAsInput(string coefficentAsInput)
                 coefficientDenominator=coefficientDenominator+coefficentAsInput[i];
             }
         }
+        //cout << coefficientNumerator << " " << coefficientDenominator << "\n";
+        formOutputCoefficient();
+        //cout << coefficientNumerator << " " << coefficientDenominator << "\n";
     }
 }
 
@@ -76,4 +79,13 @@ string Coefficientpart::getCoefficientNumerator()
 string Coefficientpart::getCoefficientDenominator()
 {
     return this->coefficientDenominator;
+}
+
+void Coefficientpart::formOutputCoefficient()
+{
+    if(fractionStatus==1)
+    {
+        helping_Tools_1.numeratorDenominatorSimplification(coefficientNumerator, coefficientDenominator);
+        if(coefficientDenominator=="1") { fractionStatus=0; coefficentAsInput=coefficientNumerator; }
+    }
 }

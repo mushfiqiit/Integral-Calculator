@@ -16,7 +16,7 @@ class helpingtools
         string removeBrackets(string stringToRemoveBrackets); // 6
         string multiplyStrings(string stringToMultiply_1,string stringToMultiply_2); // 7
         string addRoot(string stringToAddRoot);
-        string numeratorDenominatorSimplification(string& numerator, string& denominator);
+        void numeratorDenominatorSimplification(string& numerator, string& denominator);
         string addRootSign(string stringToRoot);
 };
 

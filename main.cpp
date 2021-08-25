@@ -6,18 +6,26 @@ int main()
 {
     string recievedInput;
     term term_unit_1;
-
-
+    cout << "\n\n";
+    cout << "\t\t\t\t\t\t\t*****Integral Calculator*****\n\n";
+    for(int i=0;i<6;i++) cout << "\t";
+    for(int i=0;i<45;i++) cout << "-";
+    cout << "\n\n";
     //Input taking
 
     while(recievedInput!="quit")
     {
-        cout << "Input : ";
+        cout << "\n\n\tInput : ";
         getline(cin, recievedInput);
         cout << "\n\n";
         if(recievedInput=="quit")
         {
+            cout << "Thank you for using our Integral Calculator\n\n";
             break;
+        }
+        if(recievedInput.empty())
+        {
+            cout << "\t\tPlease try again.\n\n"; continue;
         }
     inputTakingUnit inputTakingUnit_1;
     inputTakingUnit_1.takeInput(recievedInput);

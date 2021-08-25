@@ -25,7 +25,7 @@
 
 1585313037 t.h"
 
-1629489115 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
+1629801043 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
 	<bits/stdc++.h>
 	"header1.h"
 
@@ -52,7 +52,7 @@
 
 1615401689 unctionPartTypeB.h"
 
-1629489115 source:e:\work\second year\spl- 1\integral-calculator-master\outputunit.cpp
+1629795870 source:e:\work\second year\spl- 1\integral-calculator-master\outputunit.cpp
 	"outputUnit.h"
 	<bits/stdc++.h>
 
@@ -77,7 +77,7 @@
 	<string>
 	<iostream>
 
-1629489115 source:e:\work\second year\spl- 1\integral-calculator-master\powerpart.cpp
+1629799263 source:e:\work\second year\spl- 1\integral-calculator-master\powerpart.cpp
 	"powerpart.h"
 	<bits/stdc++.h>
 	<string>
@@ -221,8 +221,9 @@
 	<string>
 	<iostream>
 
-1629489115 e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.h
+1629863551 e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.h
 	<bits/stdc++.h>
+	"helpingtools.h"
 
 1629489115 source:e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.cpp
 	"coefficientpart.h"
@@ -231,14 +232,14 @@
 	<bits/stdc++.h>
 	"helpingtools.h"
 
-1629785310 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.cpp
+1629808595 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.cpp
 	"variableFunctionPartTypeB.h"
 	<bits/stdc++.h>
 
-1618471967 source:e:\work\second year\spl- 1\integral-calculator-master\helpingtools.cpp
+1629863119 source:e:\work\second year\spl- 1\integral-calculator-master\helpingtools.cpp
 	"helpingtools.h"
 
-1629786004 e:\work\second year\spl- 1\integral-calculator-master\helpingtools.h
+1629863126 e:\work\second year\spl- 1\integral-calculator-master\helpingtools.h
 	<bits/stdc++.h>
 
 1624223128 source:/home/mushfiqur/Downloads/Integral-Calculator-master/coefficientpart.cpp

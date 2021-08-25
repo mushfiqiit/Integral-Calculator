@@ -173,7 +173,7 @@ void powerPart::computeFractionalPowerAsOutput(string numerator, string denomina
     numeratorAsOutput=processedNumerator;
     denominatorAsOutput=processedDenominator;
 
-    outputPower= "("+processedNumerator+"/"+processedDenominator+")";
+    outputPower= processedNumerator+"/"+processedDenominator;
 }
 
 void powerPart::numeratorDenominatorSimplification(string numerator, string denominator)

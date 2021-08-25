@@ -64,7 +64,7 @@ string helpingtools::addRoot(string stringToAddRoot)
     return resultString;
 }
 
-string helpingtools::numeratorDenominatorSimplification(string& numerator, string& denominator)
+void helpingtools::numeratorDenominatorSimplification(string& numerator, string& denominator)
 {
     int numeratorAsInt=atoi(numerator.c_str());
     int denominatorAsInt=atoi(denominator.c_str());
@@ -97,7 +97,7 @@ string helpingtools::numeratorDenominatorSimplification(string& numerator, strin
 
 string helpingtools::addRootSign(string stringToRoot)
 {
-    string resultString=(string)rootSign+"(" + stringToRoot + ")" ;
+    string resultString=(string)rootSign+"(" + stringToRoot + ") " ;
     //cout << rootSign << " " << resultString << "\n";
     return resultString;
 }
