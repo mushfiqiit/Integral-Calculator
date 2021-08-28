@@ -133,7 +133,7 @@ void constantPart::setFractionStatus(int fractionStatus)
 }
 
 void constantPart::computeFractionNumeratorDenominator(string initialNumerator,
-                                                       string initialDenominator)
+                                                    string initialDenominator)
 {
     int i;
     string fractionStatusInitialNumerator;
@@ -142,8 +142,16 @@ void constantPart::computeFractionNumeratorDenominator(string initialNumerator,
     fractionStatusInitialNumerator=initialNumerator;
     fractionStatusInitialDenominator=initialDenominator;
 
-int fractionStatusNumeratorAsInt=atoi(fractionStatusInitialNumerator.c_str());
-int fractionStatusDenominatorAsInt=atoi(fractionStatusInitialDenominator.c_str());
+long long int fractionStatusNumeratorAsInt=
+helping_tools_1.convertStringToInt(fractionStatusInitialNumerator);
+
+//atoi(fractionStatusInitialNumerator.c_str());
+
+long long int fractionStatusDenominatorAsInt=
+helping_tools_1.convertStringToInt(fractionStatusInitialDenominator);
+
+
+//atoi(fractionStatusInitialDenominator.c_str());
 
 //cout << fractionStatusNumeratorAsInt << " " << fractionStatusDenominatorAsInt << endl;
 

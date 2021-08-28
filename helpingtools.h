@@ -11,7 +11,7 @@ class helpingtools
 
         bool isDigit(char ch); // 2
         bool isPerfectSquare(int numberToCheck); // 3
-        int convertStringToInt(string stringToConvert); // 4
+        long long int convertStringToInt(string stringToConvert); // 4
         string convertIntToString(int intToConvert); // 5
         string removeBrackets(string stringToRemoveBrackets); // 6
         string multiplyStrings(string stringToMultiply_1,string stringToMultiply_2); // 7

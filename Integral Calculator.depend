@@ -14,18 +14,18 @@
 	"inputTakingUnit.h"
 	<bits/stdc++.h>
 
-1629489115 source:e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.cpp
+1630127180 source:e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.cpp
 	"inputTakingUnit.h"
 	<bits/stdc++.h>
 
-1630126202 e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.h
+1630127129 e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.h
 	<bits/stdc++.h>
 	"term.h"
 	"outputUnit.h"
 
 1585313037 t.h"
 
-1630125612 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
+1630127283 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
 	<bits/stdc++.h>
 	"header1.h"
 
@@ -65,13 +65,13 @@
 
 1582618358 
 
-1629489115 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
+1630130744 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
 	<bits/stdc++.h>
 	"helpingtools.h"
 
 1618471967 ols.h"
 
-1629489115 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
+1630130816 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
 	"constantpart.h"
 	<bits/stdc++.h>
 	<string>
@@ -236,10 +236,10 @@
 	"variableFunctionPartTypeB.h"
 	<bits/stdc++.h>
 
-1629863119 source:e:\work\second year\spl- 1\integral-calculator-master\helpingtools.cpp
+1630129549 source:e:\work\second year\spl- 1\integral-calculator-master\helpingtools.cpp
 	"helpingtools.h"
 
-1629863126 e:\work\second year\spl- 1\integral-calculator-master\helpingtools.h
+1630129279 e:\work\second year\spl- 1\integral-calculator-master\helpingtools.h
 	<bits/stdc++.h>
 
 1624223128 source:/home/mushfiqur/Downloads/Integral-Calculator-master/coefficientpart.cpp

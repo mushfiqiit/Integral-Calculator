@@ -19,10 +19,16 @@ bool helpingtools::isPerfectSquare(int numberToCheck) // 3
     else return false;
 }
 
-int helpingtools::convertStringToInt(string stringToConvert) // 4
+long long int helpingtools::convertStringToInt(string stringToConvert) // 4
 {
-    int convertedInt;
-    convertedInt=atoi(stringToConvert.c_str());
+    long long int convertedInt=0;
+    long long int stringLength=stringToConvert.length();
+    for(int iterator_i=stringLength-1;iterator_i>=0;iterator_i--)
+    {
+        convertedInt=convertedInt*10;
+        convertedInt+=(long long int)(stringToConvert[iterator_i]-'0');
+    }
+    //cout << stringToConvert << " " << convertedInt << "\n";
     return convertedInt;
 }
 
