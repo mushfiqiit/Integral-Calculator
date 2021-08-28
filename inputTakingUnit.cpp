@@ -73,6 +73,7 @@ void inputTakingUnit::processInputToTerms()
 
    for(int i=0;i<=termIterator;i++)
    {
+        cout << "Term " << i+1 << " ";
        arrayOfTerms[i].setTerm(arrayOfTermStrings[i]);
        arrayOfTerms[i].formOutputTerm();
    }

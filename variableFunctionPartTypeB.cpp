@@ -138,10 +138,34 @@ string variableFunctionPartTypeB::parseVariableFunctionAsInput(string variableFu
 int variableFunctionPartTypeB::identifyFunctionTypeB(string variableFunctionToIdentify) //14
 {
     //cout << variableFunctionToIdentify << "\n";
-    if(variableFunctionToIdentify=="a+x^2") return 10;
-    else if(variableFunctionToIdentify=="a-x^2^1/2") { return 11; }
-    else if(variableFunctionToIdentify=="a-x^2") { return 12; }
-    else if(variableFunctionToIdentify=="x^2-a") { return 13; }
+    if(variableFunctionToIdentify=="a+x^2")
+    {
+        cout << "solved using rule: ";
+        cout << "Integrate (1/(a^2+x^2)) = (1/a) tan^-1 (x/a) ";
+        cout << "\n\n";
+        return 10;
+    }
+    else if(variableFunctionToIdentify=="a-x^2^1/2")
+    {
+        cout << "solved using rule: ";
+        cout << "Integrate (1/( (a^2-x^2)^(1/2) ) ) = sin^-1 (x/a) ";
+        cout << "\n\n";
+        return 11;
+    }
+    else if(variableFunctionToIdentify=="a-x^2")
+    {
+        cout << "solved using rule: ";
+        cout << "Integrate (1/(a^2-x^2) ) = (1/2a) ln( (a+x)/(a-x) ) ";
+        cout << "\n\n";
+        return 12;
+    }
+    else if(variableFunctionToIdentify=="x^2-a")
+    {
+        cout << "solved using rule: ";
+        cout << "Integrate (1/(x^2-a^2) ) = (1/2a) ln ( (x-a)/(x+a) )  ";
+        cout << "\n\n";
+        return 13;
+    }
     else return 0;
 }
 

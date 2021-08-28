@@ -257,7 +257,8 @@ void term::computeOutputTermForTypeA() // 11
                  +variable_Function_Part_1.getOutputVariableFunction();
     }
 
-    else if(functionType==-1) outputTerm= "Invalid Input";
+    else if(functionType==-1)
+    outputTerm= "N/A";
 }
 
 void term::computeOutputTermForTypeB()
@@ -301,55 +302,78 @@ void term::identifyFunctionType(string constant, string variableFunction, string
     //cout << constant << " " << croppedvariableFunction << " " << power << "\n";
     if(power=="-1")
     {
-        setTermFunctionType(2);
+        setTermFunctionType(2);\
+        cout << "solved using rule: Integrate(x^(-1))= lnx \n\n";
     }
 
     else if(croppedvariableFunction=="sinx")
     {
         setTermFunctionType(3);
+        cout << "solved using rule : ";
+        cout << "Integrate( sin (mx) ) = (-1/m) cos (mx) \n\n";
     }
 
     else if(croppedvariableFunction=="secxtanx")
     {
         setTermFunctionType(7);
+        cout << "solved using rule: ";
+        cout << "Integrate(sec (mx) tan (mx) ) = (1/m) sec mx \n\n";
     }
 
     else if(croppedvariableFunction=="cosecxcotx")
     {
         setTermFunctionType(8);
+        cout << "solved using rule: ";
+        cout << "Integrate (cosec(mx) cot(mx) ) = (-1/m) cosec (mx) \n\n";
     }
 
     else if(croppedvariableFunction=="cosec^2x")
     {
         //cout << "HESE\n";
         setTermFunctionType(6);
+        cout << "solved using rule: ";
+        cout << "Integrate (cosec^2 (mx) ) = (-1/m) cot(mx) ";
+        cout << "\n\n";
     }
 
 
     else if(croppedvariableFunction=="cosx")
     {
         setTermFunctionType(4);
+        cout << "solved using rule: ";
+        cout << "Integrate (cos (mx) ) = (1/m) sin (mx) ";
+        cout << "\n\n";
     }
 
     else if(croppedvariableFunction=="sec^2x")
     {
         //cout << "Here" << endl;
         setTermFunctionType(5);
+        cout << "solved using rule: ";
+        cout << "Integrate (sec^2(mx) ) = (1/m) tan (mx) ";
+        cout << "\n\n";
     }
 
     else if(croppedvariableFunction=="x")
     {
         setTermFunctionType(1);
+        cout << "solved using rule: ";
+        cout << "Integrate (x^n) = (1/(n+1) ) x^(n+1)  ";
+        cout << "\n\n";
     }
 
     else if(croppedvariableFunction=="e")
     {
         setTermFunctionType(9);
+        cout << "solved using rule: ";
+        cout << "Integrate (e^(mx) ) = (1/m) e^(mx)  ";
+        cout << "\n\n";
     }
 
     else
     {
         setTermFunctionType(-1);
+        cout << "cannot be solved. \n\n";
     }
     //cout << functionType << "\n";
 }

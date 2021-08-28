@@ -12,7 +12,7 @@ class helpingtools
         bool isDigit(char ch); // 2
         bool isPerfectSquare(int numberToCheck); // 3
         long long int convertStringToInt(string stringToConvert); // 4
-        string convertIntToString(int intToConvert); // 5
+        string convertIntToString(long long int intToConvert); // 5
         string removeBrackets(string stringToRemoveBrackets); // 6
         string multiplyStrings(string stringToMultiply_1,string stringToMultiply_2); // 7
         string addRoot(string stringToAddRoot);

@@ -23,21 +23,60 @@ long long int helpingtools::convertStringToInt(string stringToConvert) // 4
 {
     long long int convertedInt=0;
     long long int stringLength=stringToConvert.length();
-    for(int iterator_i=stringLength-1;iterator_i>=0;iterator_i--)
+    int firstDigitCharacterIndex=0;
+    int negativeFlag=0;
+
+    //If the number is negative, ignore first character.
+    if(stringToConvert[0]=='-')
+    {
+        firstDigitCharacterIndex=1;
+        negativeFlag=1;
+    }
+
+
+    for(int iterator_i=stringLength-1;iterator_i>=firstDigitCharacterIndex;
+    iterator_i--)
     {
         convertedInt=convertedInt*10;
         convertedInt+=(long long int)(stringToConvert[iterator_i]-'0');
+    }
+
+    if(negativeFlag)
+    {
+        convertedInt=-convertedInt;
     }
     //cout << stringToConvert << " " << convertedInt << "\n";
     return convertedInt;
 }
 
-string helpingtools::convertIntToString(int intToConvert) // 5
+string helpingtools::convertIntToString(long long int intToConvert) // 5
 {
     string convertedString;
-    stringstream ss;
-    ss<<intToConvert;
-    convertedString=ss.str();
+    string temporaryString;
+    int negativeFlag=0;
+
+    // If integer is negative
+    if(intToConvert<0)
+    {
+        negativeFlag=1;
+        intToConvert=-intToConvert;
+    }
+    while(intToConvert>0)
+    {
+        int lastDigit=intToConvert%10;
+        temporaryString+=(char)(lastDigit+'0');
+        intToConvert=intToConvert/10;
+    }
+    int temporaryStringLength=temporaryString.length();
+    if(negativeFlag) convertedString+="-";
+    for(int i=temporaryStringLength-1;i>=0;i--)
+    {
+        convertedString+=temporaryString[i];
+    }
+    //cout << intToConvert << "ab" << convertedString << "\n";
+    //stringstream ss;
+    //ss<<intToConvert;
+    //convertedString=ss.str();
     return convertedString;
 }
 

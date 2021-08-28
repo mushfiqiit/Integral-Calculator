@@ -8,7 +8,7 @@
 1581227494 e:\semester 3\integral calculator\inputtakingunit.h
 	<bits/stdc++.h>
 
-1618262024 ++.h>
+1629485823 ++.h>
 
 1581229953 source:e:\semester 3\integral calculator\inputtakingunit.cpp
 	"inputTakingUnit.h"
@@ -23,13 +23,13 @@
 	"term.h"
 	"outputUnit.h"
 
-1585313037 t.h"
+1624223128 t.h"
 
 1630127283 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
 	<bits/stdc++.h>
 	"header1.h"
 
-1581895033 "
+1624223128 "
 
 1629489115 e:\work\second year\spl- 1\integral-calculator-master\header1.h
 	"inputTakingUnit.h"
@@ -41,7 +41,7 @@
 	"variablefunctionpart.h"
 	"coefficientpart.h"
 
-1595946933 ntpart.h"
+1624223128 ntpart.h"
 
 1629489115 e:\work\second year\spl- 1\integral-calculator-master\term.h
 	<bits/stdc++.h>
@@ -50,7 +50,7 @@
 	"powerpart.h"
 	"variableFunctionPartTypeB.h"
 
-1615401689 unctionPartTypeB.h"
+1624223128 unctionPartTypeB.h"
 
 1629795870 source:e:\work\second year\spl- 1\integral-calculator-master\outputunit.cpp
 	"outputUnit.h"
@@ -63,13 +63,13 @@
 	<bits/stdc++.h>
 	"term.h"
 
-1582618358 
+1629475044 
 
 1630130744 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
 	<bits/stdc++.h>
 	"helpingtools.h"
 
-1618471967 ols.h"
+1624223128 ols.h"
 
 1630130816 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
 	"constantpart.h"
@@ -328,4 +328,92 @@
 1629485823 source:/home/mushfiqur/Downloads/Integral-Calculator-master/variableFunctionPartTypeB.cpp
 	"variableFunctionPartTypeB.h"
 	<bits/stdc++.h>
+
+1630134637 source:/home/mushfiqur/Downloads/Integral-Calculator-master/coefficientpart.cpp
+	"coefficientpart.h"
+
+1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/coefficientpart.h
+	<bits/stdc++.h>
+	"helpingtools.h"
+
+1630165391 /home/mushfiqur/Downloads/Integral-Calculator-master/helpingtools.h
+	<bits/stdc++.h>
+
+1630165995 source:/home/mushfiqur/Downloads/Integral-Calculator-master/constantpart.cpp
+	"constantpart.h"
+	<bits/stdc++.h>
+	<string>
+	<iostream>
+
+1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/constantpart.h
+	<bits/stdc++.h>
+	"helpingtools.h"
+
+1630171493 source:/home/mushfiqur/Downloads/Integral-Calculator-master/inputTakingUnit.cpp
+	"inputTakingUnit.h"
+	<bits/stdc++.h>
+
+1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/inputTakingUnit.h
+	<bits/stdc++.h>
+	"term.h"
+	"outputUnit.h"
+
+1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/term.h
+	<bits/stdc++.h>
+	"constantpart.h"
+	"variablefunctionpart.h"
+	"powerpart.h"
+	"variableFunctionPartTypeB.h"
+
+1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/variablefunctionpart.h
+	<bits/stdc++.h>
+	"coefficientpart.h"
+
+1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/powerpart.h
+	<bits/stdc++.h>
+
+1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/variableFunctionPartTypeB.h
+	<bits/stdc++.h>
+	"helpingtools.h"
+
+1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/outputUnit.h
+	<bits/stdc++.h>
+
+1630170847 source:/home/mushfiqur/Downloads/Integral-Calculator-master/main.cpp
+	<bits/stdc++.h>
+	"header1.h"
+
+1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/header1.h
+	"inputTakingUnit.h"
+	"term.h"
+	"constantpart.h"
+	"outputUnit.h"
+	"constantpart.h"
+	"powerpart.h"
+	"variablefunctionpart.h"
+	"coefficientpart.h"
+
+1630134637 source:/home/mushfiqur/Downloads/Integral-Calculator-master/outputUnit.cpp
+	"outputUnit.h"
+	<bits/stdc++.h>
+
+1630134637 source:/home/mushfiqur/Downloads/Integral-Calculator-master/powerpart.cpp
+	"powerpart.h"
+	<bits/stdc++.h>
+	<string>
+
+1630171386 source:/home/mushfiqur/Downloads/Integral-Calculator-master/term.cpp
+	<bits/stdc++.h>
+	"term.h"
+
+1630134637 source:/home/mushfiqur/Downloads/Integral-Calculator-master/variablefunctionpart.cpp
+	"variablefunctionpart.h"
+	<bits/stdc++.h>
+
+1630134637 source:/home/mushfiqur/Downloads/Integral-Calculator-master/variableFunctionPartTypeB.cpp
+	"variableFunctionPartTypeB.h"
+	<bits/stdc++.h>
+
+1630169200 source:/home/mushfiqur/Downloads/Integral-Calculator-master/helpingtools.cpp
+	"helpingtools.h"
 

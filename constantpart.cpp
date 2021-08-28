@@ -170,11 +170,16 @@ fractionStatusDenominatorAsInt=(fractionStatusDenominatorAsInt*
                                 outputPowerNumeratorAsInt);
 //cout << fractionStatusNumeratorAsInt << " " << fractionStatusDenominatorAsInt << endl;
 
-stringstream ss1, ss2;
+this->initialNumerator=
+helping_tools_1.convertIntToString(fractionStatusNumeratorAsInt);
+this->initialDenominator=
+helping_tools_1.convertIntToString(fractionStatusDenominatorAsInt);
+
+/*stringstream ss1, ss2;
 ss1<<fractionStatusNumeratorAsInt;
 this->initialNumerator=ss1.str();
 ss2<<fractionStatusDenominatorAsInt;
-this->initialDenominator=ss2.str();
+this->initialDenominator=ss2.str();*/
 }
 
 int constantPart::getFractionStatus()
