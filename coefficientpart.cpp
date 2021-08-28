@@ -86,6 +86,10 @@ void Coefficientpart::formOutputCoefficient()
     if(fractionStatus==1)
     {
         helping_Tools_1.numeratorDenominatorSimplification(coefficientNumerator, coefficientDenominator);
-        if(coefficientDenominator=="1") { fractionStatus=0; coefficentAsInput=coefficientNumerator; }
+        if(coefficientDenominator=="1")
+        {
+            fractionStatus=0;
+            coefficentAsInput=coefficientNumerator;
+        }
     }
 }

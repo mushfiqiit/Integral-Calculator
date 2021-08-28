@@ -1,6 +1,7 @@
 #ifndef POWERPART_H
 #define POWERPART_H
 #include <bits/stdc++.h>
+#include "helpingtools.h"
 
 using namespace std;
 
@@ -23,6 +24,7 @@ class powerPart
     bool isPositive;
     int fractionStatus;
     int functionType;
+    helpingtools helping_Tools_1;
 
     void computeOutputPowerForFunctionTypeOne();
     void computeOutputPowerForFunctionTypeNine();

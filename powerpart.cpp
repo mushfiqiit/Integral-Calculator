@@ -45,13 +45,15 @@ void powerPart::computeOutputPowerForFunctionTypeOne()
     {
         if(functionType==9) outputPower=inputPower;
     else {
-    stringstream ss;
-    convertedInputPower=atoi(inputPower.c_str());
+    //stringstream ss;
+    //convertedInputPower=atoi(inputPower.c_str());
+    convertedInputPower=helping_Tools_1.convertStringToInt(inputPower);
     //cout << convertedInputPower << "\n";
     convertedOutputPower=convertedInputPower+1;
     //cout << convertedOutputPower << "\n";
-    ss<< convertedOutputPower;
-    outputPower=ss.str();
+    //ss<< convertedOutputPower;
+    //outputPower=ss.str();
+    outputPower=helping_Tools_1.convertIntToString(convertedOutputPower);
         }
     }
 
@@ -135,7 +137,8 @@ string powerPart::getOutputPower()
 string powerPart::getOutputPowerWithX()
 {
     //cout << outputPower << "\n";
-    if(outputPower.empty()) return outputPower;
+    if(outputPower.empty())
+    { return outputPower; }
     return ("("+outputPower+")");
 }
 
@@ -151,20 +154,27 @@ int powerPart::getFractionStatus()
 
 void powerPart::computeFractionalPowerAsOutput(string numerator, string denominator)
 {
-    int numeratorAsInt=atoi(numerator.c_str());
-    int denominatorAsInt=atoi(denominator.c_str());
+    //int numeratorAsInt=atoi(numerator.c_str());
+    long long int numeratorAsInt=
+    helping_Tools_1.convertStringToInt(numerator);
+    //int denominatorAsInt=atoi(denominator.c_str());
+    long long int denominatorAsInt=
+    helping_Tools_1.convertStringToInt(denominator);
     int numeratorAsIntFinal, denominatorAsIntFinal;
 
     numeratorAsIntFinal=numeratorAsInt+denominatorAsInt;
     denominatorAsIntFinal=denominatorAsInt;
 
-    stringstream ss1;
+    /*stringstream ss1;
     ss1<<numeratorAsIntFinal;
-    processedNumerator=ss1.str();
+    processedNumerator=ss1.str();*/
+    processedNumerator=helping_Tools_1.convertIntToString(numeratorAsIntFinal);
 
-    stringstream ss2;
+    /*stringstream ss2;
     ss2<<denominatorAsIntFinal;
-    processedDenominator=ss2.str();
+    processedDenominator=ss2.str();*/
+    processedDenominator=
+    helping_Tools_1.convertIntToString(denominatorAsIntFinal);
 
     numeratorDenominatorSimplification(processedNumerator, processedDenominator);
 
@@ -173,13 +183,25 @@ void powerPart::computeFractionalPowerAsOutput(string numerator, string denomina
     numeratorAsOutput=processedNumerator;
     denominatorAsOutput=processedDenominator;
 
-    outputPower= processedNumerator+"/"+processedDenominator;
+    if(processedDenominator=="1")
+    {
+        outputPower=processedNumerator;
+    }
+
+    else
+    {
+        outputPower= processedNumerator+"/"+processedDenominator;
+    }
 }
 
 void powerPart::numeratorDenominatorSimplification(string numerator, string denominator)
 {
-    int numeratorAsInt=atoi(numerator.c_str());
-    int denominatorAsInt=atoi(denominator.c_str());
+    //int numeratorAsInt=atoi(numerator.c_str());
+    long long int numeratorAsInt=helping_Tools_1.convertStringToInt(numerator);
+    //int denominatorAsInt=atoi(denominator.c_str());
+    long long int denominatorAsInt=
+    helping_Tools_1.convertStringToInt(denominator);
+
     int numeratorAsIntFinal, denominatorAsIntFinal;
 
     numeratorAsIntFinal=numeratorAsInt/__gcd(numeratorAsInt, denominatorAsInt);
@@ -201,14 +223,9 @@ void powerPart::numeratorDenominatorSimplification(string numerator, string deno
         }
     }
 
+    processedNumerator=helping_Tools_1.convertIntToString(numeratorAsIntFinal);
 
-    stringstream ss1;
-    stringstream ss2;
-    ss1 <<numeratorAsIntFinal;
-    processedNumerator=ss1.str();
-
-    ss2 <<denominatorAsIntFinal;
-    processedDenominator=ss2.str();
+    processedDenominator=helping_Tools_1.convertIntToString(denominatorAsIntFinal);
 }
 
 string powerPart::getNumerator()

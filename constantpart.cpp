@@ -93,10 +93,14 @@ string constantPart::getOutputConstant()
 
 void constantPart::numeratorDenominatorSimplification(string numerator, string denominator)
 {
-    int numeratorAsInt=atoi(numerator.c_str());
-    int denominatorAsInt=atoi(denominator.c_str());
+    //int numeratorAsInt=atoi(numerator.c_str());
+    long long int numeratorAsInt=helping_tools_1.convertStringToInt(numerator);
+    //int denominatorAsInt=atoi(denominator.c_str());
+    long long int denominatorAsInt=
+    helping_tools_1.convertStringToInt(denominator);
     int numeratorAsIntFinal, denominatorAsIntFinal;
     //cout << numeratorAsInt << " " << denominatorAsInt << endl;
+    //cout << numerator << " " << denominator << "\n";
 
     numeratorAsIntFinal=numeratorAsInt/__gcd(numeratorAsInt, denominatorAsInt);
     denominatorAsIntFinal=denominatorAsInt/__gcd(numeratorAsInt, denominatorAsInt);
@@ -117,14 +121,11 @@ void constantPart::numeratorDenominatorSimplification(string numerator, string d
         }
     }
 
+    //cout << numeratorAsIntFinal << " " << denominatorAsIntFinal << "\n";
+    processedNumerator=helping_tools_1.convertIntToString(numeratorAsIntFinal);
 
-    stringstream ss1;
-    stringstream ss2;
-    ss1 <<numeratorAsIntFinal;
-    processedNumerator=ss1.str();
-
-    ss2 <<denominatorAsIntFinal;
-    processedDenominator=ss2.str();
+    processedDenominator=helping_tools_1.convertIntToString(denominatorAsIntFinal);
+    //cout << numerator << " " << denominator << "\n";
 }
 
 void constantPart::setFractionStatus(int fractionStatus)

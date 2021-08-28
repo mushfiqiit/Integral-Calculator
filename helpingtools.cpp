@@ -34,9 +34,10 @@ long long int helpingtools::convertStringToInt(string stringToConvert) // 4
     }
 
 
-    for(int iterator_i=stringLength-1;iterator_i>=firstDigitCharacterIndex;
-    iterator_i--)
+    for(int iterator_i=firstDigitCharacterIndex;iterator_i<stringLength;
+    iterator_i++)
     {
+        //cout << iterator_i << " " << stringToConvert[iterator_i] << "\n";
         convertedInt=convertedInt*10;
         convertedInt+=(long long int)(stringToConvert[iterator_i]-'0');
     }
@@ -111,8 +112,10 @@ string helpingtools::addRoot(string stringToAddRoot)
 
 void helpingtools::numeratorDenominatorSimplification(string& numerator, string& denominator)
 {
-    int numeratorAsInt=atoi(numerator.c_str());
-    int denominatorAsInt=atoi(denominator.c_str());
+    //int numeratorAsInt=atoi(numerator.c_str());
+    long long int numeratorAsInt=convertStringToInt(numerator);
+    //int denominatorAsInt=atoi(denominator.c_str());
+    long long int denominatorAsInt=convertStringToInt(denominator);
     int numeratorAsIntFinal, denominatorAsIntFinal;
     //cout << numeratorAsInt << " " << denominatorAsInt << endl;
 
