@@ -20,7 +20,7 @@ class inputTakingUnit
     void processInputToTerms();
     public:
         inputTakingUnit();
-        void takeInput(string recievedInput);
+        bool takeInput();
         string getProcessedTerm();
         string getRecievedInput();
 };

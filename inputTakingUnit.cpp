@@ -8,10 +8,30 @@ inputTakingUnit::inputTakingUnit()
 
 }
 
-void inputTakingUnit::takeInput(string recievedInput)
+/*void inputTakingUnit::takeInput(string recievedInput)
 {
     this->recievedInput=recievedInput;
     processInputToTerms();
+}*/
+
+bool inputTakingUnit::takeInput()
+{
+    recievedInput.clear();
+        cout << "\n\n\tInput : ";
+        getline(cin, recievedInput);
+        cout << "\n\n";
+        if(recievedInput=="quit")
+        {
+            cout << "Thank you for using our Integral Calculator\n\n";
+            return false;
+        }
+        if(recievedInput.empty())
+        {
+            cout << "\t\tPlease try again.\n\n";
+            return true;
+        }
+    processInputToTerms();
+    return true;
 }
 
 void inputTakingUnit::processInputToTerms()

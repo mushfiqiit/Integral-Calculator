@@ -12,24 +12,12 @@ int main()
     for(int i=0;i<45;i++) cout << "-";
     cout << "\n\n";
     //Input taking
-
-    while(recievedInput!="quit")
+    while(1)
     {
-        cout << "\n\n\tInput : ";
-        getline(cin, recievedInput);
-        cout << "\n\n";
-        if(recievedInput=="quit")
-        {
-            cout << "Thank you for using our Integral Calculator\n\n";
-            break;
-        }
-        if(recievedInput.empty())
-        {
-            cout << "\t\tPlease try again.\n\n"; continue;
-        }
-    inputTakingUnit inputTakingUnit_1;
-    inputTakingUnit_1.takeInput(recievedInput);
+        inputTakingUnit inputTakingUnit_1;
+        if(!inputTakingUnit_1.takeInput()) break;
     }
+
     // **
 
     //recieve a term
