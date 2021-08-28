@@ -44,6 +44,8 @@ void constantPart::formOutputConstant()
     else if(functionType==10) computeOutputConstantForFunctionTypeTen();
 
     else if(functionType==12 || functionType==13) computeOutputConstantForFunctionTypeTwelve();
+
+    else if(functionType==11) computeOutputConstantForFunctionTypeTwo();
 }
 
 void constantPart::computeOutputConstantForFunctionTypeOne()
@@ -322,11 +324,12 @@ void constantPart::computeOutputConstantForFunctionTypeTen()
             else
             {
                 parseFractionConstant(constantStringAsInput);
-                if(!emptyflag) initialDenominator=helping_tools_1.multiplyStrings
+                if(!emptyflag && functionType!=10) initialDenominator=helping_tools_1.multiplyStrings
                     (initialDenominator, "2");
             }
 
             //cout << initialNumerator << " " << initialDenominator << "\n";
+            helping_tools_1.numeratorDenominatorSimplification(initialNumerator, initialDenominator);
 
             if(!isRootValueOfPowerDenominator)
             helping_tools_1.numeratorDenominatorSimplification

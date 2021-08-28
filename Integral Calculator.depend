@@ -14,24 +14,24 @@
 	"inputTakingUnit.h"
 	<bits/stdc++.h>
 
-1630127180 source:e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.cpp
+1630177114 source:e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.cpp
 	"inputTakingUnit.h"
 	<bits/stdc++.h>
 
-1630127129 e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.h
+1630177114 e:\work\second year\spl- 1\integral-calculator-master\inputtakingunit.h
 	<bits/stdc++.h>
 	"term.h"
 	"outputUnit.h"
 
 1624223128 t.h"
 
-1630127283 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
+1630177114 source:e:\work\second year\spl- 1\integral-calculator-master\main.cpp
 	<bits/stdc++.h>
 	"header1.h"
 
 1624223128 "
 
-1629489115 e:\work\second year\spl- 1\integral-calculator-master\header1.h
+1630177114 e:\work\second year\spl- 1\integral-calculator-master\header1.h
 	"inputTakingUnit.h"
 	"term.h"
 	"constantpart.h"
@@ -43,7 +43,7 @@
 
 1624223128 ntpart.h"
 
-1629489115 e:\work\second year\spl- 1\integral-calculator-master\term.h
+1630177114 e:\work\second year\spl- 1\integral-calculator-master\term.h
 	<bits/stdc++.h>
 	"constantpart.h"
 	"variablefunctionpart.h"
@@ -52,38 +52,39 @@
 
 1624223128 unctionPartTypeB.h"
 
-1629795870 source:e:\work\second year\spl- 1\integral-calculator-master\outputunit.cpp
+1630177114 source:e:\work\second year\spl- 1\integral-calculator-master\outputunit.cpp
 	"outputUnit.h"
 	<bits/stdc++.h>
 
-1629489115 e:\work\second year\spl- 1\integral-calculator-master\outputunit.h
+1630177114 e:\work\second year\spl- 1\integral-calculator-master\outputunit.h
 	<bits/stdc++.h>
 
-1629489115 source:e:\work\second year\spl- 1\integral-calculator-master\term.cpp
+1630177114 source:e:\work\second year\spl- 1\integral-calculator-master\term.cpp
 	<bits/stdc++.h>
 	"term.h"
 
 1629475044 
 
-1630130744 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
+1630177114 e:\work\second year\spl- 1\integral-calculator-master\constantpart.h
 	<bits/stdc++.h>
 	"helpingtools.h"
 
 1624223128 ols.h"
 
-1630130816 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
+1630181345 source:e:\work\second year\spl- 1\integral-calculator-master\constantpart.cpp
 	"constantpart.h"
 	<bits/stdc++.h>
 	<string>
 	<iostream>
 
-1629799263 source:e:\work\second year\spl- 1\integral-calculator-master\powerpart.cpp
+1630177114 source:e:\work\second year\spl- 1\integral-calculator-master\powerpart.cpp
 	"powerpart.h"
 	<bits/stdc++.h>
 	<string>
 
-1629489115 e:\work\second year\spl- 1\integral-calculator-master\powerpart.h
+1630177114 e:\work\second year\spl- 1\integral-calculator-master\powerpart.h
 	<bits/stdc++.h>
+	"helpingtools.h"
 
 1582607458 source:e:\semester 3\integral-calculator-master\term.cpp
 	<bits/stdc++.h>
@@ -126,11 +127,11 @@
 1581911117 e:\semester 3\integral-calculator-master\outputunit.h
 	<bits/stdc++.h>
 
-1629489115 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.h
+1630177114 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.h
 	<bits/stdc++.h>
 	"coefficientpart.h"
 
-1629489115 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.cpp
+1630177114 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionpart.cpp
 	"variablefunctionpart.h"
 	<bits/stdc++.h>
 
@@ -221,125 +222,41 @@
 	<string>
 	<iostream>
 
-1629863551 e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.h
+1630177114 e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.h
 	<bits/stdc++.h>
 	"helpingtools.h"
 
-1629863725 source:e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.cpp
+1630177114 source:e:\work\second year\spl- 1\integral-calculator-master\coefficientpart.cpp
 	"coefficientpart.h"
 
-1629489115 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.h
+1630177114 e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.h
 	<bits/stdc++.h>
 	"helpingtools.h"
 
-1629808595 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.cpp
+1630177114 source:e:\work\second year\spl- 1\integral-calculator-master\variablefunctionparttypeb.cpp
 	"variableFunctionPartTypeB.h"
 	<bits/stdc++.h>
 
-1630129549 source:e:\work\second year\spl- 1\integral-calculator-master\helpingtools.cpp
+1630177114 source:e:\work\second year\spl- 1\integral-calculator-master\helpingtools.cpp
 	"helpingtools.h"
 
-1630129279 e:\work\second year\spl- 1\integral-calculator-master\helpingtools.h
-	<bits/stdc++.h>
-
-1624223128 source:/home/mushfiqur/Downloads/Integral-Calculator-master/coefficientpart.cpp
-	"coefficientpart.h"
-
-1624223128 /home/mushfiqur/Downloads/Integral-Calculator-master/coefficientpart.h
-	<bits/stdc++.h>
-
-1629475044 source:/home/mushfiqur/Downloads/Integral-Calculator-master/constantpart.cpp
-	"constantpart.h"
-	<bits/stdc++.h>
-	<string>
-	<iostream>
-
-1624223128 /home/mushfiqur/Downloads/Integral-Calculator-master/constantpart.h
-	<bits/stdc++.h>
-	"helpingtools.h"
-
-1629477474 /home/mushfiqur/Downloads/Integral-Calculator-master/helpingtools.h
-	<bits/stdc++.h>
-
-1629485909 source:/home/mushfiqur/Downloads/Integral-Calculator-master/helpingtools.cpp
-	"helpingtools.h"
-
-1624223128 source:/home/mushfiqur/Downloads/Integral-Calculator-master/inputTakingUnit.cpp
-	"inputTakingUnit.h"
-	<bits/stdc++.h>
-
-1624223128 /home/mushfiqur/Downloads/Integral-Calculator-master/inputTakingUnit.h
-	<bits/stdc++.h>
-	"term.h"
-	"outputUnit.h"
-
-1624223128 /home/mushfiqur/Downloads/Integral-Calculator-master/term.h
-	<bits/stdc++.h>
-	"constantpart.h"
-	"variablefunctionpart.h"
-	"powerpart.h"
-	"variableFunctionPartTypeB.h"
-
-1624223128 /home/mushfiqur/Downloads/Integral-Calculator-master/variablefunctionpart.h
-	<bits/stdc++.h>
-	"coefficientpart.h"
-
-1624223128 /home/mushfiqur/Downloads/Integral-Calculator-master/powerpart.h
-	<bits/stdc++.h>
-
-1624223128 /home/mushfiqur/Downloads/Integral-Calculator-master/variableFunctionPartTypeB.h
-	<bits/stdc++.h>
-	"helpingtools.h"
-
-1624223128 /home/mushfiqur/Downloads/Integral-Calculator-master/outputUnit.h
-	<bits/stdc++.h>
-
-1624223128 source:/home/mushfiqur/Downloads/Integral-Calculator-master/main.cpp
-	<bits/stdc++.h>
-	"header1.h"
-
-1624223128 /home/mushfiqur/Downloads/Integral-Calculator-master/header1.h
-	"inputTakingUnit.h"
-	"term.h"
-	"constantpart.h"
-	"outputUnit.h"
-	"constantpart.h"
-	"powerpart.h"
-	"variablefunctionpart.h"
-	"coefficientpart.h"
-
-1624223128 source:/home/mushfiqur/Downloads/Integral-Calculator-master/outputUnit.cpp
-	"outputUnit.h"
-	<bits/stdc++.h>
-
-1629475765 source:/home/mushfiqur/Downloads/Integral-Calculator-master/powerpart.cpp
-	"powerpart.h"
-	<bits/stdc++.h>
-	<string>
-
-1629475804 source:/home/mushfiqur/Downloads/Integral-Calculator-master/term.cpp
-	<bits/stdc++.h>
-	"term.h"
-
-1624223128 source:/home/mushfiqur/Downloads/Integral-Calculator-master/variablefunctionpart.cpp
-	"variablefunctionpart.h"
-	<bits/stdc++.h>
-
-1629485823 source:/home/mushfiqur/Downloads/Integral-Calculator-master/variableFunctionPartTypeB.cpp
-	"variableFunctionPartTypeB.h"
+1630177114 e:\work\second year\spl- 1\integral-calculator-master\helpingtools.h
 	<bits/stdc++.h>
 
 1630134637 source:/home/mushfiqur/Downloads/Integral-Calculator-master/coefficientpart.cpp
 	"coefficientpart.h"
+	"coefficientpart.h"
 
 1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/coefficientpart.h
 	<bits/stdc++.h>
+	<bits/stdc++.h>
 	"helpingtools.h"
 
-1630165391 /home/mushfiqur/Downloads/Integral-Calculator-master/helpingtools.h
-	<bits/stdc++.h>
-
 1630176638 source:/home/mushfiqur/Downloads/Integral-Calculator-master/constantpart.cpp
+	"constantpart.h"
+	<bits/stdc++.h>
+	<string>
+	<iostream>
 	"constantpart.h"
 	<bits/stdc++.h>
 	<string>
@@ -348,12 +265,27 @@
 1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/constantpart.h
 	<bits/stdc++.h>
 	"helpingtools.h"
+	<bits/stdc++.h>
+	"helpingtools.h"
+
+1630165391 /home/mushfiqur/Downloads/Integral-Calculator-master/helpingtools.h
+	<bits/stdc++.h>
+	<bits/stdc++.h>
+
+1630176326 source:/home/mushfiqur/Downloads/Integral-Calculator-master/helpingtools.cpp
+	"helpingtools.h"
+	"helpingtools.h"
 
 1630171493 source:/home/mushfiqur/Downloads/Integral-Calculator-master/inputTakingUnit.cpp
 	"inputTakingUnit.h"
 	<bits/stdc++.h>
+	"inputTakingUnit.h"
+	<bits/stdc++.h>
 
 1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/inputTakingUnit.h
+	<bits/stdc++.h>
+	"term.h"
+	"outputUnit.h"
 	<bits/stdc++.h>
 	"term.h"
 	"outputUnit.h"
@@ -364,23 +296,36 @@
 	"variablefunctionpart.h"
 	"powerpart.h"
 	"variableFunctionPartTypeB.h"
+	<bits/stdc++.h>
+	"constantpart.h"
+	"variablefunctionpart.h"
+	"powerpart.h"
+	"variableFunctionPartTypeB.h"
 
 1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/variablefunctionpart.h
 	<bits/stdc++.h>
 	"coefficientpart.h"
+	<bits/stdc++.h>
+	"coefficientpart.h"
 
 1630173658 /home/mushfiqur/Downloads/Integral-Calculator-master/powerpart.h
+	<bits/stdc++.h>
 	<bits/stdc++.h>
 	"helpingtools.h"
 
 1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/variableFunctionPartTypeB.h
 	<bits/stdc++.h>
 	"helpingtools.h"
+	<bits/stdc++.h>
+	"helpingtools.h"
 
 1630134637 /home/mushfiqur/Downloads/Integral-Calculator-master/outputUnit.h
 	<bits/stdc++.h>
+	<bits/stdc++.h>
 
 1630170847 source:/home/mushfiqur/Downloads/Integral-Calculator-master/main.cpp
+	<bits/stdc++.h>
+	"header1.h"
 	<bits/stdc++.h>
 	"header1.h"
 
@@ -393,8 +338,18 @@
 	"powerpart.h"
 	"variablefunctionpart.h"
 	"coefficientpart.h"
+	"inputTakingUnit.h"
+	"term.h"
+	"constantpart.h"
+	"outputUnit.h"
+	"constantpart.h"
+	"powerpart.h"
+	"variablefunctionpart.h"
+	"coefficientpart.h"
 
 1630134637 source:/home/mushfiqur/Downloads/Integral-Calculator-master/outputUnit.cpp
+	"outputUnit.h"
+	<bits/stdc++.h>
 	"outputUnit.h"
 	<bits/stdc++.h>
 
@@ -402,19 +357,25 @@
 	"powerpart.h"
 	<bits/stdc++.h>
 	<string>
+	"powerpart.h"
+	<bits/stdc++.h>
+	<string>
 
 1630171671 source:/home/mushfiqur/Downloads/Integral-Calculator-master/term.cpp
+	<bits/stdc++.h>
+	"term.h"
 	<bits/stdc++.h>
 	"term.h"
 
 1630134637 source:/home/mushfiqur/Downloads/Integral-Calculator-master/variablefunctionpart.cpp
 	"variablefunctionpart.h"
 	<bits/stdc++.h>
+	"variablefunctionpart.h"
+	<bits/stdc++.h>
 
 1630172292 source:/home/mushfiqur/Downloads/Integral-Calculator-master/variableFunctionPartTypeB.cpp
 	"variableFunctionPartTypeB.h"
 	<bits/stdc++.h>
-
-1630176326 source:/home/mushfiqur/Downloads/Integral-Calculator-master/helpingtools.cpp
-	"helpingtools.h"
+	"variableFunctionPartTypeB.h"
+	<bits/stdc++.h>
 
